@@ -1,0 +1,28 @@
+window_sizes 1800 945 381 1413 778 112
+cleanlooks_style
+diagrams
+  usecasediagram_ref 128110 // kehu_uc
+    1130 622 100 A4 0 0
+  classdiagram_ref 128238 // chuxu_yewu
+    1130 622 100 A4 0 0
+  active  sequencediagram_ref 141678 // qukuan
+    1130 622 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 128366 // chuxu_zizhanghu
+open
+  class_ref 128238 // yikatong_zhanghu
+  class_ref 128366 // chuxu_zizhanghu
+  usecase_ref 134766 // zhuxiao_zhanghu
+  usecase_ref 134894 // xiugai_zhanghu_mima
+  usecase_ref 135022 // cunkuan
+  usecase_ref 135278 // qukuan
+  class_ref 135022 // huoqi_chuxu
+  class_ref 135150 // dingqi_chuxu
+  attribute_ref 135918 // huoqi_lixi
+  attribute_ref 136046 // dingqi_lilv_1
+  deploymentview_ref 128110 // chuxu_deployment
+  classview_ref 134638 // class_diagram
+end
+end
+verbose
