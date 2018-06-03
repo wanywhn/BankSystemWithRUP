@@ -29,34 +29,34 @@ classcanvas 130286 class_ref 141806 // interest_table
   xyz 61 380 2000
 end
 relationcanvas 128750 relation_ref 128238 // <unidirectional association>
-  from ref 128238 z 2001 stereotype "<<vector>>" xyz 412 135 3000 to ref 128622
-  role_a_pos 470 80 3000 no_role_b
-  multiplicity_a_pos 531 113 3000 multiplicity_b_pos 348 174 3000
+  from ref 128238 z 2001 stereotype "<<vector>>" xyz 425 142 3000 to ref 128622
+  role_a_pos 470 88 3000 no_role_b
+  multiplicity_a_pos 531 121 3000 multiplicity_b_pos 374 178 3000
 end
 relationcanvas 129006 relation_ref 128110 // <association>
   from ref 128878 z 3006 to ref 128238
   no_role_a no_role_b
-  multiplicity_a_pos 192 201 3000 multiplicity_b_pos 116 211 3000
+  multiplicity_a_pos 192 208 3000 multiplicity_b_pos 116 213 3000
 end
 relationcanvas 129262 relation_ref 134766 // <directional composition>
   from ref 128622 z 2001 to ref 129134
   no_role_a no_role_b
-  multiplicity_a_pos 603 178 3000 multiplicity_b_pos 603 154 3000
+  multiplicity_a_pos 593 178 3000 multiplicity_b_pos 592 170 3000
 end
 relationcanvas 129518 relation_ref 134894 // <directional aggregation>
-  from ref 129134 z 2001 stereotype "<<vector>>" xyz 450 325 3000 to ref 129390
-  role_a_pos 387 374 3000 no_role_b
-  multiplicity_a_pos 387 407 3000 no_multiplicity_b
+  from ref 129134 z 2001 stereotype "<<vector>>" xyz 444 336 3000 to ref 129390
+  role_a_pos 377 382 3000 no_role_b
+  multiplicity_a_pos 377 415 3000 no_multiplicity_b
 end
 relationcanvas 129774 relation_ref 135022 // <directional aggregation>
-  from ref 129134 z 2001 stereotype "<<vector>>" xyz 533 331 3000 to ref 129646
-  role_a_pos 538 393 3000 no_role_b
-  multiplicity_a_pos 512 393 3000 no_multiplicity_b
+  from ref 129134 z 2001 stereotype "<<vector>>" xyz 530 339 3000 to ref 129646
+  role_a_pos 536 393 3000 no_role_b
+  multiplicity_a_pos 510 393 3000 no_multiplicity_b
 end
 relationcanvas 130414 relation_ref 141678 // <directional aggregation>
-  from ref 129134 z 2001 stereotype "<<vector>>" xyz 661 324 3000 to point 750 404
+  from ref 129134 z 2001 stereotype "<<vector>>" xyz 663 332 3000 to point 750 404
   line 130542 z 2001 to ref 129646
-  role_a_pos 560 434 3000 no_role_b
-  multiplicity_a_pos 560 467 3000 no_multiplicity_b
+  role_a_pos 554 441 3000 no_role_b
+  multiplicity_a_pos 554 474 3000 no_multiplicity_b
 end
 end

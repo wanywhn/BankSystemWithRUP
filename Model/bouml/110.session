@@ -1,28 +1,38 @@
-window_sizes 1800 945 381 1413 778 112
+window_sizes 1800 955 381 1413 788 112
 cleanlooks_style
 diagrams
-  usecasediagram_ref 128110 // kehu_uc
-    1130 622 100 A4 0 0
-  classdiagram_ref 128238 // chuxu_yewu
-    1130 622 100 A4 0 0
-  active  sequencediagram_ref 141678 // qukuan
-    1130 622 100 A4 0 0
+  sequencediagram_ref 149358 // change_passwd
+    1130 630 100 A4 0 0
+  sequencediagram_ref 149230 // close_account
+    1130 630 100 A4 0 0
+  sequencediagram_ref 141422 // deposit
+    1130 630 100 A4 0 0
+  sequencediagram_ref 149486 // transfer_account
+    1130 630 100 A4 0 0
+  componentdiagram_ref 148206 // SystemArch
+    1130 630 100 A4 0 0
+  classdiagram_ref 148846 // Main
+    1130 630 100 A4 0 0
+  classdiagram_ref 148974 // Main
+    1130 630 100 A4 0 0
+  active  classdiagram_ref 128238 // chuxu_yewu
+    1130 630 100 A4 0 0
 end
 show_stereotypes
-selected class_ref 128366 // chuxu_zizhanghu
+selected artifact_ref 128110 // BankSystem
 open
-  class_ref 128238 // yikatong_zhanghu
-  class_ref 128366 // chuxu_zizhanghu
-  usecase_ref 134766 // zhuxiao_zhanghu
-  usecase_ref 134894 // xiugai_zhanghu_mima
-  usecase_ref 135022 // cunkuan
-  usecase_ref 135278 // qukuan
-  class_ref 135022 // huoqi_chuxu
-  class_ref 135150 // dingqi_chuxu
-  attribute_ref 135918 // huoqi_lixi
-  attribute_ref 136046 // dingqi_lilv_1
+  class_ref 128110 // kehu
+  class_ref 141934 // bank_assistant
+  usecase_ref 135022 // deposit
+  usecase_ref 135150 // transfer_account
+  usecase_ref 135278 // withdrawal
   deploymentview_ref 128110 // chuxu_deployment
   classview_ref 134638 // class_diagram
+  class_ref 149102 // one_card_account_db
+  class_ref 148974 // DB
+  class_ref 148718 // one_card_control
+  class_ref 148590 // BankBoundry
+  componentview_ref 128110 // LogicalView
 end
 end
 verbose

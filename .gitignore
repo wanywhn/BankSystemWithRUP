@@ -94,3 +94,6 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+Model/bouml/src/
+Model/bouml/*.d

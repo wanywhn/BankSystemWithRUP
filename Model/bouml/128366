@@ -1,5 +1,5 @@
 format 218
-"Presistence" // Presistence
+"Presentation" // Presentation
   revision 1
   modified_by 110 "tender"
   // class settings
@@ -75,4 +75,14 @@ ${members}};
     end
   end
 
+  simplerelation 142702
+    -_->
+      on component_ref 128110 // Qt
+  end
+
+  simplerelation 142830
+    -_->
+      on 
+      package_ref 128238 // Application
+  end
 end

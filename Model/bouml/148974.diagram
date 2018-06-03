@@ -2,11 +2,11 @@ format 218
 
 classcanvas 128238 class_ref 128238 // one_card_account
   classdiagramsettings member_max_width 0 end
-  xyz 109 112 2000
+  xyz 49 180 2000
 end
 classcanvas 128366 class_ref 148974 // DB
   classdiagramsettings member_max_width 0 end
-  xyz 570 22 2000
+  xyz 547 16 2000
 end
 classcanvas 128494 class_ref 149102 // one_card_account_db
   classdiagramsettings member_max_width 0 end
