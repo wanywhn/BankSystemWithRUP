@@ -1,0 +1,78 @@
+format 218
+"Presistence" // Presistence
+  revision 1
+  modified_by 110 "tender"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  simplerelation 142446
+    -_->
+      on component_ref 128238 // MySQL
+  end
+
+  simplerelation 142574
+    -_->
+      on component_ref 128110 // Qt
+  end
+
+  classview 141166 "Realizations"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 148718 "Main"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 148590 "BankBoundry"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+end

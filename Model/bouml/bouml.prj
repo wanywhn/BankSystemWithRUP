@@ -1,6 +1,6 @@
 format 218
 "bouml"
-  revision 5
+  revision 6
   modified_by 110 "tender"
   cpp_root_dir "/home/tender/Data/Workplace/git/BankSystemWithRUP/Model/bouml/src/"
 
@@ -41,7 +41,7 @@ format 218
 
   mark_for_import
   
-  usecaseview 128238 "kehu_usecase_view"
+  usecaseview 128238 "UseCaseView"
     
     usecasediagramsettings end
     
@@ -90,6 +90,7 @@ ${inlines}
     end
 
     usecase 128110 "open_one_card_system"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -106,10 +107,14 @@ ${inlines}
       
       activitydiagramsettings
        end
+      sequencediagram 141294 "open_one_card_system"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
     end
 
     class 128238 "one_card_account"
-      visibility package 
+      visibility package stereotype "entity"
       cpp_decl "${comment}${template}class ${name}${inherit} {
 ${members}};
 ${inlines}
@@ -445,6 +450,7 @@ ${inlines}
     end
 
     usecase 134766 "close_account"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -510,6 +516,11 @@ ${inlines}
       activitydiagramsettings
        end
       associated_diagram usecasediagram_ref 128110 // kehu_uc
+      sequencediagram 141422 "deposit"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
       simplerelation 128110
 	-_->
 	  stereotype "include"
@@ -558,6 +569,11 @@ ${inlines}
       
       activitydiagramsettings
        end
+      sequencediagram 141678 "withdrawal"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
       simplerelation 135534
 	-_->
 	  stereotype "include"
@@ -885,6 +901,7 @@ ${inlines}
       mysql_decl ""
       
     end
+
   end
 
   deploymentview 128110 "chuxu_deployment"
@@ -947,20 +964,29 @@ ${namespace_end}"
       classdiagramsettings member_max_width 0 end
       size A4
     end
+  end
 
-    sequencediagram 141294 "open_one_card_system"
-      sequencediagramsettings end
-      overlapping_bars size A4
+  package_ref 128110 // Presentation
+
+  package_ref 128238 // Application
+
+  package_ref 128366 // Presistence
+
+  componentview 128110 "LogicalView"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    componentdiagram 148206 "SystemArch"
+      componentdiagramsettings
+       end
+      size A4
     end
 
-    sequencediagram 141422 "deposit"
-      sequencediagramsettings end
-      overlapping_bars size A4
+    component 128110 "Qt"
     end
 
-    sequencediagram 141678 "withdrawal"
-      sequencediagramsettings end
-      overlapping_bars size A4
+    component 128238 "MySQL"
     end
   end
+
 end
