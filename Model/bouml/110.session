@@ -1,38 +1,60 @@
-window_sizes 1800 955 381 1413 788 112
+window_sizes 1920 1044 381 1533 877 112
 cleanlooks_style
 diagrams
-  sequencediagram_ref 149358 // change_passwd
-    1130 630 100 A4 0 0
+  usecasediagram_ref 128110 // depost_uc
+    1226 701 100 A4 0 0
+  sequencediagram_ref 141294 // open_one_card_system
+    1226 701 100 A4 348 0
+  sequencediagram_ref 149102 // open_online_bank_system
+    1226 701 100 A4 0 0
   sequencediagram_ref 149230 // close_account
-    1130 630 100 A4 0 0
+    1226 701 100 A4 0 0
+  sequencediagram_ref 149358 // change_passwd
+    1226 701 100 A4 0 0
   sequencediagram_ref 141422 // deposit
-    1130 630 100 A4 0 0
+    1226 701 100 A4 0 0
   sequencediagram_ref 149486 // transfer_account
-    1130 630 100 A4 0 0
-  componentdiagram_ref 148206 // SystemArch
-    1130 630 100 A4 0 0
-  classdiagram_ref 148846 // Main
-    1130 630 100 A4 0 0
+    1226 701 100 A4 0 0
+  sequencediagram_ref 141678 // withdrawal
+    1226 701 100 A4 0 0
+  sequencediagram_ref 156014 // loss_report
+    1226 701 100 A4 0 0
+  sequencediagram_ref 156142 // cancel_loss_report
+    1226 701 100 A4 0 0
+  sequencediagram_ref 156270 // reapply_one_card
+    1226 701 100 A4 0 0
+  classdiagram_ref 128238 // chuxu_yewu
+    1226 701 100 A4 48 0
   classdiagram_ref 148974 // Main
-    1130 630 100 A4 0 0
-  active  classdiagram_ref 128238 // chuxu_yewu
-    1130 630 100 A4 0 0
+    1226 701 100 A4 0 0
+  classdiagram_ref 148846 // Main
+    1226 701 100 A4 0 0
+  active  classdiagram_ref 148718 // Main
+    1226 701 100 A4 0 0
 end
 show_stereotypes
-selected artifact_ref 128110 // BankSystem
+selected classdiagram_ref 148718 // Main
 open
   class_ref 128110 // kehu
   class_ref 141934 // bank_assistant
+  usecase_ref 128110 // open_one_card_system
+  usecase_ref 134638 // open_online_bank_system
+  usecase_ref 134766 // close_account
+  usecase_ref 134894 // change_passwd
   usecase_ref 135022 // deposit
   usecase_ref 135150 // transfer_account
   usecase_ref 135278 // withdrawal
+  usecase_ref 135406 // loss_report
+  usecase_ref 135662 // cancel_loss_report
+  usecase_ref 135790 // reapply_one_card
   deploymentview_ref 128110 // chuxu_deployment
   classview_ref 134638 // class_diagram
+  class_ref 135150 // fixed_deposit
+  class_ref 128238 // one_card_account
   class_ref 149102 // one_card_account_db
-  class_ref 148974 // DB
+  classview_ref 141678 // Common
   class_ref 148718 // one_card_control
   class_ref 148590 // BankBoundry
-  componentview_ref 128110 // LogicalView
 end
 end
 verbose

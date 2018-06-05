@@ -75,6 +75,12 @@ end
 durationcanvas 134382 classinstance_ref 131438 // :one_card_account_db
   xyzwh 777 568 2010 11 25
 end
+durationcanvas 134638 classinstance_ref 128238 // :BankBoundry
+  xyzwh 274 334 2010 11 40
+end
+durationcanvas 134766 classinstance_ref 131566 // :one_card_control
+  xyzwh 407 334 2010 11 25
+end
 msg 128750 synchronous
   from durationcanvas_ref 128494
   to durationcanvas_ref 128622
@@ -102,7 +108,7 @@ msg 131182 synchronous
 msg 131950 synchronous
   from durationcanvas_ref 131694
   to durationcanvas_ref 131822
-  yz 139 2020 msg operation_ref 142702 // "set_idcard()"
+  yz 139 2020 msg operation_ref 142702 // "set_idcard() : void"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 319 121
 msg 132206 synchronous
@@ -130,7 +136,7 @@ msg 133742 return
 msg 134126 synchronous
   from durationcanvas_ref 133870
   to durationcanvas_ref 133998
-  yz 493 2015 explicitmsg "add_info"
+  yz 493 2015 msg operation_ref 150894 // "deposit()"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 518 475
 msg 134510 synchronous
@@ -139,4 +145,10 @@ msg 134510 synchronous
   yz 568 2015 msg operation_ref 143214 // "update()"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 572 550
+msg 134894 synchronous
+  from durationcanvas_ref 134638
+  to durationcanvas_ref 134766
+  yz 334 2015 msg operation_ref 158062 // "deposit()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 320 316
 end

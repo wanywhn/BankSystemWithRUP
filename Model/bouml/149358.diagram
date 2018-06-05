@@ -71,7 +71,7 @@ msg 129646 synchronous
 msg 130030 synchronous
   from durationcanvas_ref 129774
   to durationcanvas_ref 129902
-  yz 359 2015 msg operation_ref 144366 // "change_passwd_of()"
+  yz 359 2015 msg operation_ref 144366 // "change_passwd_of() : void"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 274 341
 msg 130414 synchronous

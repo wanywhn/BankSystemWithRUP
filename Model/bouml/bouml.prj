@@ -1,6 +1,6 @@
 format 218
 "bouml"
-  revision 6
+  revision 10
   modified_by 110 "tender"
   cpp_root_dir "/home/tender/Data/Workplace/git/BankSystemWithRUP/Model/bouml/src/"
 
@@ -60,7 +60,7 @@ format 218
     
     activitydiagramsettings
      end
-    usecasediagram 128110 "kehu_uc"
+    usecasediagram 128110 "depost_uc"
       usecasediagramsettings end
       size A4
     end
@@ -191,6 +191,7 @@ ${inlines}
     end
 
     usecase 134894 "change_passwd"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -236,7 +237,7 @@ ${inlines}
       
       activitydiagramsettings
        end
-      associated_diagram usecasediagram_ref 128110 // kehu_uc
+      associated_diagram usecasediagram_ref 128110 // depost_uc
       sequencediagram 141422 "deposit"
 	sequencediagramsettings end
 	overlapping_bars size A4
@@ -335,6 +336,11 @@ ${inlines}
 	  stereotype "extend"
 	  on usecase_ref 135662 // cancel_loss_report
       end
+
+      sequencediagram 156014 "loss_report"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
     end
 
     usecase 135534 "login"
@@ -373,6 +379,10 @@ ${inlines}
       
       activitydiagramsettings
        end
+      sequencediagram 156142 "cancel_loss_report"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
     end
 
     usecase 135790 "reapply_one_card"
@@ -392,8 +402,11 @@ ${inlines}
       
       activitydiagramsettings
        end
+      sequencediagram 156270 "reapply_one_card"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
     end
-
   end
 
   deploymentview 128110 "chuxu_deployment"
@@ -551,5 +564,4 @@ ${namespace_end}"
     component 128238 "MySQL"
     end
   end
-
 end

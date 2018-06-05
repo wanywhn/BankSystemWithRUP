@@ -9,108 +9,78 @@ classinstance 130926 class_ref 148718 // one_card_control
 classinstance 131054 class_ref 148590 // BankBoundry
   name ""   xyz 241.963 4.48804 2000 life_line_z 2000
 classinstance 135278 class_ref 149102 // one_card_account_db
-  name ""   xyz 708.519 2.95 2000 life_line_z 2000
+  name ""   xyz 708.519 4 2000 life_line_z 2000
 durationcanvas 131182 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 68.1228 2010 11 41
+  xyzwh 105 68 2010 11 41
 end
 durationcanvas 131310 classinstance_ref 131054 // :BankBoundry
-  xyzwh 277 67.9522 2010 11 58
+  xyzwh 278 67 2010 11 58
 end
 durationcanvas 131950 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 173.883 2010 11 40
+  xyzwh 105 173 2010 11 40
 end
 durationcanvas 132078 classinstance_ref 131054 // :BankBoundry
-  xyzwh 277 173.456 2010 11 82
+  xyzwh 278 173 2010 11 82
 end
 durationcanvas 132590 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 292.366 2010 11 40
+  xyzwh 105 292 2010 11 40
 end
 durationcanvas 132718 classinstance_ref 131054 // :BankBoundry
-  xyzwh 277 292.515 2010 11 25
+  xyzwh 278 292 2010 11 25
 end
 durationcanvas 132974 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 370.681 2010 11 40
+  xyzwh 105 370 2010 11 40
 end
 durationcanvas 133102 classinstance_ref 131054 // :BankBoundry
-  xyzwh 277 370.83 2010 11 26
+  xyzwh 278 370 2010 11 26
 end
 durationcanvas 133358 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 456.846 2010 11 40
+  xyzwh 105 456 2010 11 40
 end
 durationcanvas 133486 classinstance_ref 131054 // :BankBoundry
-  xyzwh 278 457.996 2010 11 25
-end
-durationcanvas 133742 classinstance_ref 130926 // :one_card_control
-  xyzwh 438 66.8882 2010 11 67
-  overlappingdurationcanvas 133998
-    xyzwh 444 86.9095 2020 11 25
-  end
-end
-durationcanvas 134254 classinstance_ref 128238 // :one_card_account
-  xyzwh 632 113.334 2010 11 25
-end
-durationcanvas 134510 classinstance_ref 130926 // :one_card_control
-  xyzwh 437 200.243 2010 11 48
-  overlappingdurationcanvas 134766
-    xyzwh 443 209.286 2020 11 25
-  end
-end
-durationcanvas 135022 classinstance_ref 128238 // :one_card_account
-  xyzwh 632 237.688 2010 11 25
-end
-durationcanvas 135406 classinstance_ref 130926 // :one_card_control
-  xyzwh 438 304.259 2010 11 25
-end
-durationcanvas 135662 classinstance_ref 128238 // :one_card_account
-  xyzwh 632 315.025 2010 11 25
-end
-durationcanvas 135918 classinstance_ref 130926 // :one_card_control
-  xyzwh 438 386.51 2010 11 25
-end
-durationcanvas 136174 classinstance_ref 128238 // :one_card_account
-  xyzwh 632 395.318 2010 11 25
-end
-durationcanvas 136430 classinstance_ref 130926 // :one_card_control
-  xyzwh 438 465.825 2010 11 25
-end
-durationcanvas 136686 classinstance_ref 128238 // :one_card_account
-  xyzwh 632 476.59 2010 11 25
+  xyzwh 278 457 2010 11 25
 end
 durationcanvas 136942 classinstance_ref 128110 // :bank_assistant
-  xyzwh 105 533.225 2010 11 40
+  xyzwh 105 533 2010 11 40
 end
 durationcanvas 137070 classinstance_ref 131054 // :BankBoundry
-  xyzwh 278 533.374 2010 11 25
+  xyzwh 278 533 2010 11 25
 end
 durationcanvas 137326 classinstance_ref 130926 // :one_card_control
-  xyzwh 437 544.14 2010 11 25
+  xyzwh 438 544 2010 11 25
 end
 durationcanvas 137582 classinstance_ref 135278 // :one_card_account_db
-  xyzwh 774 551.99 2010 11 25
+  xyzwh 774 551 2010 11 25
 end
 durationcanvas 137838 classinstance_ref 135278 // :one_card_account_db
-  xyzwh 774 618.412 2010 11 40
+  xyzwh 774 618 2010 11 40
 end
 durationcanvas 137966 classinstance_ref 130926 // :one_card_control
-  xyzwh 437 618.561 2010 11 25
+  xyzwh 438 618 2010 11 25
 end
 durationcanvas 138222 classinstance_ref 130926 // :one_card_control
-  xyzwh 437 727.087 2010 11 40
+  xyzwh 438 747 2010 11 40
 end
 durationcanvas 138350 classinstance_ref 135278 // :one_card_account_db
-  xyzwh 774 727.236 2010 11 25
+  xyzwh 774 754 2010 11 31
 end
 durationcanvas 138606 classinstance_ref 130926 // :one_card_control
-  xyzwh 438 812.274 2010 11 40
+  xyzwh 438 812 2010 11 40
 end
 durationcanvas 138734 classinstance_ref 131054 // :BankBoundry
-  xyzwh 277 812.423 2010 11 25
+  xyzwh 278 812 2010 11 25
 end
 durationcanvas 138990 classinstance_ref 130926 // :one_card_control
-  xyzwh 437 682.047 2010 11 40
+  xyzwh 438 657 2010 11 40
 end
 durationcanvas 139118 classinstance_ref 131054 // :BankBoundry
-  xyzwh 278 682.196 2010 11 25
+  xyzwh 278 657 2010 11 50
+end
+durationcanvas 139374 classinstance_ref 130926 // :one_card_control
+  xyzwh 438 719 2010 11 40
+end
+durationcanvas 139502 classinstance_ref 128238 // :one_card_account
+  xyzwh 633 719 2010 11 25
 end
 msg 131438 synchronous
   from durationcanvas_ref 131182
@@ -142,76 +112,6 @@ msg 133614 synchronous
   yz 457 2015 explicitmsg "set_passwd"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 163 439
-msg 133870 synchronous
-  from durationcanvas_ref 131310
-  to durationcanvas_ref 133742
-  yz 83 2015 msg operation_ref 142574 // "set_name()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 331 65
-reflexivemsg 134126 synchronous
-  to durationcanvas_ref 133998
-  yz 86 2025 explicitmsg "check_if_valid"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 424 68
-msg 134382 synchronous
-  from durationcanvas_ref 133742
-  to durationcanvas_ref 134254
-  yz 113 2025 msg operation_ref 134638 // "set_name() : string"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 509 95
-msg 134638 synchronous
-  from durationcanvas_ref 132078
-  to durationcanvas_ref 134510
-  yz 200 2015 msg operation_ref 142702 // "set_idcard()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 329 182
-reflexivemsg 134894 synchronous
-  to durationcanvas_ref 134766
-  yz 209 2025 explicitmsg "check_if_valid"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 424 191
-msg 135150 synchronous
-  from durationcanvas_ref 134510
-  to durationcanvas_ref 135022
-  yz 237 2030 msg operation_ref 134766 // "set_idcard() : string"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 507 219
-msg 135534 synchronous
-  from durationcanvas_ref 132718
-  to durationcanvas_ref 135406
-  yz 304 2015 msg operation_ref 143342 // "set_address()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 325 286
-msg 135790 synchronous
-  from durationcanvas_ref 135406
-  to durationcanvas_ref 135662
-  yz 315 2015 msg operation_ref 134894 // "set_address() : string"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 503 297
-msg 136046 synchronous
-  from durationcanvas_ref 133102
-  to durationcanvas_ref 135918
-  yz 386 2015 msg operation_ref 143470 // "set_phone_number()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 303 368
-msg 136302 synchronous
-  from durationcanvas_ref 135918
-  to durationcanvas_ref 136174
-  yz 395 2015 msg operation_ref 135022 // "set_phone_number() : string"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 481 377
-msg 136558 synchronous
-  from durationcanvas_ref 133486
-  to durationcanvas_ref 136430
-  yz 465 2015 msg operation_ref 143598 // "set_passwd()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 326 447
-msg 136814 synchronous
-  from durationcanvas_ref 136430
-  to durationcanvas_ref 136686
-  yz 476 2015 msg operation_ref 135150 // "set_passwd()"
-  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 504 458
 msg 137198 synchronous
   from durationcanvas_ref 136942
   to durationcanvas_ref 137070
@@ -221,7 +121,7 @@ msg 137198 synchronous
 msg 137454 synchronous
   from durationcanvas_ref 137070
   to durationcanvas_ref 137326
-  yz 544 2015 msg operation_ref 143726 // "register()"
+  yz 544 2015 msg operation_ref 143726 // "register() : void"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 337 526
 msg 137710 synchronous
@@ -239,9 +139,9 @@ msg 138094 return
 msg 138478 asynchronous
   from durationcanvas_ref 138222
   to durationcanvas_ref 138350
-  yz 727 2015 msg operation_ref 142830 // "create()"
+  yz 774 2015 msg operation_ref 142830 // "create()"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 590 709
+  label_xy 590 756
 msg 138862 return
   from durationcanvas_ref 138606
   to durationcanvas_ref 138734
@@ -251,7 +151,13 @@ msg 138862 return
 msg 139246 return
   from durationcanvas_ref 138990
   to durationcanvas_ref 139118
-  yz 682 2015 explicitmsg "exists"
+  yz 657 2015 explicitmsg "exists"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
-  label_xy 347 664
+  label_xy 347 639
+msg 139630 synchronous
+  from durationcanvas_ref 139374
+  to durationcanvas_ref 139502
+  yz 719 2015 explicitmsg "set_info"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 517 701
 end

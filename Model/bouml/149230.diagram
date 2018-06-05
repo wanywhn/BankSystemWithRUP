@@ -56,7 +56,7 @@ msg 129646 synchronous
 msg 129902 synchronous
   from durationcanvas_ref 129518
   to durationcanvas_ref 129774
-  yz 251 2020 msg operation_ref 144238 // "delete_account_of()"
+  yz 251 2020 msg operation_ref 144238 // "delete_account_of() : void"
   show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 256 233
 msg 130286 synchronous
