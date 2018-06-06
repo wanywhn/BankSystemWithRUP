@@ -15,7 +15,7 @@ file(GLOB_RECURSE   FORMS   "*.ui")
 file(GLOB_RECURSE   RESOURCES   "*.qrc")
 
 
-set(QTPKG Core  Gui Widgets)
+set(QTPKG Core  Gui Widgets Sql)
 find_package(Qt5 REQUIRED   ${QTPKG})
 
 

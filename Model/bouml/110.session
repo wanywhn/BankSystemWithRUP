@@ -1,39 +1,35 @@
-window_sizes 1920 1044 381 1533 877 112
+window_sizes 1920 1031 381 1533 867 112
 cleanlooks_style
 diagrams
-  usecasediagram_ref 128110 // depost_uc
-    1226 701 100 A4 0 0
-  sequencediagram_ref 141294 // open_one_card_system
-    1226 701 100 A4 348 0
-  sequencediagram_ref 149102 // open_online_bank_system
-    1226 701 100 A4 0 0
-  sequencediagram_ref 149230 // close_account
-    1226 701 100 A4 0 0
-  sequencediagram_ref 149358 // change_passwd
-    1226 701 100 A4 0 0
-  sequencediagram_ref 141422 // deposit
-    1226 701 100 A4 0 0
-  sequencediagram_ref 149486 // transfer_account
-    1226 701 100 A4 0 0
-  sequencediagram_ref 141678 // withdrawal
-    1226 701 100 A4 0 0
-  sequencediagram_ref 156014 // loss_report
-    1226 701 100 A4 0 0
-  sequencediagram_ref 156142 // cancel_loss_report
-    1226 701 100 A4 0 0
-  sequencediagram_ref 156270 // reapply_one_card
-    1226 701 100 A4 0 0
-  classdiagram_ref 128238 // chuxu_yewu
-    1226 701 100 A4 48 0
   classdiagram_ref 148974 // Main
-    1226 701 100 A4 0 0
-  classdiagram_ref 148846 // Main
-    1226 701 100 A4 0 0
-  active  classdiagram_ref 148718 // Main
-    1226 701 100 A4 0 0
+    1226 693 100 A4 12 0
+  usecasediagram_ref 128110 // depost_uc
+    1226 693 100 A4 0 0
+  sequencediagram_ref 141294 // open_one_card_system
+    1226 693 100 A4 0 0
+  sequencediagram_ref 149102 // open_online_bank_system
+    1226 693 100 A4 0 0
+  sequencediagram_ref 149230 // close_account
+    1226 693 100 A4 0 0
+  sequencediagram_ref 149358 // change_passwd
+    1226 693 100 A4 0 0
+  sequencediagram_ref 141422 // deposit
+    1226 693 100 A4 0 0
+  sequencediagram_ref 141678 // withdrawal
+    1226 693 100 A4 0 0
+  sequencediagram_ref 149486 // transfer_account
+    1226 693 100 A4 108 0
+  sequencediagram_ref 156142 // cancel_loss_report
+    1226 693 100 A4 0 0
+  sequencediagram_ref 156014 // loss_report
+    1226 693 100 A4 0 0
+  sequencediagram_ref 156270 // reapply_one_card
+    1226 693 100 A4 0 0
+  active  classdiagram_ref 128238 // chuxu_yewu
+    1226 693 100 A4 0 0
 end
 show_stereotypes
-selected classdiagram_ref 148718 // Main
+selected classdiagram_ref 128238 // chuxu_yewu
 open
   class_ref 128110 // kehu
   class_ref 141934 // bank_assistant
@@ -50,6 +46,7 @@ open
   deploymentview_ref 128110 // chuxu_deployment
   classview_ref 134638 // class_diagram
   class_ref 135150 // fixed_deposit
+  class_ref 128366 // saving_subaccount
   class_ref 128238 // one_card_account
   class_ref 149102 // one_card_account_db
   classview_ref 141678 // Common

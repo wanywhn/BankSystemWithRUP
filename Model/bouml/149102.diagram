@@ -11,46 +11,46 @@ classinstance 128494 class_ref 149102 // one_card_account_db
 classinstance 128622 class_ref 128238 // one_card_account
   name ""   xyz 565 4 2000 life_line_z 2000
 durationcanvas 128750 classinstance_ref 128110 // :bank_assistant
-  xyzwh 122 98 2010 11 40
+  xyzwh 118 98 2010 11 40
 end
 durationcanvas 128878 classinstance_ref 128238 // :BankBoundry
-  xyzwh 301 98 2010 11 25
+  xyzwh 298 98 2010 11 25
 end
 durationcanvas 129390 classinstance_ref 128110 // :bank_assistant
-  xyzwh 122 198 2010 11 40
+  xyzwh 118 198 2010 11 40
 end
 durationcanvas 129518 classinstance_ref 128238 // :BankBoundry
-  xyzwh 301 198 2010 11 25
+  xyzwh 298 198 2010 11 25
 end
 durationcanvas 129774 classinstance_ref 128238 // :BankBoundry
-  xyzwh 301 303 2010 11 40
+  xyzwh 298 303 2010 11 40
 end
 durationcanvas 129902 classinstance_ref 128366 // :one_card_control
-  xyzwh 478 303 2010 11 25
+  xyzwh 473 303 2010 11 25
 end
 durationcanvas 130158 classinstance_ref 128366 // :one_card_control
-  xyzwh 478 365 2010 11 40
+  xyzwh 473 365 2010 11 40
 end
 durationcanvas 130286 classinstance_ref 128494 // :one_card_account_db
-  xyzwh 767 365 2010 11 25
+  xyzwh 762 365 2010 11 25
 end
 durationcanvas 130542 classinstance_ref 128494 // :one_card_account_db
-  xyzwh 767 442 2010 11 40
+  xyzwh 762 442 2010 11 40
 end
 durationcanvas 130670 classinstance_ref 128366 // :one_card_control
-  xyzwh 478 442 2010 11 25
+  xyzwh 473 442 2010 11 25
 end
 durationcanvas 130926 classinstance_ref 128366 // :one_card_control
-  xyzwh 478 506 2010 11 40
+  xyzwh 473 506 2010 11 40
 end
 durationcanvas 131054 classinstance_ref 128622 // :one_card_account
-  xyzwh 617 506 2010 11 25
+  xyzwh 612 506 2010 11 25
 end
 durationcanvas 131310 classinstance_ref 128366 // :one_card_control
-  xyzwh 478 597 2010 11 40
+  xyzwh 473 597 2010 11 40
 end
 durationcanvas 131438 classinstance_ref 128494 // :one_card_account_db
-  xyzwh 767 597 2010 11 25
+  xyzwh 762 597 2010 11 25
 end
 msg 129006 synchronous
   from durationcanvas_ref 128750

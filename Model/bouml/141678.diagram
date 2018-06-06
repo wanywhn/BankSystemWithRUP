@@ -11,34 +11,34 @@ classinstance 129646 class_ref 148590 // BankBoundry
 classinstance 129774 class_ref 149102 // one_card_account_db
   name ""   xyz 660 4 2000 life_line_z 2000
 durationcanvas 131054 classinstance_ref 128110 // :bank_assistant
-  xyzwh 147 68 2010 11 40
+  xyzwh 143 68 2010 11 40
 end
 durationcanvas 131182 classinstance_ref 129646 // :BankBoundry
-  xyzwh 320 68 2010 11 25
+  xyzwh 317 68 2010 11 25
 end
 durationcanvas 131438 classinstance_ref 128110 // :bank_assistant
-  xyzwh 147 199 2010 11 40
+  xyzwh 143 199 2010 11 40
 end
 durationcanvas 131566 classinstance_ref 129646 // :BankBoundry
-  xyzwh 320 199 2010 11 25
+  xyzwh 317 199 2010 11 25
 end
 durationcanvas 132590 classinstance_ref 129646 // :BankBoundry
-  xyzwh 320 290 2010 11 40
+  xyzwh 317 290 2010 11 40
 end
 durationcanvas 132718 classinstance_ref 128238 // :one_card_account
-  xyzwh 436 279 2010 11 74
+  xyzwh 431 279 2010 11 74
 end
 durationcanvas 132974 classinstance_ref 129134 // :saving_subaccount
-  xyzwh 581 278 2010 11 44
+  xyzwh 577 278 2010 11 44
 end
 durationcanvas 133230 classinstance_ref 129774 // :one_card_account_db
-  xyzwh 726 316 2010 11 34
+  xyzwh 721 316 2010 11 34
 end
 durationcanvas 133486 classinstance_ref 128110 // :bank_assistant
-  xyzwh 147 250 2010 11 40
+  xyzwh 143 250 2010 11 40
 end
 durationcanvas 133614 classinstance_ref 129646 // :BankBoundry
-  xyzwh 320 250 2010 11 25
+  xyzwh 317 250 2010 11 25
 end
 msg 131310 synchronous
   from durationcanvas_ref 131054
