@@ -71,13 +71,44 @@ void MainWindow::init_ui()
             qDebug()<<"Change passwd failed";
         }
     });
+    connect(loss_reporting,&QAction::triggered,this,[this](){
+
+        auto ret=QMessageBox::question(this,tr("Confirm"),tr("Sure loss report?"));
+        if(QMessageBox::Yes==ret){
+            card_ctrl.set_loss();
+        }else{
+            qDebug()<<"User Cancel loss report";
+        }
+    });
+
+    connect(cancel_loss_reporting,&QAction::triggered,this,[this](){
+        auto ret=card_ctrl.cancel_loss();
+        if(ret.first==true){
+            QMessageBox::information(this,tr("Success"),tr("DONE"));
+        }else{
+            QMessageBox::warning(this,tr("Error"),ret.second);
+        }
+    });
+    connect(reapply_onecard,&QAction::triggered,this,[this](){
+        auto ret=card_ctrl.reapply_one_card();
+        if(ret.first==true){
+            QMessageBox::information(this,tr("Success"),tr("DONE"));
+        }else{
+            QMessageBox::warning(this,tr("Error"),ret.second);
+        }
+    });
+    connect(open_online_bank,&QAction::triggered,this,[this](){
+        auto ret=card_ctrl.open_online_bank_system_of();
+        if(ret.first){
+            QMessageBox::information(this,tr("Success"),tr("Open online bank successed"));
+        }else{
+            QMessageBox::warning(this,tr("Error"),ret.second);
+        }
+    });
 
 
 
-
-
-
-    connect(deposit,&QAction::triggered,[this](){this->setCentralWidget(new DepositWidget(this));});
+    connect(deposit,&QAction::triggered,[this](){this->setCentralWidget(new DepositWidget(card_ctrl,this));});
     connect(creditCard,&QAction::triggered,[this](){});
     connect(bank_system,&QAction::triggered,[this](){});
 

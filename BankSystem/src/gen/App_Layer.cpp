@@ -8,6 +8,9 @@ void one_card_control::set_name() {
 
 void one_card_control::set_idcard(QString id)
 {
+    if(true==one_card_account::check_if_exist(id))
+        exists=true;
+
     idcard=id;
 }
 
@@ -30,9 +33,9 @@ QPair<bool, QString> one_card_control::register_user(QString name,
     }
     //TODO check the param;
 
-    one_card_account tmp;
+    one_card_account tmp(idcard);
 
-    if(true==one_card_account::check_if_exist(idcard)){
+    if(exists){
         return {false,QObject::tr("You had open an One Card")};
     }else{
         tmp.create(name,idcard,address,phone,passwd);
@@ -41,13 +44,23 @@ QPair<bool, QString> one_card_control::register_user(QString name,
 
 }
 
-void one_card_control::open_online_bank_system_of() {
+QPair<bool, QString> one_card_control::open_online_bank_system_of() {
+    if(exists){
+        one_card_account tmp(idcard);
+        tmp.set_online_bank_status(true);
+        return {true,""};
+    }else{
+        return {false,QObject::tr("You hadn't open the one card")};
+    }
 }
 
 void one_card_control::delete_account_of() {
 }
 
 QPair<bool, QString> one_card_control::change_passwd(QString orig, QString npasswd) {
+    one_card_account tmp(idcard);
+    tmp.change_passwd(npasswd);
+    return {true,""};
 }
 
 void  one_card_control::set_target_idcard() {
@@ -55,13 +68,35 @@ void  one_card_control::set_target_idcard() {
 void  one_card_control::transfer_money() {
 }
 void  one_card_control::set_loss() {
-}
-void  one_card_control::is_lost() {
+    one_card_account tmp(idcard);
+    tmp.set_loss(true);
 }
 void  one_card_control::deposit() {
 }
-void  one_card_control::cancel_loss() {
+QPair<bool, QString> one_card_control::cancel_loss() {
+    one_card_account tmp(idcard);
+    auto ret=tmp.get_loss();
+    if(ret.first){
+        tmp.set_loss(false);
+        return {true,""};
+        }else{
+            return {false,"the one card havn't been lost"};
+            }
+
+
 }
-void  one_card_control::reapply_one_card() {
+QPair<bool, QString> one_card_control::reapply_one_card() {
+    one_card_account tmp(idcard);
+    auto ret=tmp.get_loss();
+    if(ret.first){
+        if(ret.second.daysTo(QDate::currentDate())>7){
+        tmp.set_loss(false);
+        return {true,""};
+        }else{
+            return {false,"Please wait till "+ret.second.addDays(7).toString()};
+        }
+    }else{
+        return {false,"the One Card havn't been lost"};
+    }
 }
 

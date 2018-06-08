@@ -1,21 +1,20 @@
+#include "databaseutils.h"
 #include "depositwidget.h"
 
 #include <QHBoxLayout>
+#include <QSqlQuery>
 #include <QSqlQueryModel>
-DepositWidget::DepositWidget(QWidget *parent) : QWidget(parent)
+#include <QSqlTableModel>
+
+DepositWidget::DepositWidget(one_card_control &ctrl, QWidget *parent):ctrl(ctrl)
 {
-
-    init_ui();
     init_res();
-
-
-
+    init_ui();
 }
 
 void DepositWidget::init_ui()
 {
 
-   sqlView=new QTableView(this);
 
    auto hbox=new QHBoxLayout();
 
@@ -23,17 +22,15 @@ void DepositWidget::init_ui()
 
    auto vbox=new QVBoxLayout();
 
-   category_combobox=new QComboBox(this);
+//   category_combobox=new QComboBox(this);
 
-   add_subaccount=new QPushButton(tr("Add SubAccount"),this);
-   delete_subaccount=new QPushButton(tr("Delete SubAccount"),this);
+//   add_subaccount=new QPushButton(tr("Add SubAccount"),this);
+//   delete_subaccount=new QPushButton(tr("Delete SubAccount"),this);
 
-   add_deposit=new QPushButton(tr("Deposit"),this);
-   withdraw_money=new QPushButton(tr("WithDraw"),this);
 
-   vbox->addWidget(category_combobox);
-   vbox->addWidget(add_subaccount);
-   vbox->addWidget(delete_subaccount);
+  // vbox->addWidget(category_combobox);
+  // vbox->addWidget(add_subaccount);
+  // vbox->addWidget(delete_subaccount);
    vbox->addWidget(add_deposit);
    vbox->addWidget(withdraw_money);
 
@@ -45,6 +42,18 @@ void DepositWidget::init_ui()
 
 void DepositWidget::init_res()
 {
-    QSqlQueryModel *combox_model=new QSqlQueryModel(this);
-    
+//    QSqlQueryModel *combox_model=new QSqlQueryModel(this);
+   sqlView=new QTableView(this);
+   auto model=new QSqlQueryModel(this);
+   QSqlQuery query(DataBaseUtils::getInstance());
+   query.prepare("SELECT * FROM saving_subaccount WHERE id in("
+                   "SELECT sid FROM card_saving WHERE"
+                   " cid=':i'"
+                   ")");
+   query.bindValue(":i",QVariant(this->ctrl.idcard));
+   model->setQuery(query);
+
+   add_deposit=new QPushButton(tr("Deposit"),this);
+   withdraw_money=new QPushButton(tr("WithDraw"),this);
+
 }

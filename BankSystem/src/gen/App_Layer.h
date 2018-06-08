@@ -20,7 +20,7 @@ class one_card_control {
 
     QPair<bool,QString> register_user(QString name,QString idcard,QString address,QString phone,QString passwd);
 
-    void open_online_bank_system_of();
+    QPair<bool,QString> open_online_bank_system_of();
 
     void delete_account_of();
 
@@ -32,16 +32,17 @@ class one_card_control {
 
     void  set_loss();
 
-    void  is_lost();
+    bool is_lost();
 
     void  deposit();
 
-    void  cancel_loss();
+    QPair<bool,QString> cancel_loss();
 
-    void  reapply_one_card();
+    QPair<bool,QString> reapply_one_card();
 
-private:
     QString idcard;
+private:
+    bool exists;
 
 };
 #endif

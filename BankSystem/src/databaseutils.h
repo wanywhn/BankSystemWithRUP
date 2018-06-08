@@ -3,6 +3,7 @@
 
 #include <QSqlDatabase>
 
+extern QString connection_name;
 class DataBaseUtils
 {
 public:

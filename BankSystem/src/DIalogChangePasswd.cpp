@@ -32,6 +32,7 @@ void DIalogChangePasswd::init_res()
             QMessageBox::warning(this,tr("ERROR"),tr("enw passwd don't match"));
             return;
         }else{
+            //TODO origin passwd needn't
         auto ret=ctrl.change_passwd(origin_passwd->text(),new_passwd->text());
         if(true==ret.first){
             QMessageBox::information(this,tr("OK"),tr("Change success"));

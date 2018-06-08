@@ -81,7 +81,7 @@ class one_card_account {
 
     string owner_name;
 
-    string id_card;
+    QString id_card;
 
     string address;
 
@@ -99,7 +99,7 @@ class one_card_account {
 
 
   public:
-    one_card_account();
+    one_card_account(QString idc);
 
     void set_name();
 
@@ -114,16 +114,18 @@ class one_card_account {
     saving_subaccount *get_sub_account();
 
 
-    void  set_online_bank_status();
+    void  set_online_bank_status(bool flag);
 
     void  withdrawal_money();
 
-    void  change_passwd();
+    void  change_passwd(QString n);
 
     void  deposit();
 
     void create(QString name ,QString idcard,QString address,QString phone ,QString passwd);
 
+    void set_loss(bool flag);
+    QPair<bool,QDate> get_loss();
 
     // DB interface
 

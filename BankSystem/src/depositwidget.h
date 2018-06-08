@@ -7,11 +7,13 @@
 #include <QTableView>
 #include <QWidget>
 
+#include "gen/App_Layer.h"
+
 class DepositWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DepositWidget(QWidget *parent = nullptr);
+    explicit DepositWidget(one_card_control &ctrl,QWidget *parent = nullptr);
 
 signals:
 
@@ -20,10 +22,10 @@ public slots:
 
 private:
     QTableView *sqlView;
-    QComboBox *category_combobox;
+//    QComboBox *category_combobox;
 
-    QPushButton *add_subaccount;
-    QPushButton *delete_subaccount;
+//    QPushButton *add_subaccount;
+//    QPushButton *delete_subaccount;
 
     QPushButton *add_deposit;
     QPushButton *withdraw_money;
@@ -31,6 +33,7 @@ private:
 private:
     void init_ui();
     void init_res();
+    one_card_control &ctrl;
 
 };
 
