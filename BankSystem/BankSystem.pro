@@ -27,12 +27,24 @@ SOURCES += \
        src/main.cpp \
        src/mainwindow.cpp \
     src/depositwidget.cpp \
-    src/databaseutils.cpp
+    src/databaseutils.cpp \
+    src/gen/BankSystem.cpp \
+    src/gen/db_utils.cpp \
+    src/gen/Presentation_Layer.cpp \
+    src/gen/App_Layer.cpp \
+    src/openaccount.cpp \
+    src/DIalogChangePasswd.cpp
 
 HEADERS += \
        src/mainwindow.h \
     src/depositwidget.h \
-    src/databaseutils.h
+    src/databaseutils.h \
+    src/gen/BankSystem.h \
+    src/gen/db_utils.h \
+    src/gen/Presentation_Layer.h \
+    src/gen/App_Layer.h \
+    src/openaccount.h \
+    src/DIalogChangePasswd.h
 
 FORMS += \
         src/mainwindow.ui

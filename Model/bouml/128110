@@ -1,6 +1,6 @@
 format 218
 "Presistence" // Presistence
-  revision 5
+  revision 6
   modified_by 110 "jiaqingtong"
   // class settings
   
@@ -395,6 +395,57 @@ ${inlines}
 	
 	
       end
+
+      attribute 143470 "save_type"
+	private explicit_type "ushort"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 143598 "body"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 155246 // <directional aggregation>
+	relation 154734 o-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155246 // <directional aggregation>
+	  b parent class_ref 135150 // fixed_deposit
+      end
+
+      classrelation 155374 // <directional aggregation>
+	relation 154862 o-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155374 // <directional aggregation>
+	  b parent class_ref 135022 // current_saving
+      end
+
+      classrelation 155502 // <directional aggregation>
+	relation 154990 o-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155502 // <directional aggregation>
+	  b parent class_ref 135278 // dinghuo_liangbian
+      end
     end
 
     class 128238 "one_card_account"
@@ -684,6 +735,14 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 155630 // <realization>
+	relation 155118 -_-|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 155630 // <realization>
+	  b parent class_ref 149102 // one_card_account_db
       end
     end
 

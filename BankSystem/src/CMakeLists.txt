@@ -19,6 +19,6 @@ set(QTPKG Core  Gui Widgets Sql)
 find_package(Qt5 REQUIRED   ${QTPKG})
 
 
-add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS} ${FORMS}    ${RESOURCES})
+add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS} ${FORMS}    ${RESOURCES} DIalogChangePasswd.cpp DIalogChangePasswd.h)
 
 qt5_use_modules(${TARGET_NAME}  ${QTPKG})
