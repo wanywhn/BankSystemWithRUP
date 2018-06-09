@@ -11,7 +11,7 @@ QSqlDatabase DataBaseUtils::getInstance()
     db=QSqlDatabase::addDatabase("QSQLITE",connection_name);
     db.setDatabaseName(connection_name);
     }
-    return db;
+   return db;
 
 }
 

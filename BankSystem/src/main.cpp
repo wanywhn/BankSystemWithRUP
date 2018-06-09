@@ -19,7 +19,7 @@ static bool init_db(){
         if(query.next()){
             if(query.value(0).toInt()==0){
                 //TODO init table
-                query.exec("CREATE TABLE saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin INTEGER ,nianxian INTEGER,lilv float,qishi_shijian DATE ,lixi float)");
+                query.exec("CREATE TABLE saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin INTEGER ,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float)");
 
                 query.exec("CREATE TABLE one_card (id INTEGER PRIMARY KEY"
                           " AUTOINCREMENT,owner_name varchar(20),id_card varchar(19),"

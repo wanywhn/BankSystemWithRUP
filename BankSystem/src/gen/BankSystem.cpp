@@ -66,6 +66,41 @@ void one_card_account::change_passwd(QString n)
 
 }
 
+QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int cunqi, float lilv, int auto_continue)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,"Can't open DB"};
+    }else{
+        QSqlQuery query(db);
+        QString tmp="SELECT MAX(sid) FROM card_saving WHERE cid='%1' ";
+        QString stmt=tmp.arg(id_card);
+        qDebug()<<DEBUG_PRE<<stmt;
+        if(query.exec(stmt)){
+            int mid;
+            if(query.next()){
+                mid=query.value(0).toInt()%1000;
+            }else{
+                mid=0;
+            }
+            QString sid=QString::number(mk)+QString::number(type)+QString::number(mid);
+            qDebug()<<DEBUG_PRE<<"sid:"<<sid;
+            tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7')";
+            stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString().arg(auto_continue));
+        qDebug()<<DEBUG_PRE<<stmt;
+        if(query.exec(stmt)){
+            return {true,""};
+        }else{
+            return {false,query.lastError().text()};
+        }
+        }else{
+            return {false,query.lastError().text()};
+        }
+    }
+
+
+}
+
 void one_card_account::create(QString name, QString idcard, QString address, QString phone, QString passwd)
 {
     auto db=DataBaseUtils::getInstance();

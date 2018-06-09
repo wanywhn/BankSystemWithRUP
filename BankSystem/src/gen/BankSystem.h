@@ -120,7 +120,7 @@ class one_card_account {
 
     void  change_passwd(QString n);
 
-    void  deposit();
+    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, int auto_continue);
 
     void create(QString name ,QString idcard,QString address,QString phone ,QString passwd);
 

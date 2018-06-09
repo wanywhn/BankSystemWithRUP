@@ -38,11 +38,12 @@ void MainWindow::init_ui()
     auto reapply_onecard=account_menu->addAction(tr("&Reapply One Card"));
     auto open_online_bank=account_menu->addAction(tr("&Open Online Bank"));
 
-    auto deposit=this->menuBar()->addAction(tr("&Deposit"));
+    auto depart=this->menuBar()->addMenu(tr("Depart"));
+    auto deposit=depart->addAction(tr("&Deposit"));
 
-    auto creditCard=this->menuBar()->addAction(tr("&CreditCard"));
+    auto creditCard=depart->addAction(tr("&CreditCard"));
 
-    auto bank_system=this->menuBar()->addAction(tr("&Bank System"));
+    auto bank_system=depart->addAction(tr("&Bank System"));
 
     //------2
     connect(open_one_card,&QAction::triggered,this,[this](){
@@ -74,7 +75,7 @@ void MainWindow::init_ui()
     connect(loss_reporting,&QAction::triggered,this,[this](){
 
         auto ret=QMessageBox::question(this,tr("Confirm"),tr("Sure loss report?"));
-        if(QMessageBox::Yes==ret){
+        if(QMessageBox::Yes==ret||QMessageBox::Ok==ret){
             card_ctrl.set_loss();
         }else{
             qDebug()<<"User Cancel loss report";

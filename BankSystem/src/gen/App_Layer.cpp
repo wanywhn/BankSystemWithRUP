@@ -71,7 +71,14 @@ void  one_card_control::set_loss() {
     one_card_account tmp(idcard);
     tmp.set_loss(true);
 }
-void  one_card_control::deposit() {
+
+QPair<bool, QString> one_card_control::deposit(int mk,int type, int benjin, int cunqi, float lilv, bool auto_continue)
+{
+
+    one_card_account tmp(idcard);
+    return tmp.deposit(mk,type,benjin,cunqi,lilv,auto_continue);
+
+
 }
 QPair<bool, QString> one_card_control::cancel_loss() {
     one_card_account tmp(idcard);

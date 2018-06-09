@@ -42,7 +42,7 @@ void DepositWidget::init_ui()
 
 
    connect(add_deposit,&QPushButton::clicked,this,[this](){
-       DialogAddDeposit dia;
+       DialogAddDeposit dia(ctrl);
        if(dia.exec()==QDialog::Accepted){
            qDebug()<<DEBUG_PRE<<"Add Succedd";
        }else{

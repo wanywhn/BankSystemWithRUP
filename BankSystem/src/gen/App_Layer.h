@@ -34,7 +34,7 @@ class one_card_control {
 
     bool is_lost();
 
-    void  deposit();
+    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue);
 
     QPair<bool,QString> cancel_loss();
 
