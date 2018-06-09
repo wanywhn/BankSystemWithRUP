@@ -25,11 +25,12 @@ static bool init_db(){
                           " AUTOINCREMENT,owner_name varchar(20),id_card varchar(19),"
                           " address varchar(20), phone_number varchar(12),passwd varchar(16),"
                           " online_bank boolean DEFAULT 'FALSE' ,online_name varchar(17) DEFAULT ' ',"
-                          " online_passwd varchar(17) DEFAULT ' ',lost boolean DEFAULT 'FALSE',lost_time TEXT DEFAULT ' ')");
+                          " online_passwd varchar(17) DEFAULT ' ',lost boolean DEFAULT 'FALSE',lost_time TEXT DEFAULT ' ',auto_continue boolean DEFAULT ' ')");
 
                 query.exec("CREATE TABLE card_saving( cid INTEGER,sid INTEGER,"
                           " FOREIGN KEY(cid) REFERENCES one_card(id),"
                           " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
+                query.exec("CREATE TABLE lilv (type INTEGER PRIMARY KEY,d float)");
 
                 query.exec("delete from sqlite_sequence where name='one_card'");
                 query.exec("update sqlite_sequence SET seq = 1000000000 where name = 'one_card'");
