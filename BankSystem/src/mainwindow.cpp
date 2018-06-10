@@ -1,9 +1,12 @@
 #include "DIalogChangePasswd.h"
 #include "depositwidget.h"
+#include "dialogsyslogin.h"
 #include "mainwindow.h"
 #include "openaccount.h"
+#include "systemwidget.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <QDialog>
 #include <QInputDialog>
 #include <QInputDialog>
 #include <QMessageBox>
@@ -123,7 +126,14 @@ void MainWindow::init_ui()
     connect(creditCard,&QAction::triggered,[this](){
 
 
+
     });
     connect(bank_system,&QAction::triggered,[this](){});
+    DialogSysLogin dia;
+    if(dia.exec()!=QDialog::Accepted){
+        return;
+    }
+    static auto sys=new SystemWidget(this);
+    this->setCentralWidget(sys);
 
 }

@@ -19,6 +19,19 @@ static bool init_db(){
         if(query.next()){
             if(query.value(0).toInt()==0){
                 //TODO init table
+                query.exec("CREATE TABLE credit_card (id INTEGER PRIMARY KEY,"
+                           "credit INTEGER,used INTEGER,paid INTEGER,"
+                           "passwd TEXT,interest_free_money INTEGER,server_charge FLOAT,least_unpaid FLOAT,interest FLOAT,overdue_fine FLOAT)");
+                query.exec("CREATE TABLE consume_tb (id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                           "figure FLOAT,reason TEXT,date TEXT)");
+                query.exec("CREATE TABLE enchashment_tb (id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                            "figure FLOAT )");
+
+
+                query.exec("CREATE TABLE sys_acc_tb (id INTEGER PRIMARY KEY ,"
+                           "passwd TEXT,admin boolean DEFAULT 'FALSE'");
+
+
                 query.exec("CREATE TABLE saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float)");
 
                 query.exec("CREATE TABLE id_card (iid INTEGER ,online_bank boolean DEFAULT 'FALSE',online_name TEXT DEFAULT ' ',"

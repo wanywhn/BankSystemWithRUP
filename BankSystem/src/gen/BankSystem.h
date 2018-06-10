@@ -44,21 +44,16 @@ class saving_subaccount {
 };
 class fixed_deposit {
   private:
-    float dingqi_lilv;
-
-    int dingqi_nianxian;
 
     QDate dingqi_shijian;
 
 
-    float benjin;
 
 };
 class current_saving {
   private:
 //    int tianshu;
 
-    float benjin;
 
 };
 //class kehu {
@@ -68,45 +63,14 @@ class current_saving {
 //};
 class one_card_account {
 
+public:
+    one_card_account(QString ocd);
   private:
 //    kehu * ;
 
-    vector<saving_subaccount *> subaccount;
-
-    /**
-     * @brief id 以1开头的10位数字
-     */
-    char id[11];
-
-
-    string owner_name;
-
-    QString one_card;
     QString id_card;
-
-    string address;
-
-    string phone_number;
-
-    string passwd;
-
-    bool online_bank = false;
-
-    string online_name;
-
-    string online_passwd;
-
-    bool lost = false;
-
-
-  public:
-    one_card_account(QString ocd);
-
-    void set_name();
-
-    void set_idcard();
-
-    void set_address();
+    QString one_card;
+    vector<saving_subaccount *> subaccount;
 
     void set_phone_number();
 
@@ -135,13 +99,13 @@ class one_card_account {
 public:
     static bool check_if_exist(QString id);
 };
-class interest_table {
-  private:
-    float current_interest;
+class sys_ctrl{
 
-    float fixed_interest_1;
+public:
+    QPair<bool,QString> login(QString name ,QString passwd);
+        QPair<bool,QString> change_passwd(QString name, QString origin, QString n);
 
-    float fixed_interest_5;
+
 
 };
 #endif

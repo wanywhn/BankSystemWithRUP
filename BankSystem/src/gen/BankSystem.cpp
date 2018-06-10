@@ -295,3 +295,51 @@ bool one_card_account::check_if_exist(QString id)
 
 
 
+
+QPair<bool, QString> sys_ctrl::login(QString name, QString passwd)
+{
+   auto db=DataBaseUtils::getInstance();
+   if(!db.open()){
+       return {false,"Can't open DB"};
+   }
+   QString tmp="SELECT passwd FROM sys_acc_tb WHERE id='%1'";
+   QSqlQuery query(db);
+   if(!query.exec(tmp.arg(name))){
+       return {false,query.lastError().text()};
+   }
+   query.next();
+   auto spasswd=query.value(0).toString();
+   if(spasswd==passwd){
+       return {true,""};
+   }else{
+       return{false,"Passwd Wrong"};
+   }
+}
+
+QPair<bool, QString> sys_ctrl::change_passwd(QString name,QString origin, QString n)
+{
+    auto db=DataBaseUtils::getInstance();
+    QString tmp="SELECT passwd FROM sys_acc_tb WHERE id='%1";
+    if(!db.open()){
+        return {false,"Can't open DB"};
+    }
+    QSqlQuery query(db);
+    if(!query.exec(tmp.arg(name))){
+        return {false ,query.lastError().text()};
+    }
+    query.next();
+    QString spasswd=query.value(0).toString();
+    if(spasswd!=origin){
+        return {false,"Origin Passwd Wrong"};
+    }
+    tmp="UPDATE sys_acc_tb SET passwd = '%1' WHERE id='%2'";
+    if(!query.exec(tmp.arg(n).arg(name))){
+        return {false,query.lastError().text()};
+    }
+    return {true,""};
+
+
+
+
+
+}

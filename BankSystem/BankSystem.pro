@@ -34,7 +34,9 @@ SOURCES += \
     src/gen/App_Layer.cpp \
     src/openaccount.cpp \
     src/DIalogChangePasswd.cpp \
-    src/dialogadddeposit.cpp
+    src/dialogadddeposit.cpp \
+    src/systemwidget.cpp \
+    src/dialogsyslogin.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -46,7 +48,9 @@ HEADERS += \
     src/gen/App_Layer.h \
     src/openaccount.h \
     src/DIalogChangePasswd.h \
-    src/dialogadddeposit.h
+    src/dialogadddeposit.h \
+    src/systemwidget.h \
+    src/dialogsyslogin.h
 
 FORMS += \
         src/mainwindow.ui
