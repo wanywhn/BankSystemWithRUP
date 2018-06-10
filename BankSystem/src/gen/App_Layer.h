@@ -10,7 +10,7 @@ class one_card_control {
   public:
     void set_name();
 
-    void set_idcard(QString id);
+    void set_onecard(QString id);
 
     void set_address();
 
@@ -20,7 +20,7 @@ class one_card_control {
 
     QPair<bool,QString> register_user(QString name,QString idcard,QString address,QString phone,QString passwd);
 
-    QPair<bool,QString> open_online_bank_system_of();
+    QPair<bool,QString> open_online_bank_system_of(QString name,QString passwd);
 
     void delete_account_of();
 
@@ -34,13 +34,17 @@ class one_card_control {
 
     bool is_lost();
 
+    float get_lilv(int t);
+
     QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue);
+
+    QPair<bool,QString> withdraw(int id,int count);
 
     QPair<bool,QString> cancel_loss();
 
     QPair<bool,QString> reapply_one_card();
 
-    QString idcard;
+    QString onecard;
 private:
     bool exists;
 

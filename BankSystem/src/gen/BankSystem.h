@@ -81,6 +81,7 @@ class one_card_account {
 
     string owner_name;
 
+    QString one_card;
     QString id_card;
 
     string address;
@@ -99,7 +100,7 @@ class one_card_account {
 
 
   public:
-    one_card_account(QString idc);
+    one_card_account(QString ocd);
 
     void set_name();
 
@@ -113,10 +114,11 @@ class one_card_account {
 
     saving_subaccount *get_sub_account();
 
+    float get_lilv(int t);
 
-    void  set_online_bank_status(bool flag);
+    void  set_online_bank_status(bool flag,QString name="",QString passwd="");
 
-    void  withdrawal_money();
+    QPair<bool,QString> withdrawal_money(int id,int count);
 
     void  change_passwd(QString n);
 

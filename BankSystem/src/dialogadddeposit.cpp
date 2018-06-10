@@ -31,11 +31,12 @@ void DialogAddDeposit::init_res()
 void DialogAddDeposit::init_ui()
 {
     //------1
-    cb_deposit_kind->addItems({"Fixed","Current","Dinghuo"});
-    cb_money_kind->addItems({"1","2","3","4"});
+    cb_deposit_kind->addItems({"Current","Fixed","Dinghuo"});
+    cb_money_kind->addItems({tr("RMB"),tr("$"),tr("HK"),tr("J"),tr("U")});
     cb_cunqi->addItems({"1","2","5"});
 
 
+            lb_lilv->setText(QString::number(ctrl.get_lilv(0)));
 
 
 
@@ -47,8 +48,8 @@ void DialogAddDeposit::init_ui()
     common->addRow(tr("Benjin"),le_benjin);
     common->addRow(tr("Lilv"),lb_lilv);
     common->addRow(tr("Money Kind"),cb_money_kind);
-    common->addRow(tr("Cunqi"),cb_cunqi);
-    common->addRow(tr("Auto Continue"),rb_autocontinue);
+   // common->addRow(tr("Cunqi"),cb_cunqi);
+   // common->addRow(tr("Auto Continue"),rb_autocontinue);
 
     common->addRow(btn_accept,btn_calcen);
 
@@ -59,22 +60,26 @@ void DialogAddDeposit::init_ui()
     connect(cb_deposit_kind,static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),this,[this,common](int index){
 
         static int last=0;
-        if(index==0||index==2){
-            if(last==0){
+        if(index==1||index==2){
+            if(last==1){
 
             }else{
                 cb_cunqi=new QComboBox;
     cb_cunqi->addItems({"1","2","5"});
                 rb_autocontinue=new QRadioButton;
+                connect(cb_cunqi,static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),this,[this](int index){
+                    this->lb_lilv->setText(QString::number(ctrl.get_lilv(index+1)));
+                });
 
     common->insertRow(4,"Cunqi",cb_cunqi);
     common->insertRow(4,"Auto Continue",rb_autocontinue);
-    last=0;
+    last=1;
             }
         }else{
             common->removeRow(4);
             common->removeRow(4);
-            last=1;
+            lb_lilv->setText(QString::number(ctrl.get_lilv(0)));
+            last=0;
 
         }
 
@@ -82,6 +87,9 @@ void DialogAddDeposit::init_ui()
 
     connect(btn_accept,&QPushButton::clicked,this,[this](){
         this->process_btn(cb_deposit_kind->currentIndex());
+    });
+    connect(btn_calcen,&QPushButton::clicked,this,[this](){
+        this->reject();
     });
 }
 
@@ -94,9 +102,10 @@ void DialogAddDeposit::process_btn(int type)
     float ll=lb_lilv->text().toFloat();
     bool  ac=rb_autocontinue->isChecked();
 
-    auto ret=ctrl.deposit(mk,type,bj,cq,ll,ac);
+    auto ret=ctrl.deposit(mk+1,type+1,bj,cq,ll,ac);
     if(ret.first){
         QMessageBox::information(this,tr("Success"),tr("Deposit Success"));
+        this->accept();
     }else{
         QMessageBox::warning(this,tr("Failed"),ret.second);
     }

@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QInputDialog>
+#include <QInputDialog>
 #include <QMessageBox>
 
 
@@ -56,12 +57,12 @@ void MainWindow::init_ui()
 
     });
     connect(read_one_card,&QAction::triggered,this,[this](){
-        auto id=QInputDialog::getText(this,tr("Input info"),tr("Please Input ID Card"));
+        auto id=QInputDialog::getText(this,tr("Input info"),tr("Please Input One Card"));
         if(id.isEmpty()){
-            QMessageBox::warning(this,tr("Warning"),tr("You have enter a wrong ID Card"));
+            QMessageBox::warning(this,tr("Warning"),tr("You have enter a wrong One Card"));
             return;
         }else{
-        this->card_ctrl.set_idcard(id);
+            this->card_ctrl.set_onecard(id);
         }
     });
     connect(change_passwd,&QAction::triggered,this,[this](){
@@ -99,7 +100,12 @@ void MainWindow::init_ui()
         }
     });
     connect(open_online_bank,&QAction::triggered,this,[this](){
-        auto ret=card_ctrl.open_online_bank_system_of();
+        auto name=QInputDialog::getText(this,tr("Input"),tr("Please Input UserName"));
+        auto passwd=QInputDialog::getText(this,tr("Input"),tr("Please Input Passwd"));
+        //TODO checko format
+
+
+        auto ret=card_ctrl.open_online_bank_system_of(name,passwd);
         if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("Open online bank successed"));
         }else{
@@ -109,8 +115,15 @@ void MainWindow::init_ui()
 
 
 
-    connect(deposit,&QAction::triggered,[this](){this->setCentralWidget(new DepositWidget(card_ctrl,this));});
-    connect(creditCard,&QAction::triggered,[this](){});
+    connect(deposit,&QAction::triggered,[this](){
+
+        static auto wid=new DepositWidget(card_ctrl,this);
+        this->setCentralWidget(wid);
+    });
+    connect(creditCard,&QAction::triggered,[this](){
+
+
+    });
     connect(bank_system,&QAction::triggered,[this](){});
 
 }

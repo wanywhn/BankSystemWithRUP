@@ -1,4 +1,5 @@
 #include "databaseutils.h"
+#include <QDebug>
 QString connection_name="qt_sql_default_connection";
 
 QSqlDatabase DataBaseUtils::getInstance()

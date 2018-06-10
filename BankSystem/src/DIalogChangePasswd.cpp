@@ -34,7 +34,7 @@ void DIalogChangePasswd::init_res()
         }else{
             //TODO origin passwd needn't
         auto ret=ctrl.change_passwd(origin_passwd->text(),new_passwd->text());
-        if(true==ret.first){
+        if(ret.first){
             QMessageBox::information(this,tr("OK"),tr("Change success"));
             QDialog::accept();
         }else{

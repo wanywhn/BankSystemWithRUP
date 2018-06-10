@@ -6,12 +6,11 @@
 void one_card_control::set_name() {
 }
 
-void one_card_control::set_idcard(QString id)
+void one_card_control::set_onecard(QString id)
 {
-    if(true==one_card_account::check_if_exist(id))
+    if(one_card_account::check_if_exist(id))
         exists=true;
-
-    idcard=id;
+    onecard=id;
 }
 
 
@@ -35,19 +34,19 @@ QPair<bool, QString> one_card_control::register_user(QString name,
 
     one_card_account tmp(idcard);
 
-    if(exists){
-        return {false,QObject::tr("You had open an One Card")};
-    }else{
+//    if(exists){
+//        return {false,QObject::tr("You had open an One Card")};
+//    }else{
         tmp.create(name,idcard,address,phone,passwd);
         return {true,""};
-    }
+//    }
 
 }
 
-QPair<bool, QString> one_card_control::open_online_bank_system_of() {
+QPair<bool, QString> one_card_control::open_online_bank_system_of(QString name,QString passwd) {
     if(exists){
-        one_card_account tmp(idcard);
-        tmp.set_online_bank_status(true);
+        one_card_account tmp(onecard);
+        tmp.set_online_bank_status(true,name,passwd);
         return {true,""};
     }else{
         return {false,QObject::tr("You hadn't open the one card")};
@@ -58,7 +57,7 @@ void one_card_control::delete_account_of() {
 }
 
 QPair<bool, QString> one_card_control::change_passwd(QString orig, QString npasswd) {
-    one_card_account tmp(idcard);
+    one_card_account tmp(onecard);
     tmp.change_passwd(npasswd);
     return {true,""};
 }
@@ -68,20 +67,33 @@ void  one_card_control::set_target_idcard() {
 void  one_card_control::transfer_money() {
 }
 void  one_card_control::set_loss() {
-    one_card_account tmp(idcard);
+    one_card_account tmp(onecard);
     tmp.set_loss(true);
+}
+
+float one_card_control::get_lilv(int t)
+{
+    one_card_account tmp(onecard);
+    return tmp.get_lilv(t);
 }
 
 QPair<bool, QString> one_card_control::deposit(int mk,int type, int benjin, int cunqi, float lilv, bool auto_continue)
 {
 
-    one_card_account tmp(idcard);
+    one_card_account tmp(onecard);
     return tmp.deposit(mk,type,benjin,cunqi,lilv,auto_continue);
 
 
 }
+
+QPair<bool, QString> one_card_control::withdraw(int id, int count)
+{
+    one_card_account tmp(onecard);
+    return tmp.withdrawal_money(id,count);
+
+}
 QPair<bool, QString> one_card_control::cancel_loss() {
-    one_card_account tmp(idcard);
+    one_card_account tmp(onecard);
     auto ret=tmp.get_loss();
     if(ret.first){
         tmp.set_loss(false);
@@ -93,7 +105,7 @@ QPair<bool, QString> one_card_control::cancel_loss() {
 
 }
 QPair<bool, QString> one_card_control::reapply_one_card() {
-    one_card_account tmp(idcard);
+    one_card_account tmp(onecard);
     auto ret=tmp.get_loss();
     if(ret.first){
         if(ret.second.daysTo(QDate::currentDate())>7){

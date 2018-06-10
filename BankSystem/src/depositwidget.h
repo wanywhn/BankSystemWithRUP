@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QTableView>
 #include <QWidget>
+#include <QSqlQueryModel>
 
 #include "gen/App_Layer.h"
 
@@ -29,6 +30,8 @@ private:
 
     QPushButton *add_deposit;
     QPushButton *withdraw_money;
+    QSqlQueryModel *model;
+    QString query_stmt;
 
 private:
     void init_ui();
