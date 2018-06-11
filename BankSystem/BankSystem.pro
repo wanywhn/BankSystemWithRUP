@@ -36,7 +36,8 @@ SOURCES += \
     src/DIalogChangePasswd.cpp \
     src/dialogadddeposit.cpp \
     src/systemwidget.cpp \
-    src/dialogsyslogin.cpp
+    src/dialogsyslogin.cpp \
+    src/widgetcreditcard.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -50,7 +51,8 @@ HEADERS += \
     src/DIalogChangePasswd.h \
     src/dialogadddeposit.h \
     src/systemwidget.h \
-    src/dialogsyslogin.h
+    src/dialogsyslogin.h \
+    src/widgetcreditcard.h
 
 FORMS += \
         src/mainwindow.ui

@@ -72,6 +72,7 @@ public:
     QString one_card;
     vector<saving_subaccount *> subaccount;
 
+public:
     void set_phone_number();
 
     void  set_passwd();
@@ -107,5 +108,11 @@ public:
 
 
 
+};
+class credit_crtl{
+
+public:
+    QPair<bool,QString> pay(QString credit_id,float value,QString reason);
+    QPair<bool,QString> enchashmen(QString credit_id,QString passwd,float value);
 };
 #endif

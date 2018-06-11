@@ -10,6 +10,7 @@
 #include <QInputDialog>
 #include <QInputDialog>
 #include <QMessageBox>
+#include "widgetcreditcard.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -124,16 +125,17 @@ void MainWindow::init_ui()
         this->setCentralWidget(wid);
     });
     connect(creditCard,&QAction::triggered,[this](){
-
-
-
+        auto static wid=new WidgetCreditCard();
+        this->setCentralWidget(wid);
     });
-    connect(bank_system,&QAction::triggered,[this](){});
+    connect(bank_system,&QAction::triggered,[this](){
+
     DialogSysLogin dia;
     if(dia.exec()!=QDialog::Accepted){
         return;
     }
     static auto sys=new SystemWidget(this);
     this->setCentralWidget(sys);
+    });
 
 }

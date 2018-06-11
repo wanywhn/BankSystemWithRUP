@@ -343,3 +343,114 @@ QPair<bool, QString> sys_ctrl::change_passwd(QString name,QString origin, QStrin
 
 
 }
+
+QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString reason)
+{
+    if(credit_id.isEmpty()){
+        return {false,QObject::tr("Please Input CreditCard ID")};
+    }
+    if(value<=0){
+        return {false,QObject::tr("pay Count ERROR:")+QString::number(value)};
+    }
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,QObject::tr("DB Open Failed:")+db.lastError().text()};
+    }
+
+    QSqlQuery query(db);
+    if(!checkifexists(credit_id)){
+        return {false,"Can't find the Credit Card"};
+    }
+
+    //Check if credit gt value
+    if(!checkifenough(value,credit_id)){
+        return {false,"You don't have enough credit"};
+    }
+    //UPDATE credit_card
+    QString
+    tmp="UPDATE credit_card SET interest_free_money=interest_free_money+'%1',used=used+'%2' WHERE id='%3' ";
+    if(!query.exec(tmp.arg(value).arg(value).arg(credit_id))){
+        return {false,query.lastError().text()};
+    }
+    //UPDATE credit_consume
+    tmp="UPDATE credit_consume SET total=total+'%1' WHERE id='%2'";
+    if(!query.exec(tmp.arg(value).arg(credit_id))){
+        return {false,query.lastError().text()};
+    }
+    //UPDATE consume_log
+    tmp="INSERT INTO  consume_log(figure,reason,date,cid) VALUES ('%1','%2','%3','%4')";
+    if(!query.exec(tmp.arg(value).arg(reason).arg(QDate::currentDate().toString()).arg(credit_id))){
+        return {false,query.lastError().text()};
+    }
+
+
+}
+
+QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd, float value)
+{
+    if(!checkifexists(credit_id)){
+        return {false,"Can't find your Credit Card"};
+    }
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,db.lastError().text()};
+    }
+    QSqlQuery query(db);
+    //Check if > 0.7
+    QString tmp="SELECT credit FROM credit_card WHERE id='%1'";
+    if(!query.exec(tmp.arg(credit_id))){
+        return {false,query.lastError().text()};
+    }
+    query.next();
+    auto max=query.value(0).toFloat();
+    if(value>max*0.7){
+        return {false,"Sorry You can only enchashment "+QString::number(max*0.7)};
+    }
+    //Check if enough
+    if(!checkifenough(value,credit_id)){
+        return {false,"You don't have enough money"};
+    }
+    //TODO continue
+
+
+
+
+}
+
+bool credit_crtl::checkifexists(QString id)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<"Open DB ERROR";
+    }
+    QSqlQuery query(db);
+    QString tmp="SELECT COUNT(*) FROM credit_card WHERE id='%1' ";
+    if(!query.exec(tmp.arg(id))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return false;
+    }
+    if(query.size()==0){
+        return false;
+    }
+    return true;
+
+}
+
+bool credit_crtl::checkifenough(float value, QString credit_id)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<"Open DB failed"<<db.lastError();
+        return false;
+    }
+    QSqlQuery query(db);
+    QString tmp="SELECT interest_free_money FROM credit_card WHERE id='%1'";
+    if(!query.exec(tmp.arg(credit_id))){
+        return false;
+    }
+    auto curr_credit=query.value(0).toFloat();
+    if((value-curr_credit)<0){
+        return false;
+    }
+    return true;
+}

@@ -19,13 +19,28 @@ static bool init_db(){
         if(query.next()){
             if(query.value(0).toInt()==0){
                 //TODO init table
+
+                //消费累计
+                query.exec("CREATE TABLE credit_consume (id INTEGER PRIMARY KEY,"
+                           "FOREIGN KEY (id) REFERENCES credit_card(id) ,"
+                           "total FLOAT"//总共的刷卡消费金额，以方便计算最低还款额
+                           ")"
+                           );
+                //信用卡
                 query.exec("CREATE TABLE credit_card (id INTEGER PRIMARY KEY,"
-                           "credit INTEGER,used INTEGER,paid INTEGER,"
-                           "passwd TEXT,interest_free_money INTEGER,server_charge FLOAT,least_unpaid FLOAT,interest FLOAT,overdue_fine FLOAT)");
-                query.exec("CREATE TABLE consume_tb (id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                           "figure FLOAT,reason TEXT,date TEXT)");
+                           "interest_free_money FLOAT,credit FLOAT,used FLOAT,paid FLOAT,passwd TEXT)");
+                //			  所有可用的额度             总额度       已使用      已还款（不准备做提前还款）
+
+                //消费与支取记录
+                query.exec("CREATE TABLE consume_log (id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                           "figure FLOAT,reason TEXT,date TEXT,cid INTEGER,"
+                           //金额		 花费原因		 日期
+                           "FOREIGN KEY (cid) REFERENCES credit_card(id))");
+                //支取信息
                 query.exec("CREATE TABLE enchashment_tb (id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                            "figure FLOAT )");
+                            "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT,"
+                           //支取金额		预借现金手续费				支取利息
+                           " )");
 
 
                 query.exec("CREATE TABLE sys_acc_tb (id INTEGER PRIMARY KEY ,"

@@ -9,9 +9,12 @@ QSqlDatabase DataBaseUtils::getInstance()
         db=QSqlDatabase::database(connection_name);
         db.setDatabaseName(connection_name);
     }else{
-    db=QSqlDatabase::addDatabase("QSQLITE",connection_name);
+    db=QSqlDatabase::addDatabase("QMYSQL",connection_name);
     db.setDatabaseName(connection_name);
     }
+    db.setHostName("ericsuens.xin");
+    db.setUserName("root");
+    db.setPassword("sunyukang123");
    return db;
 
 }
