@@ -1,6 +1,7 @@
 #include "databaseutils.h"
 #include <QDebug>
-QString connection_name="qt_sql_default_connection";
+//QString connection_name="qt_sql_default_connection";
+QString connection_name="jiaqingtong";
 
 QSqlDatabase DataBaseUtils::getInstance()
 {

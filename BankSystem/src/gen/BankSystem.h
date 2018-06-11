@@ -68,6 +68,7 @@ public:
   private:
 //    kehu * ;
 
+public:
     QString id_card;
     QString one_card;
     vector<saving_subaccount *> subaccount;
