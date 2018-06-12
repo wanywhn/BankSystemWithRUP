@@ -40,7 +40,7 @@ static bool init_db(){
                            "FOREIGN KEY (cid) REFERENCES credit_card(id))");
                 //支取信息
                 query.exec("CREATE TABLE enchashment_tb (id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                            "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT,"
+                            "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT "
                            //支取金额		预借现金手续费				支取利息
                            " )");
 
@@ -62,7 +62,15 @@ static bool init_db(){
                 query.exec("CREATE TABLE IF NOT EXISTS card_saving( cid INTEGER,sid INTEGER,"
                           " FOREIGN KEY(cid) REFERENCES one_card(id),"
                           " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
-                query.exec("CREATE TABLE IF NOT EXISTS lilv (type INTEGER PRIMARY KEY,d float)");
+                query.exec("CREATE TABLE IF NOT EXISTS lilv (type INTEGER PRIMARY KEY,"
+                           "current FLOAT,one_year FLOAT,five_year FLOAT,"
+                           //活期			一年			五年
+                           "daikuan FLOAT,credit_enchashment_fee FLOAT,"
+                           //贷款利率（暂无用） 取现手续费
+                           "credit_lixi FLOAT, credit_overdue_fine FLOAT,"
+                           //取现利息				罚款利息
+                           "usd FLOAT,yen FLOAT,euro,FLOAT)");
+                            //美元	日元			欧元
 
 
 //                query.exec("delete from sqlite_sequence where name='one_card'");
