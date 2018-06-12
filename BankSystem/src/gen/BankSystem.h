@@ -68,7 +68,6 @@ public:
   private:
 //    kehu * ;
 
-public:
     QString id_card;
     QString one_card;
     vector<saving_subaccount *> subaccount;
@@ -115,5 +114,8 @@ class credit_crtl{
 public:
     QPair<bool,QString> pay(QString credit_id,float value,QString reason);
     QPair<bool,QString> enchashmen(QString credit_id,QString passwd,float value);
+private:
+    bool checkifexists(QString id);
+    bool checkifenough(float value,QString credit_id);
 };
 #endif

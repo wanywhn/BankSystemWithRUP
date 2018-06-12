@@ -368,7 +368,7 @@ QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString re
     }
     //UPDATE credit_card
     QString
-    tmp="UPDATE credit_card SET interest_free_money=interest_free_money+'%1',used=used+'%2' WHERE id='%3' ";
+    tmp="UPDATE credit_card SET interest_free_money=interest_free_money-%1,used=used+%2 WHERE id='%3' ";
     if(!query.exec(tmp.arg(value).arg(value).arg(credit_id))){
         return {false,query.lastError().text()};
     }
@@ -410,7 +410,24 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd, 
     if(!checkifenough(value,credit_id)){
         return {false,"You don't have enough money"};
     }
-    //TODO continue
+    //UPDATE enchashment
+    tmp="INSERT INTO ehchashment (figure,server_charge,enchashment_interest) VALUES ('%1','%2',0)";
+    //TODO server_charge
+    if(!query.exec(tmp.arg(value).arg(value*0.05))){
+        return {false,query.lastError().text()};
+    }
+    //TODO CREATE TRIGGER
+    //UPDATE consume_log
+    tmp="INSERT INTO consume_log (figure ,reason,date,cid) VALUES ('%1','%2','%3','%4')";
+    if(!query.exec(tmp.arg(value).arg("ENCHASHMENT").arg(QDate::currentDate().toString()).arg(credit_id)));{
+        return {false,query.lastError().text()};
+    }
+    //UPDATE credit_card
+    tmp="UPDATE credit_card SET interest_free_money=interest_freemoney-%1,used=used+'%2'";
+    if(!query.exec(tmp.arg(value*1.05).arg(value*1.05))){
+        return {false,query.lastError().text()};
+    }
+
 
 
 
