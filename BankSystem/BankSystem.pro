@@ -37,7 +37,8 @@ SOURCES += \
     src/dialogadddeposit.cpp \
     src/systemwidget.cpp \
     src/dialogsyslogin.cpp \
-    src/widgetcreditcard.cpp
+    src/widgetcreditcard.cpp \
+    src/widgetonlinebank.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -52,7 +53,8 @@ HEADERS += \
     src/dialogadddeposit.h \
     src/systemwidget.h \
     src/dialogsyslogin.h \
-    src/widgetcreditcard.h
+    src/widgetcreditcard.h \
+    src/widgetonlinebank.h
 
 FORMS += \
         src/mainwindow.ui

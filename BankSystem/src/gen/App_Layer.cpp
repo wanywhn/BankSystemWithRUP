@@ -32,7 +32,8 @@ QPair<bool, QString> one_card_control::register_user(QString name,
     }
     //TODO check the param;
 
-    one_card_account tmp(idcard);
+    //haven't have one_card;
+    one_card_account tmp("");
 
 //    if(exists){
 //        return {false,QObject::tr("You had open an One Card")};

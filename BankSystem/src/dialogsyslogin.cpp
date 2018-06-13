@@ -4,9 +4,11 @@
 #include <QMessageBox>
 #include <QInputDialog>
 
-DialogSysLogin::DialogSysLogin()
+DialogSysLogin::DialogSysLogin(interface_ctrl &ctrl):ctrl(ctrl)
 {
 
+    init_res();
+    init_ui();
 }
 
 void DialogSysLogin::init_ui()

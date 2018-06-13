@@ -11,7 +11,7 @@
 class DialogSysLogin : public QDialog
 {
 public:
-    DialogSysLogin();
+    DialogSysLogin(interface_ctrl &ctrl);
 
 
 private:
@@ -26,7 +26,8 @@ private:
     QPushButton *changePasswd;
     QPushButton *canc;
 
-    sys_ctrl ctrl;
+    interface_ctrl &ctrl;
+//    sys_ctrl ctrl;
 };
 
 #endif // DIALOGSYSLOGIN_H

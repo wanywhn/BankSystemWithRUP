@@ -100,14 +100,28 @@ public:
 public:
     static bool check_if_exist(QString id);
 };
-class sys_ctrl{
+class interface_ctrl{
+public:
+    virtual QPair<bool,QString>login(QString name,QString passwd)=0;
+    virtual QPair<bool,QString>change_passwd(QString name,QString origin,QString n)=0;
+    virtual ~interface_ctrl(){}
+
+};
+class sys_ctrl :public interface_ctrl{
 
 public:
-    QPair<bool,QString> login(QString name ,QString passwd);
-        QPair<bool,QString> change_passwd(QString name, QString origin, QString n);
+    QPair<bool,QString> login(QString name ,QString passwd) override;
+        QPair<bool,QString> change_passwd(QString name, QString origin, QString n)override;
 
 
+};
+class online_ctrl :public interface_ctrl{
 
+
+    // interface_ctrl interface
+public:
+    QPair<bool, QString> login(QString name, QString passwd) override;
+    QPair<bool, QString> change_passwd(QString name, QString origin, QString n) override;
 };
 class credit_crtl{
 

@@ -50,12 +50,14 @@ private:
 
     QGroupBox *gb_daikuan;
     QFormLayout *fl_daikuan;
+    QLineEdit	*le_daikuan_lilv;
 
 
     QGroupBox *gb_credit_card;
     QFormLayout *fl_credit_card;
     QLineEdit	*le_credit_interest;
     QLineEdit	*le_credit_enchashment_fee;
+    QLineEdit	*le_credit_overdue_fine;
 
 
 

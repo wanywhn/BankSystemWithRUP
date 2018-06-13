@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QStackedWidget>
 
+
 #include "gen/App_Layer.h"
+#include "gen/BankSystem.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +26,8 @@ private:
     QStackedWidget *stacked_widget;
 
     one_card_control card_ctrl;
+    sys_ctrl sctrl;
+    online_ctrl octrl;
 
 
 

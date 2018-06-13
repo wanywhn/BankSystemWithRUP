@@ -11,6 +11,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include "widgetcreditcard.h"
+#include "widgetonlinebank.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -49,6 +50,8 @@ void MainWindow::init_ui()
     auto creditCard=depart->addAction(tr("&CreditCard"));
 
     auto bank_system=depart->addAction(tr("&Bank System"));
+
+    auto online_bank=depart->addAction(tr("Online Bank"));
 
     //------2
     connect(open_one_card,&QAction::triggered,this,[this](){
@@ -130,12 +133,23 @@ void MainWindow::init_ui()
     });
     connect(bank_system,&QAction::triggered,[this](){
 
-    DialogSysLogin dia;
+    static DialogSysLogin dia(sctrl);
     if(dia.exec()!=QDialog::Accepted){
         return;
     }
     static auto sys=new SystemWidget(this);
     this->setCentralWidget(sys);
+    });
+
+    connect(online_bank,&QAction::triggered,this,[this](){
+        static DialogSysLogin dia(octrl);
+        if(dia.exec()!=QDialog::Accepted){
+            return ;
+        }
+        auto static wid=new WidgetOnlineBank();
+        this->setCentralWidget(wid);
+
+
     });
 
 }

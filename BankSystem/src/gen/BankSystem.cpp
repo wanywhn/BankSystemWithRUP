@@ -18,7 +18,7 @@ one_card_account::one_card_account(QString ocd)
     auto db=DataBaseUtils::getInstance();
     db.open();
     QSqlQuery query(db);
-    QString tmp="SELECT idcard FROM one_card WHERE iid='%1'";
+    QString tmp="SELECT idcard FROM one_card WHERE id='%1'";
     query.exec(tmp.arg(ocd));
     query.next();
 
@@ -65,8 +65,9 @@ void one_card_account::set_online_bank_status(bool flag, QString name, QString p
             //WARNING simple handle
             QSqlQuery query(db);
             QString tmp=
-            "UPDATE  id_card SET online_bank = '%1' ,online_name='%2',online_passwd='%3' WHERE id='%4' ";
-            QString stmt=tmp.arg(flag?"TRUE":"FALSE").arg(name).arg(passwd).arg(id_card);
+            "UPDATE  id_card SET online_bank = '%1' ,online_name='%2',passwd='%3' WHERE iid='%4' ";
+            QString stmt=tmp.arg(flag?1:0).arg(name).arg(passwd).arg(id_card);
+            qDebug()<<DEBUG_PRE<<stmt;
             if(query.exec(stmt)){
                 qDebug()<<DEBUG_PRE<<"Open online bank success";
             }else{
@@ -300,7 +301,7 @@ QPair<bool, QString> sys_ctrl::login(QString name, QString passwd)
 {
    auto db=DataBaseUtils::getInstance();
    if(!db.open()){
-       return {false,"Can't open DB"};
+       return {false,db.lastError().text()};
    }
    QString tmp="SELECT passwd FROM sys_acc_tb WHERE id='%1'";
    QSqlQuery query(db);
@@ -314,6 +315,57 @@ QPair<bool, QString> sys_ctrl::login(QString name, QString passwd)
    }else{
        return{false,"Passwd Wrong"};
    }
+}
+QPair<bool, QString> online_ctrl::login(QString name, QString passwd)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,db.lastError().text()};
+    }
+
+    QString tmp="SELECT passwd FROM id_card WHERE online_name='%1'";
+    QSqlQuery query(db);
+    if(!query.exec(tmp.arg(name))){
+        return {false,query.lastError().text()};
+    }
+    if(query.size()==0){
+        return {false,"It seems that you haven't open the online bank"};
+    }
+    query.next();
+    if(passwd.compare(query.value(0).toString())==0){
+        return {true,""};
+    }else{
+        return {false,"you may enter a wrong passwd"};
+    }
+
+}
+
+QPair<bool, QString> online_ctrl::change_passwd(QString name, QString origin, QString n)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,db.lastError().text()};
+    }
+    QSqlQuery query(db);
+    QString tmp="SELECT passwd FROM id_card WHERE online_name='%1'";
+    if(!query.exec(tmp.arg(name))){
+        return {false,query.lastError().text()};
+    }
+    query.next();
+    if(query.size()==0){
+        return {false,"you haven't open the online bank"};
+    }
+    if(origin.compare(query.value(0).toString())!=0){
+        return {false,"Origin passwd Wrong"} ;
+    }
+    tmp="UPDATE id_card SET passwd = '%1' WHERE online_name='%2'";
+    if(!query.exec(tmp.arg(n).arg(name))){
+        return {false,query.lastError().text()};
+    }
+    return {true,""};
+
+
+
 }
 
 QPair<bool, QString> sys_ctrl::change_passwd(QString name,QString origin, QString n)
@@ -471,3 +523,4 @@ bool credit_crtl::checkifenough(float value, QString credit_id)
     }
     return true;
 }
+
