@@ -1,11 +1,14 @@
 #ifndef WIDGETONLINEBANK_H
 #define WIDGETONLINEBANK_H
 
+#include <QComboBox>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QSqlQueryModel>
 #include <QTableView>
 #include <QWidget>
+
+#include "gen/BankSystem.h"
 
 #include "databaseutils.h"
 
@@ -13,19 +16,27 @@ class WidgetOnlineBank : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WidgetOnlineBank(QWidget *parent = nullptr);
+    explicit WidgetOnlineBank(online_ctrl &c,QWidget *parent = nullptr);
 
 signals:
 
 public slots:
 
+    void show_record();
+    void slots_transfer();
+    void show_analy();
+    void slots_loss_report();
 
 
 private:
     QHBoxLayout	*layout_main;
     QVBoxLayout	*layout_rv;
+    QVBoxLayout *layout_lv;
 
     QTableView	*tv_lview;
+    QComboBox	*cb_onecard;
+
+
     QPushButton	*btn_record;
     QPushButton	*btn_transfer;
     QPushButton	*btn_analy;
@@ -39,6 +50,10 @@ private:
 private:
     void init_res();
     void init_ui();
+    void init_data();
+
+private:
+    online_ctrl &ctrl;
 
 };
 

@@ -10,7 +10,9 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-#define DEBUG_PRE "DepositWidget:"
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+#define DEBUG_PRE __FILE__ "DepositWidget:" TOSTRING(__LINE__)
 DepositWidget::DepositWidget(one_card_control &ctrl, QWidget *parent):ctrl(ctrl)
 {
     init_res();
@@ -76,18 +78,19 @@ void DepositWidget::init_res()
    model=new QSqlQueryModel(this);
 //   QSqlQuery query(DataBaseUtils::getInstance());
    QString tmp=
-   "SELECT id,s_type,benjin,nianxian,lilv,qishi_shijian FROM saving_subaccount WHERE id in("
+   "SELECT id,s_type,m_type,benjin,nianxian,lilv,qishi_shijian FROM saving_subaccount WHERE id in("
                    "SELECT sid FROM card_saving WHERE"
                    " cid='%1'"
                    ")";
    query_stmt=tmp.arg(this->ctrl.onecard);
    model->setQuery(query_stmt,DataBaseUtils::getInstance());
    model->setHeaderData(0,Qt::Horizontal,tr("ID"));
-   model->setHeaderData(1,Qt::Horizontal,tr("Type"));
-   model->setHeaderData(2,Qt::Horizontal,tr("Benjin"));
-   model->setHeaderData(3,Qt::Horizontal,tr("nianxian"));
-   model->setHeaderData(4,Qt::Horizontal,tr("lilv"));
-   model->setHeaderData(5,Qt::Horizontal,tr("qishi_shijian"));
+   model->setHeaderData(1,Qt::Horizontal,tr("Deposit Type"));
+   model->setHeaderData(2,Qt::Horizontal,tr("Money Type"));
+   model->setHeaderData(3,Qt::Horizontal,tr("Benjin"));
+   model->setHeaderData(4,Qt::Horizontal,tr("nianxian"));
+   model->setHeaderData(5,Qt::Horizontal,tr("lilv"));
+   model->setHeaderData(6,Qt::Horizontal,tr("qishi_shijian"));
 
    sqlView->setModel(model);
    sqlView->setSelectionMode(QAbstractItemView::SingleSelection);

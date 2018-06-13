@@ -2,14 +2,17 @@
 #include "BankSystem.h"
 
 #include "../databaseutils.h"
+#include "../common_const.h"
 
 #include <QSqlQuery>
 #include <QVariant>
 #include <QDebug>
 #include <QSqlError>
 
-#define DEBUG_PRE "BankSystem:"
 
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+#define DEBUG_PRE __FILE__ "BankSystem:" TOSTRING(__LINE__)
 
 one_card_account::one_card_account(QString ocd)
 {
@@ -36,9 +39,23 @@ float one_card_account::get_lilv(int t)
         return 0;
     }else{
         QSqlQuery query(db);
-        QString tmp="SELECT d FROM lilv WHERE type='%1'";
-        QString stmt=tmp.arg(t);
-        if(query.exec(stmt)){
+        QString tmp;
+        switch (t) {
+        case LILV_CURRENT:{
+            tmp="SELECT current FROM lilv ";
+            break;
+        }
+        case LILV_ONE:{
+            tmp="SELECT one_year FROM lilv ";
+            break;
+        }
+        case LILV_FIVE:{
+            tmp="SELECT five_year FROM lilv ";
+            break;
+        }
+        }
+//        QString stmt=tmp.arg(t);
+        if(query.exec(tmp)){
             if(query.next()){
             return query.value(0).toFloat();
 
@@ -94,13 +111,17 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count)
         if(query.exec(stmt)){
             if(query.next()){
             auto benjin=query.value(0).toDouble();
-            if(benjin==count){
-               tmp="DELETE FROM card_svaing WHERE cid='%1' AND sid='%2'" ;
+            if(abs(benjin-count)<0.001){
+               tmp="DELETE FROM card_saving WHERE cid='%1' AND sid='%2'" ;
                stmt=tmp.arg(one_card).arg(id);
-               query.exec(stmt);
+               if(!query.exec(stmt)){
+                   return {false,query.lastError().text()};
+               }
                tmp="DELETE FROM saving_subaccount WHERE id='%1'";
                stmt=tmp.arg(id);
-               query.exec(stmt);
+               if(!query.exec(stmt)){
+                   return {false,query.lastError().text()};
+               }
 
                return {true,""};
             }else if(benjin>count){
@@ -163,8 +184,8 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
             }
             QString sid=QString::number(mk)+QString::number(type)+mid;
             qDebug()<<DEBUG_PRE<<"sid:"<<sid;
-            tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7','%8')";
-            stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString()).arg(auto_continue).arg(0);
+            tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7','%8','%9')";
+            stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(auto_continue).arg(0).arg(sid.left(1));
         qDebug()<<DEBUG_PRE<<stmt;
         if(query.exec(stmt)){
             tmp="INSERT INTO card_saving VALUES('%1','%2')";
@@ -192,7 +213,7 @@ void one_card_account::create(QString name, QString idcard, QString address, QSt
         QString tmp="SELECT COUNT(*) FROM id_card WHERE iid='%1'";
         QString stmt=tmp.arg(idcard);
         if(!query.exec(stmt)){
-            qDebug()<<query.lastError();
+            qDebug()<<DEBUG_PRE<<query.lastError();
             return;
         }
         query.next();
@@ -323,7 +344,7 @@ QPair<bool, QString> online_ctrl::login(QString name, QString passwd)
         return {false,db.lastError().text()};
     }
 
-    QString tmp="SELECT passwd FROM id_card WHERE online_name='%1'";
+    QString tmp="SELECT passwd,iid FROM id_card WHERE online_name='%1'";
     QSqlQuery query(db);
     if(!query.exec(tmp.arg(name))){
         return {false,query.lastError().text()};
@@ -332,11 +353,12 @@ QPair<bool, QString> online_ctrl::login(QString name, QString passwd)
         return {false,"It seems that you haven't open the online bank"};
     }
     query.next();
-    if(passwd.compare(query.value(0).toString())==0){
-        return {true,""};
-    }else{
+    if(passwd.compare(query.value(0).toString())!=0){
         return {false,"you may enter a wrong passwd"};
     }
+
+    this->idcard=query.value(1).toString();
+        return {true,""};
 
 }
 
@@ -368,6 +390,17 @@ QPair<bool, QString> online_ctrl::change_passwd(QString name, QString origin, QS
 
 }
 
+bool online_ctrl::set_idcard(QString id)
+{
+    this->idcard=id;
+
+}
+
+QString online_ctrl::get_idcard()
+{
+    return idcard;
+}
+
 QPair<bool, QString> sys_ctrl::change_passwd(QString name,QString origin, QString n)
 {
     auto db=DataBaseUtils::getInstance();
@@ -394,6 +427,18 @@ QPair<bool, QString> sys_ctrl::change_passwd(QString name,QString origin, QStrin
 
 
 
+}
+
+bool sys_ctrl::set_idcard(QString id)
+{
+    this->idcard=id;
+
+
+}
+
+QString sys_ctrl::get_idcard()
+{
+    return idcard;
 }
 
 QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString reason)

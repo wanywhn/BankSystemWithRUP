@@ -2,6 +2,7 @@
 
 #include <QFormLayout>
 #include <QMessageBox>
+#include "common_const.h"
 
 DialogAddDeposit::DialogAddDeposit(one_card_control &c):ctrl(c)
 {
@@ -33,10 +34,10 @@ void DialogAddDeposit::init_ui()
     //------1
     cb_deposit_kind->addItems({"Current","Fixed","Dinghuo"});
     cb_money_kind->addItems({tr("RMB"),tr("$"),tr("HK"),tr("J"),tr("U")});
-    cb_cunqi->addItems({"1","2","5"});
+    cb_cunqi->addItems({"1","5"});
 
 
-            lb_lilv->setText(QString::number(ctrl.get_lilv(0)));
+            lb_lilv->setText(QString::number(ctrl.get_lilv(LILV_CURRENT)));
 
 
 
@@ -60,12 +61,12 @@ void DialogAddDeposit::init_ui()
     connect(cb_deposit_kind,static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),this,[this,common](int index){
 
         static int last=0;
-        if(index==1||index==2){
+        if(index==1){
             if(last==1){
 
             }else{
                 cb_cunqi=new QComboBox;
-    cb_cunqi->addItems({"1","2","5"});
+    cb_cunqi->addItems({"1","5"});
                 rb_autocontinue=new QRadioButton;
                 connect(cb_cunqi,static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),this,[this](int index){
                     this->lb_lilv->setText(QString::number(ctrl.get_lilv(index+1)));
@@ -76,9 +77,12 @@ void DialogAddDeposit::init_ui()
     last=1;
             }
         }else{
+            if(last==1){
+
             common->removeRow(4);
             common->removeRow(4);
             lb_lilv->setText(QString::number(ctrl.get_lilv(0)));
+            }
             last=0;
 
         }

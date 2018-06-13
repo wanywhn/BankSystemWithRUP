@@ -106,6 +106,9 @@ public:
     virtual QPair<bool,QString>change_passwd(QString name,QString origin,QString n)=0;
     virtual ~interface_ctrl(){}
 
+    virtual bool set_idcard(QString id)=0;
+    virtual QString get_idcard()=0;
+
 };
 class sys_ctrl :public interface_ctrl{
 
@@ -113,8 +116,21 @@ public:
     QPair<bool,QString> login(QString name ,QString passwd) override;
         QPair<bool,QString> change_passwd(QString name, QString origin, QString n)override;
 
+private:
+        QString idcard;
 
+
+        // interface_ctrl interface
+public:
+        bool set_idcard(QString id) override;
+
+        // interface_ctrl interface
+public:
+        QString get_idcard() override;
+
+private:
 };
+
 class online_ctrl :public interface_ctrl{
 
 
@@ -122,6 +138,13 @@ class online_ctrl :public interface_ctrl{
 public:
     QPair<bool, QString> login(QString name, QString passwd) override;
     QPair<bool, QString> change_passwd(QString name, QString origin, QString n) override;
+
+    // interface_ctrl interface
+public:
+    bool set_idcard(QString id) override;
+    QString get_idcard() override;
+private:
+    QString idcard;
 };
 class credit_crtl{
 

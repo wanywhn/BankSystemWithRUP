@@ -1,16 +1,23 @@
 
 #include "App_Layer.h"
 #include "BankSystem.h"
-#include <QObject>
+#include <QMessageBox>
 
 void one_card_control::set_name() {
 }
 
-void one_card_control::set_onecard(QString id)
+bool one_card_control::set_onecard(QString id)
 {
-    if(one_card_account::check_if_exist(id))
-        exists=true;
+    if(one_card_account::check_if_exist(id)){
+
+
     onecard=id;
+        exists=true;
+        return true;
+    }else{
+        exists=false;
+        return false;
+    }
 }
 
 

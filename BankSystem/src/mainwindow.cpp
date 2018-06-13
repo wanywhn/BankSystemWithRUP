@@ -7,6 +7,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QDialog>
+#include <QDir>
 #include <QInputDialog>
 #include <QInputDialog>
 #include <QMessageBox>
@@ -68,9 +69,14 @@ void MainWindow::init_ui()
         if(id.isEmpty()){
             QMessageBox::warning(this,tr("Warning"),tr("You have enter a wrong One Card"));
             return;
-        }else{
-            this->card_ctrl.set_onecard(id);
         }
+        if(!this->card_ctrl.set_onecard(id)){
+            QMessageBox::warning(this,tr("Error"),tr("Can't find the card,please login again"));
+            return ;
+        }
+        QMessageBox::information(this,tr("Success"),tr("You have Login in"));
+
+
     });
     connect(change_passwd,&QAction::triggered,this,[this](){
         DIalogChangePasswd dialog(card_ctrl);
@@ -107,8 +113,15 @@ void MainWindow::init_ui()
         }
     });
     connect(open_online_bank,&QAction::triggered,this,[this](){
-        auto name=QInputDialog::getText(this,tr("Input"),tr("Please Input UserName"));
-        auto passwd=QInputDialog::getText(this,tr("Input"),tr("Please Input Passwd"));
+        bool ok;
+        auto name=QInputDialog::getText(this,tr("Input"),tr("Please Input UserName"),QLineEdit::Normal,QDir::home().dirName(),&ok);
+        if(!ok){
+            return ;
+        }
+        auto passwd=QInputDialog::getText(this,tr("Input"),tr("Please Input Passwd"),QLineEdit::PasswordEchoOnEdit,QDir::home().dirName(),&ok);
+        if(!ok){
+            return ;
+        }
         //TODO checko format
 
 
@@ -133,7 +146,7 @@ void MainWindow::init_ui()
     });
     connect(bank_system,&QAction::triggered,[this](){
 
-    static DialogSysLogin dia(sctrl);
+    DialogSysLogin dia(sctrl);
     if(dia.exec()!=QDialog::Accepted){
         return;
     }
@@ -142,11 +155,11 @@ void MainWindow::init_ui()
     });
 
     connect(online_bank,&QAction::triggered,this,[this](){
-        static DialogSysLogin dia(octrl);
+        DialogSysLogin dia(octrl);
         if(dia.exec()!=QDialog::Accepted){
             return ;
         }
-        auto static wid=new WidgetOnlineBank();
+        auto static wid=new WidgetOnlineBank(octrl);
         this->setCentralWidget(wid);
 
 

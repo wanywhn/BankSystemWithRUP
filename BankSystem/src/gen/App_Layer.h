@@ -10,7 +10,7 @@ class one_card_control {
   public:
     void set_name();
 
-    void set_onecard(QString id);
+    bool set_onecard(QString id);
 
     void set_address();
 

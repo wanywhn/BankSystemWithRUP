@@ -55,21 +55,24 @@ static bool init_db(){
                            "passwd TEXT,admin boolean DEFAULT '0') ");
 
 
-                query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float)");
+                query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float,m_type INTEGER)");
 
-                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid INTEGER PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
+                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(19) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
                            " passwd TEXT )");
 
+                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS one_card (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
-                           " owner_name varchar(20),idcard INTEGER ,"
+                           " owner_name varchar(20),idcard VARCHAR(19),"
                           " address varchar(20), phone_number varchar(12),passwd varchar(16),"
                           " lost boolean DEFAULT '0',lost_time TEXT ,auto_continue boolean DEFAULT '0',"
                           " FOREIGN KEY(idcard) REFERENCES id_card(iid) )");
 
+                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS card_saving( cid INTEGER,sid INTEGER,"
                           " FOREIGN KEY(cid) REFERENCES one_card(id),"
                           " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
 
+                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS lilv (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
                            "current FLOAT,one_year FLOAT,five_year FLOAT,"
                            //活期			一年			五年

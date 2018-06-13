@@ -5,7 +5,9 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 
-#define DEBUG_PRE "SystemWidget"
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+#define DEBUG_PRE __FILE__ "SystemWidget:" TOSTRING(__LINE__)
 SystemWidget::SystemWidget(QWidget *parent) : QWidget(parent)
 {
 

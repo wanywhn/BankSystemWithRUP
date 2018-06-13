@@ -54,7 +54,8 @@ HEADERS += \
     src/systemwidget.h \
     src/dialogsyslogin.h \
     src/widgetcreditcard.h \
-    src/widgetonlinebank.h
+    src/widgetonlinebank.h \
+    src/common_const.h
 
 FORMS += \
         src/mainwindow.ui
