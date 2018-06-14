@@ -36,6 +36,7 @@ void DepositWidget::init_ui()
 
 
    connect(add_deposit,&QPushButton::clicked,this,[this](){
+       //TODO current should add into one sub_account;
        DialogAddDeposit dia(ctrl);
        if(dia.exec()==QDialog::Accepted){
            qDebug()<<DEBUG_PRE<<"Add Succedd";
@@ -78,10 +79,7 @@ void DepositWidget::init_res()
    model=new QSqlQueryModel(this);
 //   QSqlQuery query(DataBaseUtils::getInstance());
    QString tmp=
-   "SELECT id,s_type,m_type,benjin,nianxian,lilv,qishi_shijian FROM saving_subaccount WHERE id in("
-                   "SELECT sid FROM card_saving WHERE"
-                   " cid='%1'"
-                   ")";
+   "SELECT id,s_type,m_type,benjin,nianxian,lilv,qishi_shijian FROM saving_subaccount WHERE cid = '%1' ";
    query_stmt=tmp.arg(this->ctrl.onecard);
    model->setQuery(query_stmt,DataBaseUtils::getInstance());
    model->setHeaderData(0,Qt::Horizontal,tr("ID"));

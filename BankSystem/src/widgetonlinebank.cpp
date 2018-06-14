@@ -2,12 +2,14 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QModelIndexList>
+#include <QMessageBox>
 
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
 #define DEBUG_PRE __FILE__ "WidgetOnlineBank:" TOSTRING(__LINE__)
 
-static QString str_query="SELECT id,s_type,benjin,nianxian,lilv,qishi_shijian,ac,lixi FROM saving_subaccount WHERE id IN (SELECT sid FROM card_saving WHERE cid='%1' )";
+static QString str_query="SELECT id,s_type,benjin,nianxian,lilv,qishi_shijian,ac,lixi FROM saving_subaccount WHERE cid='%1' ";
 
 WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(parent),ctrl(c)
 {
@@ -20,8 +22,9 @@ WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(par
     connect(btn_record,&QPushButton::clicked,this,&WidgetOnlineBank::show_record);
     connect(btn_transfer,&QPushButton::clicked,this,&WidgetOnlineBank::slots_transfer);
     connect(btn_loss_report,&QPushButton::clicked,this,&WidgetOnlineBank::slots_loss_report);
+    connect(btn_people,&QPushButton::clicked,this,&WidgetOnlineBank::slots_people);
     connect(cb_onecard,&QComboBox::currentTextChanged,this,[this](QString str){
-        sqlmodel->setQuery(str_query.arg(str));
+        sqlmodel->setQuery(str_query.arg(str),DataBaseUtils::getInstance());
     });
 }
 
@@ -32,6 +35,19 @@ void WidgetOnlineBank::show_record()
 
 void WidgetOnlineBank::slots_transfer()
 {
+    auto m=tv_lview->selectionModel();
+    auto row=m->selectedRows();
+    
+    if(row.size()==0||row.at(0).data().toString().at(1)!="1"){
+        QMessageBox::warning(this,tr("Error"),tr("You Should Select a Current subaccount"));
+        return ;
+    }
+    
+    
+
+
+        
+    
 
 }
 
@@ -42,7 +58,13 @@ void WidgetOnlineBank::show_analy()
 
 void WidgetOnlineBank::slots_loss_report()
 {
+    //TODO xijie
+    one_card_account account(this->cb_onecard->currentText());
+    account.set_loss(true);
+}
 
+void WidgetOnlineBank::slots_people()
+{
 
 }
 
@@ -61,6 +83,7 @@ void WidgetOnlineBank::init_res()
     btn_loss_report=new QPushButton(tr("Loss Report"));
     btn_record=new QPushButton(tr("Recode"));
     btn_transfer=new QPushButton(tr("Transfer"));
+    btn_people=new QPushButton(tr("People Manage"));
 
     sqlmodel=new QSqlQueryModel;
 
@@ -70,7 +93,7 @@ void WidgetOnlineBank::init_ui()
 {
     this->setLayout(layout_main);
 
-    layout_lv->addLayout(layout_lv);
+    layout_main->addLayout(layout_lv);
     layout_main->addLayout(layout_rv);
 
     layout_lv->addWidget(cb_onecard);
@@ -81,6 +104,7 @@ void WidgetOnlineBank::init_ui()
     layout_rv->addWidget(btn_loss_report);
     layout_rv->addWidget(btn_record);
     layout_rv->addWidget(btn_transfer);
+    layout_rv->addWidget(btn_people);
 
 }
 

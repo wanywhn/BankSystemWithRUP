@@ -11,6 +11,7 @@ class one_card_control {
     void set_name();
 
     bool set_onecard(QString id);
+    QString get_onecard();
 
     void set_address();
 

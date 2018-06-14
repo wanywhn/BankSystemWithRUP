@@ -26,6 +26,7 @@ public slots:
     void slots_transfer();
     void show_analy();
     void slots_loss_report();
+    void slots_people();
 
 
 private:
@@ -40,6 +41,7 @@ private:
     QPushButton	*btn_record;
     QPushButton	*btn_transfer;
     QPushButton	*btn_analy;
+    QPushButton *btn_people;
 
     QPushButton	*btn_change_passwd;
     QPushButton	*btn_loss_report;

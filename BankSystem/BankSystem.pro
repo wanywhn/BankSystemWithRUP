@@ -38,7 +38,8 @@ SOURCES += \
     src/systemwidget.cpp \
     src/dialogsyslogin.cpp \
     src/widgetcreditcard.cpp \
-    src/widgetonlinebank.cpp
+    src/widgetonlinebank.cpp \
+    src/dialogtransfer.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -55,7 +56,8 @@ HEADERS += \
     src/dialogsyslogin.h \
     src/widgetcreditcard.h \
     src/widgetonlinebank.h \
-    src/common_const.h
+    src/common_const.h \
+    src/dialogtransfer.h
 
 FORMS += \
         src/mainwindow.ui

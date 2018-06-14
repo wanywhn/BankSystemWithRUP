@@ -11,18 +11,6 @@ static bool init_db(){
         return false;
     }
     QSqlQuery query(db);
-//    QString check_table=
-//            "SELECT COUNT(*) FROM sqlite_master where type='table' and name='one_card'";
-//            "SHOW TABLES LIKE 'one_card'";
-
-//    query.prepare(check_table);
-//    if(!query.exec()){
-//        qDebug()<<"init_db"<<query.lastError();
-//        return  false;
-//    }else{
-//        if(query.next()){
-//            if(query.value(0).toInt()==0){
-//            if(query.size()==0){
                 //TODO init table
 
                 //信用卡
@@ -54,9 +42,6 @@ static bool init_db(){
                 query.exec("CREATE TABLE IF NOT EXISTS sys_acc_tb (id INTEGER PRIMARY KEY ,"
                            "passwd TEXT,admin boolean DEFAULT '0') ");
 
-
-                query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER PRIMARY KEY , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float,m_type INTEGER)");
-
                 query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(19) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
                            " passwd TEXT )");
 
@@ -68,11 +53,20 @@ static bool init_db(){
                           " FOREIGN KEY(idcard) REFERENCES id_card(iid) )");
 
                 qDebug()<<query.lastError();
-                query.exec("CREATE TABLE IF NOT EXISTS card_saving( cid INTEGER,sid INTEGER,"
-                          " FOREIGN KEY(cid) REFERENCES one_card(id),"
-                          " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
 
+                query.exec("CREATE TABLE IF NOT EXISTS familiar (onecard INTEGER,name VARCHAR(20),idcard VARCHAR(19),"
+                           "FOREIGN KEY(onecard) REFERENCES one_card(id)，"
+                           "FOREIGN KEY(name)	 REFERENCES one_card(owner_name),"
+                           "FOREIGN KEY(idcard)  REFERENCES id_card(iid)");
+
+                query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float,m_type INTEGER,cid INTEGER ,FOREIGN KEY (cid) REFERENCES one_card(id) ,PRIMARY KEY(id,cid))");
                 qDebug()<<query.lastError();
+
+//                query.exec("CREATE TABLE IF NOT EXISTS card_saving( cid INTEGER,sid INTEGER,"
+//                          " FOREIGN KEY(cid) REFERENCES one_card(id),"
+//                          " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
+
+//                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS lilv (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
                            "current FLOAT,one_year FLOAT,five_year FLOAT,"
                            //活期			一年			五年

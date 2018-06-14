@@ -20,6 +20,12 @@ bool one_card_control::set_onecard(QString id)
     }
 }
 
+QString one_card_control::get_onecard()
+{
+
+    return onecard;
+}
+
 
 void one_card_control::set_address() {
 }

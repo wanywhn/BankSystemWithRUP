@@ -172,7 +172,7 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
         return {false,"Can't open DB"};
     }else{
         QSqlQuery query(db);
-        QString tmp="SELECT MAX(sid) FROM card_saving WHERE cid='%1' ";
+        QString tmp="SELECT MAX(id) FROM saving_subaccount WHERE cid='%1' ";
         QString stmt=tmp.arg(one_card);
         qDebug()<<DEBUG_PRE<<stmt;
         if(query.exec(stmt)){
@@ -184,13 +184,13 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
             }
             QString sid=QString::number(mk)+QString::number(type)+mid;
             qDebug()<<DEBUG_PRE<<"sid:"<<sid;
-            tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7','%8','%9')";
-            stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(auto_continue).arg(0).arg(sid.left(1));
+            tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7','%8','%9','%10')";
+            stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(auto_continue).arg(0).arg(sid.left(1)).arg(one_card);
         qDebug()<<DEBUG_PRE<<stmt;
         if(query.exec(stmt)){
-            tmp="INSERT INTO card_saving VALUES('%1','%2')";
-            stmt=tmp.arg(one_card).arg(sid);
-            query.exec(stmt);
+//            tmp="INSERT INTO card_saving VALUES('%1','%2')";
+//            stmt=tmp.arg(one_card).arg(sid);
+//            query.exec(stmt);
             return {true,""};
         }else{
             return {false,query.lastError().text()};

@@ -137,7 +137,7 @@ void MainWindow::init_ui()
 
     connect(deposit,&QAction::triggered,[this](){
 
-        static auto wid=new DepositWidget(card_ctrl,this);
+        auto wid=new DepositWidget(card_ctrl,this);
         this->setCentralWidget(wid);
     });
     connect(creditCard,&QAction::triggered,[this](){
