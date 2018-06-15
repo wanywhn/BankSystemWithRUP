@@ -159,7 +159,7 @@ void MainWindow::init_ui()
         if(dia.exec()!=QDialog::Accepted){
             return ;
         }
-        auto static wid=new WidgetOnlineBank(octrl);
+        auto wid=new WidgetOnlineBank(octrl);
         this->setCentralWidget(wid);
 
 

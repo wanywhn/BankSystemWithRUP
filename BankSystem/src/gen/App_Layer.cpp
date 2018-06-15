@@ -3,8 +3,6 @@
 #include "BankSystem.h"
 #include <QMessageBox>
 
-void one_card_control::set_name() {
-}
 
 bool one_card_control::set_onecard(QString id)
 {
@@ -27,14 +25,8 @@ QString one_card_control::get_onecard()
 }
 
 
-void one_card_control::set_address() {
-}
 
-void one_card_control::set_phone_number() {
-}
 
-void one_card_control::set_passwd() {
-}
 
 QPair<bool, QString> one_card_control::register_user(QString name,
              QString idcard, QString address, QString phone, QString passwd) {
@@ -76,8 +68,6 @@ QPair<bool, QString> one_card_control::change_passwd(QString orig, QString npass
     return {true,""};
 }
 
-void  one_card_control::set_target_idcard() {
-}
 void  one_card_control::transfer_money() {
 }
 void  one_card_control::set_loss() {
@@ -91,11 +81,11 @@ float one_card_control::get_lilv(int t)
     return tmp.get_lilv(t);
 }
 
-QPair<bool, QString> one_card_control::deposit(int mk,int type, int benjin, int cunqi, float lilv, bool auto_continue)
+QPair<bool, QString> one_card_control::deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue, QString reason)
 {
 
     one_card_account tmp(onecard);
-    return tmp.deposit(mk,type,benjin,cunqi,lilv,auto_continue);
+    return tmp.deposit(mk,type,benjin,cunqi,lilv,auto_continue,reason);
 
 
 }

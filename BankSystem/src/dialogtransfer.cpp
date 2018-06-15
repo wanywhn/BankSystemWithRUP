@@ -16,6 +16,7 @@ DialogTransfer::DialogTransfer(QString ocd, QString subaccount)
         QMessageBox::warning(this,tr("Error"),tr("One Card ID ERROR"));
     }
     this->saccount=subaccount;
+    this->ocd=ocd;
 
     init_res();
     init_ui();
@@ -55,6 +56,7 @@ void DialogTransfer::init_ui()
     layout_fl->addRow(btn_accept,btn_cancel);
 
     cb_name->setEditable(true);
+    cb_onecard->setEditable(true);
 
 
 }
@@ -99,6 +101,8 @@ QPair<bool, QString> DialogTransfer::store_familiar(QString name, QString ocd)
     if(!query.exec(tmp.arg(ocd).arg(name).arg(idcard))){
         return {false,query.lastError().text()};
     }
+    map.insert(name,ocd);
+    return {true,"Success"};
 
 }
 
@@ -106,6 +110,7 @@ void DialogTransfer::slots_name_changed(QString name)
 {
     if(!map.contains(name)){
         new_name=true;
+        cb_onecard->clear();
 
         return ;
     }else{
@@ -117,8 +122,11 @@ void DialogTransfer::slots_name_changed(QString name)
 
 void DialogTransfer::slots_onecard_changed(QString ocd)
 {
-    if(new_name){
+//    if(new_name){
 
+    if(-1==cb_onecard->findText(ocd)){
+        return;
+    }
         map.insert(cb_name->currentText(),ocd);
         auto ret=store_familiar(cb_name->currentText(),ocd);
         if(!ret.first){
@@ -126,8 +134,8 @@ void DialogTransfer::slots_onecard_changed(QString ocd)
         }
 
 
-    }else{
-    }
+//    }else{
+//    }
 
 }
 
@@ -138,5 +146,14 @@ void DialogTransfer::slots_transfer_money()
         QMessageBox::warning(this,tr("Error"),ret.second);
         return ;
     }
+    ctrl.set_onecard(cb_onecard->currentText());
+    ret=ctrl.deposit(saccount.left(1).toInt(),saccount.left(2).right(1).toInt(),le_count->text().toInt(),0,0,false,"Recever From "+this->idcard);
+    ctrl.set_onecard(ocd);
+    if(!ret.first){
+        QMessageBox::warning(this,tr("Error"),ret.second);
+        return;
+    }
+    QMessageBox::information(this,tr("Success"),tr("Fransfer Successed"));
+    this->accept();
 
 }

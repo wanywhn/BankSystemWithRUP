@@ -111,12 +111,18 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair
         return {false,"Open DataBase Failed"};
     }
         QString tmp="SELECT benjin FROM saving_subaccount WHERE id='%1' AND cid='%2'";
-        QString stmt=tmp.arg(id).arg(id_card);
+        QString stmt=tmp.arg(id).arg(one_card);
         QSqlQuery query(db);
         if(!query.exec(stmt)){
-            return {false,query.lastError().text()};
+            qDebug()<<stmt;
+            return {false,"Exec failed "+query.lastError().text()};
         }
-            if(query.next()){
+            if(!query.next()){
+            qDebug()<<stmt;
+                return {false,"Next Failed "+query.lastError().text()};
+
+            }
+
             auto benjin=query.value(0).toDouble();
             if(abs(benjin-count)<0.001){
                tmp="DELETE FROM card_saving WHERE cid='%1' AND sid='%2'" ;
@@ -142,7 +148,6 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair
             }else{
                 return {false,"Your Account don't have such money"};
             }
-            }
 
 
 
@@ -150,6 +155,23 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair
 
 void one_card_account::log(QString reason, int count, QString id, QString cid,QString type)
 {
+    QString tmp="INSERT INTO consume_log (figure,reason,date,cid,cardid,type) VALUES('%1','%2','%3','%4','%5','%6')";
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<db.lastError();
+        return ;
+    }
+    QSqlQuery query(db);
+    QString stmt=
+    tmp.arg(count).arg(reason).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(cid).arg(id).arg(type);
+    if(!query.exec(stmt)){
+    qDebug()<<DEBUG_PRE<<"stmt:"<<stmt;
+            qDebug()<<DEBUG_PRE<<query.lastError();
+            return ;
+}
+    qDebug()<<DEBUG_PRE<<"LOG SUCCESSED";
+
+
 
 }
 
@@ -174,7 +196,7 @@ void one_card_account::change_passwd(QString n)
 
 }
 
-QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int cunqi, float lilv, int auto_continue)
+QPair<bool, QString> one_card_account::deposit(int mk, int type, int benjin, int cunqi, float lilv, int auto_continue, QString reason)
 {
     //TODO CREATE TRIGGER
     auto db=DataBaseUtils::getInstance();
@@ -207,7 +229,7 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
 //            tmp="INSERT INTO card_saving VALUES('%1','%2')";
 //            stmt=tmp.arg(one_card).arg(sid);
 //            query.exec(stmt);
-        log("DEPOSIT",benjin,sid,id_card,"DEPOSIT");
+        log(reason,benjin,one_card,id_card,"DEPOSIT");
             return {true,""};
 
 

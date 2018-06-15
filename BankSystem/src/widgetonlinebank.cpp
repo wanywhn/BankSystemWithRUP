@@ -1,3 +1,4 @@
+#include "dialogrecord.h"
 #include "dialogtransfer.h"
 #include "widgetonlinebank.h"
 #include <QDebug>
@@ -31,6 +32,15 @@ WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(par
 
 void WidgetOnlineBank::show_record()
 {
+    DialogRecord dia(cb_onecard->currentText());
+    if(dia.exec()==QDialog::Accepted){
+        qDebug()<<DEBUG_PRE<<"Accept";
+        return ;
+    }
+        qDebug()<<DEBUG_PRE<<"Reject";
+        return;
+
+
 
 }
 
@@ -43,7 +53,13 @@ void WidgetOnlineBank::slots_transfer()
         QMessageBox::warning(this,tr("Error"),tr("You Should Select a Current subaccount"));
         return ;
     }
-    DialogTransfer dia();
+    DialogTransfer dia(cb_onecard->currentText(),row.at(0).data().toString());
+    if(dia.exec()==QDialog::Accepted){
+        qDebug()<<DEBUG_PRE<<"Transfer Successed";
+    }else{
+        qDebug()<<DEBUG_PRE<<"Transfer Failed";
+    }
+    sqlmodel->setQuery(str_query.arg(cb_onecard->currentText()),DataBaseUtils::getInstance());
     
     
 
@@ -63,6 +79,9 @@ void WidgetOnlineBank::slots_loss_report()
     //TODO xijie
     one_card_account account(this->cb_onecard->currentText());
     account.set_loss(true);
+    QMessageBox::information(this,tr("Success"),tr(
+                                 "Loss Report Successed"));
+
 }
 
 void WidgetOnlineBank::slots_people()

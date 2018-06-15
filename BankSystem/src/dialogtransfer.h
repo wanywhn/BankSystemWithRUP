@@ -37,6 +37,7 @@ private:
     bool new_name;
     QString idcard;
     QString saccount;
+    QString ocd;
 
 private slots:
     void slots_name_changed(QString name);

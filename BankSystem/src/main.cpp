@@ -27,11 +27,6 @@ static bool init_db(){
 
                 qDebug()<<query.lastError();
 
-                //消费与支取记录
-                query.exec("CREATE TABLE IF NOT EXISTS consume_log (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
-                           "figure FLOAT,reason TEXT,date TEXT,cid VARCHAR(19),cardid INTEGER ,type TEXT"
-                           //金额		 花费原因		 日期
-                           "FOREIGN KEY (cid) REFERENCES id_card(id))");
 
 
                 //支取信息
@@ -44,23 +39,33 @@ static bool init_db(){
                 query.exec("CREATE TABLE IF NOT EXISTS sys_acc_tb (id INTEGER PRIMARY KEY ,"
                            "passwd TEXT,admin boolean DEFAULT '0') ");
 
-                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(19) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
+                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(20) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
                            " passwd TEXT )");
 
+                //消费与支取记录
+                query.exec("CREATE TABLE IF NOT EXISTS consume_log (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
+                           "figure FLOAT,reason TEXT,date TEXT,cid VARCHAR(20),cardid INTEGER ,type TEXT ,"
+                           //金额		 花费原因		 日期		idcard  		 the id of card
+                           "FOREIGN KEY (cid) REFERENCES id_card(iid))");
+
                 qDebug()<<query.lastError();
-                query.exec("CREATE TABLE IF NOT EXISTS one_card (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
-                           " owner_name varchar(20),idcard VARCHAR(19),"
+
+                qDebug()<<query.lastError();
+                query.exec("CREATE TABLE IF NOT EXISTS one_card (id INTEGER AUTO_INCREMENT,"
+                           " owner_name varchar(20),idcard VARCHAR(20),"
                           " address varchar(20), phone_number varchar(12),passwd varchar(16),"
                           " lost boolean DEFAULT '0',lost_time TEXT ,auto_continue boolean DEFAULT '0',"
-                          " FOREIGN KEY(idcard) REFERENCES id_card(iid) )");
+                          " FOREIGN KEY(idcard) REFERENCES id_card(iid),"
+                           "PRIMARY KEY(id,owner_name) )");
 
                 qDebug()<<query.lastError();
 
-                query.exec("CREATE TABLE IF NOT EXISTS familiar (onecard INTEGER,name VARCHAR(20),idcard VARCHAR(19),"
-                           "FOREIGN KEY(onecard) REFERENCES one_card(id)，"
-                           "FOREIGN KEY(name)	 REFERENCES one_card(owner_name),"
-                           "FOREIGN KEY(idcard)  REFERENCES id_card(iid)");
+                query.exec("CREATE TABLE IF NOT EXISTS familiar (onecard INTEGER,name VARCHAR(20),idcard VARCHAR(20),PRIMARY KEY(onecard,name,idcard),"
+                           "FOREIGN KEY(onecard) REFERENCES one_card(id),"
+//                           "FOREIGN KEY(name) REFERENCES one_card(owner_name),"
+                           "FOREIGN KEY(idcard) REFERENCES id_card(iid) )");
 
+                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float,m_type INTEGER,cid INTEGER ,FOREIGN KEY (cid) REFERENCES one_card(id) ,PRIMARY KEY(id,cid))");
                 qDebug()<<query.lastError();
 

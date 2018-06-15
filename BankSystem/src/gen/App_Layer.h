@@ -8,16 +8,12 @@
 
 class one_card_control {
   public:
-    void set_name();
 
     bool set_onecard(QString id);
     QString get_onecard();
 
-    void set_address();
 
-    void set_phone_number();
 
-    void set_passwd();
 
     QPair<bool,QString> register_user(QString name,QString idcard,QString address,QString phone,QString passwd);
 
@@ -27,7 +23,6 @@ class one_card_control {
 
     QPair<bool,QString> change_passwd(QString orig,QString npasswd);
 
-    void  set_target_idcard();
 
     void  transfer_money();
 
@@ -37,7 +32,7 @@ class one_card_control {
 
     float get_lilv(int t);
 
-    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue);
+    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue,QString reason="DEPOSIT");
 
     QPair<bool,QString> withdraw(int id,int count,QPair<QString,QString> type_info={"",""});
 

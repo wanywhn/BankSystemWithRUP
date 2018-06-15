@@ -39,7 +39,8 @@ SOURCES += \
     src/dialogsyslogin.cpp \
     src/widgetcreditcard.cpp \
     src/widgetonlinebank.cpp \
-    src/dialogtransfer.cpp
+    src/dialogtransfer.cpp \
+    src/dialogrecord.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -57,7 +58,8 @@ HEADERS += \
     src/widgetcreditcard.h \
     src/widgetonlinebank.h \
     src/common_const.h \
-    src/dialogtransfer.h
+    src/dialogtransfer.h \
+    src/dialogrecord.h
 
 FORMS += \
         src/mainwindow.ui

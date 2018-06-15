@@ -98,7 +98,7 @@ public:
 
     void  change_passwd(QString n);
 
-    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, int auto_continue);
+    QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, int auto_continue,QString reason);
 
     void create(QString name ,QString idcard,QString address,QString phone ,QString passwd);
 
