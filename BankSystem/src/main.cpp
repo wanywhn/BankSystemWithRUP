@@ -29,9 +29,11 @@ static bool init_db(){
 
                 //消费与支取记录
                 query.exec("CREATE TABLE IF NOT EXISTS consume_log (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
-                           "figure FLOAT,reason TEXT,date TEXT,cid INTEGER,"
+                           "figure FLOAT,reason TEXT,date TEXT,cid VARCHAR(19),cardid INTEGER ,type TEXT"
                            //金额		 花费原因		 日期
-                           "FOREIGN KEY (cid) REFERENCES credit_card(id))");
+                           "FOREIGN KEY (cid) REFERENCES id_card(id))");
+
+
                 //支取信息
                 query.exec("CREATE TABLE IF NOT EXISTS enchashment_tb (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
                             "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT "

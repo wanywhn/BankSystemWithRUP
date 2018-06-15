@@ -11,7 +11,7 @@ class WidgetCreditCard : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WidgetCreditCard(QWidget *parent = nullptr);
+    explicit WidgetCreditCard(QString idc,QWidget *parent = nullptr);
 
 signals:
 
@@ -29,6 +29,7 @@ private:
 private:
     void init_ui();
     void init_res();
+    QString idcard;
 };
 
 #endif // WIDGETCREDITCARD_H

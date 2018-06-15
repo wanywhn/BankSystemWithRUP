@@ -1,3 +1,4 @@
+#include "dialogtransfer.h"
 #include "widgetonlinebank.h"
 #include <QDebug>
 #include <QSqlError>
@@ -42,6 +43,7 @@ void WidgetOnlineBank::slots_transfer()
         QMessageBox::warning(this,tr("Error"),tr("You Should Select a Current subaccount"));
         return ;
     }
+    DialogTransfer dia();
     
     
 

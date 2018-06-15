@@ -75,6 +75,7 @@ public:
 public:
     void set_phone_number();
 
+    QString get_idcard();
     void  set_passwd();
 
     saving_subaccount *get_sub_account();
@@ -83,7 +84,17 @@ public:
 
     void  set_online_bank_status(bool flag,QString name="",QString passwd="");
 
-    QPair<bool,QString> withdrawal_money(int id,int count);
+    QPair<bool,QString> withdrawal_money(int id,int count,QPair<QString,QString> type={"",""});
+
+    /**
+     * @brief log  记录某人（cid）在某账户（id）上花费的金额及理由
+     * @param reason 理由
+     * @param count	金额
+     * @param id	该类型对应的ID
+     * @param cid	IDCARD
+     * @param type	话费类型
+     */
+    static void log(QString reason,int count,QString id,QString cid,QString type);
 
     void  change_passwd(QString n);
 
@@ -147,6 +158,9 @@ private:
     QString idcard;
 };
 class credit_crtl{
+public:
+    credit_crtl(QString id);
+
 
 public:
     QPair<bool,QString> pay(QString credit_id,float value,QString reason);
@@ -154,5 +168,6 @@ public:
 private:
     bool checkifexists(QString id);
     bool checkifenough(float value,QString credit_id);
+    QString id_card;
 };
 #endif

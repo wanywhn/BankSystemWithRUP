@@ -39,11 +39,12 @@ class one_card_control {
 
     QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue);
 
-    QPair<bool,QString> withdraw(int id,int count);
+    QPair<bool,QString> withdraw(int id,int count,QPair<QString,QString> type_info={"",""});
 
     QPair<bool,QString> cancel_loss();
 
     QPair<bool,QString> reapply_one_card();
+    QString get_idcard();
 
     QString onecard;
 private:

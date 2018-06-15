@@ -11,4 +11,8 @@
 #define HK	3
 #define	JEP	4
 #define EURO	5
+
+
+#define WITHDRAW	0
+#define TRANSFER	1
 #endif // COMMON_CONST_H

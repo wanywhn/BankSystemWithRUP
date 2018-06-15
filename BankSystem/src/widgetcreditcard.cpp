@@ -2,10 +2,11 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-WidgetCreditCard::WidgetCreditCard(QWidget *parent) : QWidget(parent)
+WidgetCreditCard::WidgetCreditCard(QString idc, QWidget *parent) : QWidget(parent),ctrl(idc)
 {
     init_res();
     init_ui();
+    idcard=idc;
 
 }
 

@@ -141,7 +141,7 @@ void MainWindow::init_ui()
         this->setCentralWidget(wid);
     });
     connect(creditCard,&QAction::triggered,[this](){
-        auto static wid=new WidgetCreditCard();
+        auto wid=new WidgetCreditCard(card_ctrl.get_idcard());
         this->setCentralWidget(wid);
     });
     connect(bank_system,&QAction::triggered,[this](){

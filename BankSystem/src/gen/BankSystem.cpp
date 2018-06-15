@@ -31,6 +31,11 @@ one_card_account::one_card_account(QString ocd)
 void one_card_account::set_phone_number() {
 }
 
+QString one_card_account::get_idcard()
+{
+   return id_card;
+}
+
 float one_card_account::get_lilv(int t)
 {
 
@@ -98,17 +103,19 @@ void one_card_account::set_online_bank_status(bool flag, QString name, QString p
 
 }
 
-QPair<bool, QString> one_card_account::withdrawal_money(int id, int count)
+QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair<QString, QString> type)
 {
 
     auto db=DataBaseUtils::getInstance();
     if(!db.open()){
         return {false,"Open DataBase Failed"};
-    }else{
-        QString tmp="SELECT benjin FROM saving_subaccount WHERE id='%1'";
-        QString stmt=tmp.arg(id);
+    }
+        QString tmp="SELECT benjin FROM saving_subaccount WHERE id='%1' AND cid='%2'";
+        QString stmt=tmp.arg(id).arg(id_card);
         QSqlQuery query(db);
-        if(query.exec(stmt)){
+        if(!query.exec(stmt)){
+            return {false,query.lastError().text()};
+        }
             if(query.next()){
             auto benjin=query.value(0).toDouble();
             if(abs(benjin-count)<0.001){
@@ -123,12 +130,14 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count)
                    return {false,query.lastError().text()};
                }
 
+               log(type.second,count,one_card,id_card,type.first);
                return {true,""};
             }else if(benjin>count){
                tmp="UPDATE saving_subaccount SET benjin='%1' WHERE id='%2'";
                stmt=tmp.arg(benjin-count).arg(id);
                query.exec(stmt);
 
+               log(type.second,count,one_card,id_card,type.first);
                return {true,""};
             }else{
                 return {false,"Your Account don't have such money"};
@@ -136,10 +145,11 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count)
             }
 
 
-        }else{
-            return {false,query.lastError().text()};
-        }
-    }
+
+}
+
+void one_card_account::log(QString reason, int count, QString id, QString cid,QString type)
+{
 
 }
 
@@ -170,12 +180,15 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
     auto db=DataBaseUtils::getInstance();
     if(!db.open()){
         return {false,"Can't open DB"};
-    }else{
+    }
         QSqlQuery query(db);
         QString tmp="SELECT MAX(id) FROM saving_subaccount WHERE cid='%1' ";
         QString stmt=tmp.arg(one_card);
         qDebug()<<DEBUG_PRE<<stmt;
-        if(query.exec(stmt)){
+        if(!query.exec(stmt)){
+            return {false,query.lastError().text()};
+
+        }
             QString mid;
             if(query.next()){
                 mid=QString::number(query.value(0).toInt()+1001).right(3);
@@ -187,18 +200,15 @@ QPair<bool, QString> one_card_account::deposit(int mk,int type, int benjin, int 
             tmp="INSERT INTO saving_subaccount VALUES('%1','%2','%3','%4','%5','%6','%7','%8','%9','%10')";
             stmt=tmp.arg(sid.toInt()).arg(type).arg(benjin).arg(cunqi).arg(lilv).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(auto_continue).arg(0).arg(sid.left(1)).arg(one_card);
         qDebug()<<DEBUG_PRE<<stmt;
-        if(query.exec(stmt)){
+        if(!query.exec(stmt)){
+
+            return {false,query.lastError().text()};
+        }
 //            tmp="INSERT INTO card_saving VALUES('%1','%2')";
 //            stmt=tmp.arg(one_card).arg(sid);
 //            query.exec(stmt);
+        log("DEPOSIT",benjin,sid,id_card,"DEPOSIT");
             return {true,""};
-        }else{
-            return {false,query.lastError().text()};
-        }
-        }else{
-            return {false,query.lastError().text()};
-        }
-    }
 
 
 }
@@ -441,6 +451,11 @@ QString sys_ctrl::get_idcard()
     return idcard;
 }
 
+credit_crtl::credit_crtl(QString id)
+{
+   id_card=id;
+}
+
 QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString reason)
 {
     if(credit_id.isEmpty()){
@@ -475,10 +490,11 @@ QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString re
         return {false,query.lastError().text()};
     }
     //UPDATE consume_log
-    tmp="INSERT INTO  consume_log(figure,reason,date,cid) VALUES ('%1','%2','%3','%4')";
-    if(!query.exec(tmp.arg(value).arg(reason).arg(QDate::currentDate().toString()).arg(credit_id))){
-        return {false,query.lastError().text()};
-    }
+    one_card_account::log(reason,value,credit_id,id_card,"PAY");
+//    tmp="INSERT INTO  consume_log(figure,reason,date,cid,cardid) VALUES ('%1','%2','%3','%4','%5')";
+//    if(!query.exec(tmp.arg(value).arg(reason).arg(QDate::currentDate().toString()).arg(credit_id).ar(id_card))){
+//        return {false,query.lastError().text()};
+//    }
 
 
 }
@@ -515,10 +531,11 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd, 
     }
     //TODO CREATE TRIGGER
     //UPDATE consume_log
-    tmp="INSERT INTO consume_log (figure ,reason,date,cid) VALUES ('%1','%2','%3','%4')";
-    if(!query.exec(tmp.arg(value).arg("ENCHASHMENT").arg(QDate::currentDate().toString()).arg(credit_id)));{
-        return {false,query.lastError().text()};
-    }
+    one_card_account::log("ENCHASHMENT",value,credit_id,id_card,"ENCHASHMENT");
+//    tmp="INSERT INTO consume_log (figure ,reason,date,cid) VALUES ('%1','%2','%3','%4')";
+//    if(!query.exec(tmp.arg(value).arg("ENCHASHMENT").arg(QDate::currentDate().toString()).ar(credit_id)));{
+//        return {false,query.lastError().text()};
+//    }
     //UPDATE credit_card
     tmp="UPDATE credit_card SET interest_free_money=interest_freemoney-%1,used=used+'%2'";
     if(!query.exec(tmp.arg(value*1.05).arg(value*1.05))){

@@ -6,20 +6,25 @@
 #include <QSqlQuery>
 
 #include <QDebug>
+#include "common_const.h"
 
 
 #define DEBUG_PRE "DialogTransfer"
-DialogTransfer::DialogTransfer(QString ocd)
+DialogTransfer::DialogTransfer(QString ocd, QString subaccount)
 {
     if(!ctrl.set_onecard(ocd)){
         QMessageBox::warning(this,tr("Error"),tr("One Card ID ERROR"));
     }
+    this->saccount=subaccount;
+
     init_res();
     init_ui();
     init_data();
 
     connect(cb_name,&QComboBox::currentTextChanged,this,&DialogTransfer::slots_name_changed);
     connect(cb_onecard,&QComboBox::currentTextChanged,this,&DialogTransfer::slots_onecard_changed);
+    connect(btn_cancel,&QPushButton::clicked,this,[this](){this->reject();});
+    connect(btn_accept,&QPushButton::clicked,this,&DialogTransfer::slots_transfer_money);
 
 
 }
@@ -67,7 +72,7 @@ void DialogTransfer::init_data()
         return ;
     }
     query.next();
-    QString idcard=query.value(0).toString();
+    idcard=query.value(0).toString();
     tmp="SELECT name,onecard FROM familiar WHERE idcard='%1' ";
     if(!query.exec(tmp.arg(idcard))){
         qDebug()<<DEBUG_PRE<<query.lastError();
@@ -83,6 +88,20 @@ void DialogTransfer::init_data()
 
 }
 
+QPair<bool, QString> DialogTransfer::store_familiar(QString name, QString ocd)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        return {false,db.lastError().text()};
+    }
+    QString tmp="INSERT INTO familiar(onecard,name,idcard) VALUES('%1','%2','%3')";
+    QSqlQuery query(db);
+    if(!query.exec(tmp.arg(ocd).arg(name).arg(idcard))){
+        return {false,query.lastError().text()};
+    }
+
+}
+
 void DialogTransfer::slots_name_changed(QString name)
 {
     if(!map.contains(name)){
@@ -91,6 +110,7 @@ void DialogTransfer::slots_name_changed(QString name)
         return ;
     }else{
     cb_onecard->addItems(map.values(cb_name->currentText()));
+    new_name=false;
     }
 
 }
@@ -99,8 +119,24 @@ void DialogTransfer::slots_onecard_changed(QString ocd)
 {
     if(new_name){
 
-    }else{
+        map.insert(cb_name->currentText(),ocd);
+        auto ret=store_familiar(cb_name->currentText(),ocd);
+        if(!ret.first){
+            QMessageBox::warning(this,tr("Error"),tr("Store Familiar Failed:")+ret.second);
+        }
 
+
+    }else{
+    }
+
+}
+
+void DialogTransfer::slots_transfer_money()
+{
+    auto ret=ctrl.withdraw(saccount.toInt(),le_count->text().toInt(),{"Transfer","Transfer to "+cb_name->currentText()+cb_onecard->currentText()});
+    if(!ret.first){
+        QMessageBox::warning(this,tr("Error"),ret.second);
+        return ;
     }
 
 }
