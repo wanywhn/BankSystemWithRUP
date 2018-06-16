@@ -7,6 +7,8 @@
 #include <QModelIndexList>
 #include <QMessageBox>
 
+#include "dialoganaly.h"
+#include "dialogpeople.h"
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
 #define DEBUG_PRE __FILE__ "WidgetOnlineBank:" TOSTRING(__LINE__)
@@ -71,6 +73,13 @@ void WidgetOnlineBank::slots_transfer()
 
 void WidgetOnlineBank::show_analy()
 {
+    DialogAnaly	dia(ctrl.get_idcard());
+    if(dia.exec()==QDialog::Accepted){
+        qDebug()<<DEBUG_PRE<<"analy accepted";
+    }else{
+        qDebug()<<DEBUG_PRE<<"analy rejected";
+
+    }
 
 }
 
@@ -86,6 +95,12 @@ void WidgetOnlineBank::slots_loss_report()
 
 void WidgetOnlineBank::slots_people()
 {
+    DIalogPeople dia(ctrl.get_idcard());
+    if(dia.exec()==QDialog::Accepted){
+        qDebug()<<DEBUG_PRE<<"ACCEPTED";
+        return ;
+    }
+        qDebug()<<DEBUG_PRE<<"REJECTED";
 
 }
 

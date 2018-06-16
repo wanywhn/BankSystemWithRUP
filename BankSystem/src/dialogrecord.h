@@ -42,6 +42,7 @@ private:
 private slots:
     void slots_select_date();
     void slots_refersh();
+    void slots_categ_changed(const QString &str);
 
 };
 

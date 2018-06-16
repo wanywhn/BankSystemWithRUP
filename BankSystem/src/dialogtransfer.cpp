@@ -83,7 +83,9 @@ void DialogTransfer::init_data()
     while(query.next()){
         map.insert(query.value(0).toString(),query.value(1).toString());
     }
-    cb_name->addItems(map.keys());
+    auto keys=map.keys();
+    keys.removeDuplicates();
+    cb_name->addItems(keys);
     cb_onecard->addItems(map.values(cb_name->currentText()));
 
 
@@ -114,8 +116,10 @@ void DialogTransfer::slots_name_changed(QString name)
 
         return ;
     }else{
+        cb_onecard->clear();
     cb_onecard->addItems(map.values(cb_name->currentText()));
     new_name=false;
+    return ;
     }
 
 }
@@ -124,7 +128,7 @@ void DialogTransfer::slots_onecard_changed(QString ocd)
 {
 //    if(new_name){
 
-    if(-1==cb_onecard->findText(ocd)){
+    if(-1!=cb_onecard->findText(ocd)||ocd==""||ocd.length()!=10){
         return;
     }
         map.insert(cb_name->currentText(),ocd);

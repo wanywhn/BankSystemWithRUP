@@ -40,7 +40,10 @@ SOURCES += \
     src/widgetcreditcard.cpp \
     src/widgetonlinebank.cpp \
     src/dialogtransfer.cpp \
-    src/dialogrecord.cpp
+    src/dialogrecord.cpp \
+    src/dialogpeople.cpp \
+    src/dialoganaly.cpp \
+    src/analy/pieview.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -59,7 +62,10 @@ HEADERS += \
     src/widgetonlinebank.h \
     src/common_const.h \
     src/dialogtransfer.h \
-    src/dialogrecord.h
+    src/dialogrecord.h \
+    src/dialogpeople.h \
+    src/dialoganaly.h \
+    src/analy/pieview.h
 
 FORMS += \
         src/mainwindow.ui
