@@ -4,26 +4,39 @@
 #include <QDialog>
 #include <QHBoxLayout>
 
+#include <QMainWindow>
 
+QT_BEGIN_NAMESPACE
+class QAbstractItemModel;
+class QAbstractItemView;
+class QItemSelectionModel;
+QT_END_NAMESPACE
 
-class DialogAnaly : public QDialog
+class DialogAnaly: public QDialog
 {
     Q_OBJECT
+
 public:
     DialogAnaly(QString icd);
 
-
-    void init_ui();
-    void init_res();
-    void init_data();
+private slots:
 
 private:
+    void setupModel();
+    void setupViews();
+    void loadFile(const QString icd);
+
+    QAbstractItemModel *model;
+    QAbstractItemView *pieChart;
+    QItemSelectionModel *selectionModel;
+
     QString id_card;
-
-    QHBoxLayout	*layout_main;
-
-
-
 };
+
+
+
+
+
+
 
 #endif // DIALOGANALY_H

@@ -2,6 +2,8 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
+#include <QZXing>
+
 WidgetCreditCard::WidgetCreditCard(QString idc, QWidget *parent) : QWidget(parent),ctrl(idc)
 {
     init_res();
@@ -15,17 +17,21 @@ void WidgetCreditCard::init_ui()
     layout_main->addWidget(le_creditcard_id);
     layout_main->addWidget(btn_pay);
     layout_main->addWidget(btn_enchashment);
+    layout_main->addWidget(lb_img);
+
 
 
     connect(btn_pay,&QPushButton::clicked,this,[this](){
         auto id=le_creditcard_id->text();
         //TODO shaoeriweima
-        auto ret=ctrl.pay(id,0,"");
-        if(ret.first){
-            QMessageBox::information(this,tr("Succcess"),tr("Pay Success"));
-        }else{
-            QMessageBox::warning(this,tr("Error"),ret.second);
-        }
+//        auto ret=ctrl.pay(id,0,"","");
+//        if(ret.first){
+//            QMessageBox::information(this,tr("Succcess"),tr("Pay Success"));
+//        }else{
+//            QMessageBox::warning(this,tr("Error"),ret.second);
+//        }
+        QImage qr=QZXing::encodeData(id);
+        lb_img->setPixmap(QPixmap::fromImage(qr));
     });
     connect(btn_enchashment,&QPushButton::clicked,this,[this](){
         auto id=le_creditcard_id->text();
@@ -52,6 +58,7 @@ void WidgetCreditCard::init_res()
     this->le_creditcard_id=new QLineEdit;
     this->btn_pay=new QPushButton(tr("Pay"));
     this->btn_enchashment=new QPushButton(tr("enchashment"));
+    lb_img=new QLabel;
 
 
 }

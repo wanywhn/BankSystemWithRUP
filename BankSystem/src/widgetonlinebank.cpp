@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QModelIndexList>
 #include <QMessageBox>
+#include <QInputDialog>
 
 #include "dialoganaly.h"
 #include "dialogpeople.h"
@@ -30,6 +31,7 @@ WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(par
     connect(cb_onecard,&QComboBox::currentTextChanged,this,[this](QString str){
         sqlmodel->setQuery(str_query.arg(str),DataBaseUtils::getInstance());
     });
+    connect(btn_open_creditcard,&QPushButton::clicked,this,&WidgetOnlineBank::slots_open_creditcard);
 }
 
 void WidgetOnlineBank::show_record()
@@ -104,6 +106,24 @@ void WidgetOnlineBank::slots_people()
 
 }
 
+void WidgetOnlineBank::slots_open_creditcard()
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<db.lastError();
+        return ;
+    }
+    QSqlQuery query(db);
+
+    QString passwd=QInputDialog::getText(this,tr("Please Input"),tr("Please Input Passwd"));
+    QString tmp="INSERT INTO credit_card(credit,passwd,cid) VALUES('%1','%2','%3')";
+    if(!query.exec(tmp.arg(qrand()%10000).arg(passwd).arg(ctrl.get_idcard()))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return;
+    }
+    QMessageBox::information(this,tr("Success"),tr("You Have Open Credit Card"));
+}
+
 void WidgetOnlineBank::init_res()
 {
 
@@ -120,6 +140,7 @@ void WidgetOnlineBank::init_res()
     btn_record=new QPushButton(tr("Recode"));
     btn_transfer=new QPushButton(tr("Transfer"));
     btn_people=new QPushButton(tr("People Manage"));
+    btn_open_creditcard=new QPushButton(tr("Open Credit Card"));
 
     sqlmodel=new QSqlQueryModel;
 
@@ -141,6 +162,7 @@ void WidgetOnlineBank::init_ui()
     layout_rv->addWidget(btn_record);
     layout_rv->addWidget(btn_transfer);
     layout_rv->addWidget(btn_people);
+    layout_rv->addWidget(btn_open_creditcard);
 
 }
 

@@ -13,9 +13,12 @@ static bool init_db(){
     QSqlQuery query(db);
                 //TODO init table
 
+                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(20) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
+                           " passwd TEXT )");
                 //信用卡
-                query.exec("CREATE TABLE IF NOT EXISTS credit_card (id INTEGER PRIMARY KEY,"
-                           "interest_free_money FLOAT,credit FLOAT,used FLOAT,paid FLOAT,passwd TEXT)");
+                query.exec("CREATE TABLE IF NOT EXISTS credit_card (id INTEGER PRIMARY KEY DEFAULT 2000000000,"
+                           "interest_free_money FLOAT DEFAULT 0,credit FLOAT,used FLOAT DEFAULT 0,paid FLOAT DEFAULT 0,passwd TEXT,cid VARCHAR(20),"
+                           "FOREIGN KEY (cid) REFERENCES id_card(iid) )");
                 //			  所有可用的额度             总额度       已使用      已还款（不准备做提前还款）
 
                 //消费累计
@@ -39,8 +42,6 @@ static bool init_db(){
                 query.exec("CREATE TABLE IF NOT EXISTS sys_acc_tb (id INTEGER PRIMARY KEY ,"
                            "passwd TEXT,admin boolean DEFAULT '0') ");
 
-                query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(20) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
-                           " passwd TEXT )");
 
                 //消费与支取记录
                 query.exec("CREATE TABLE IF NOT EXISTS consume_log (id INTEGER PRIMARY KEY AUTO_INCREMENT,"

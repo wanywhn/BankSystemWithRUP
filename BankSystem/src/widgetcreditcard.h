@@ -2,6 +2,7 @@
 #define WIDGETCREDITCARD_H
 
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QWidget>
@@ -17,6 +18,7 @@ signals:
 
 public slots:
 
+    //TODO change layout ,display credit etc.
 
 private:
     credit_crtl ctrl;
@@ -24,7 +26,8 @@ private:
     QVBoxLayout *layout_main;
     QLineEdit	*le_creditcard_id;
     QPushButton *btn_pay;
-    QPushButton *btn_enchashment;
+    QPushButton	*btn_enchashment;
+    QLabel		*lb_img;
 
 private:
     void init_ui();

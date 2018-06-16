@@ -163,7 +163,7 @@ public:
 
 
 public:
-    QPair<bool,QString> pay(QString credit_id,float value,QString reason);
+    QPair<bool,QString> pay(QString credit_id,float value,QString reason,QString type);
     QPair<bool,QString> enchashmen(QString credit_id,QString passwd,float value);
 private:
     bool checkifexists(QString id);

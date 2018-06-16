@@ -478,7 +478,7 @@ credit_crtl::credit_crtl(QString id)
    id_card=id;
 }
 
-QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString reason)
+QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString reason, QString type)
 {
     if(credit_id.isEmpty()){
         return {false,QObject::tr("Please Input CreditCard ID")};
@@ -512,7 +512,7 @@ QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString re
         return {false,query.lastError().text()};
     }
     //UPDATE consume_log
-    one_card_account::log(reason,value,credit_id,id_card,"PAY");
+    one_card_account::log(reason,value,credit_id,id_card,type);
 //    tmp="INSERT INTO  consume_log(figure,reason,date,cid,cardid) VALUES ('%1','%2','%3','%4','%5')";
 //    if(!query.exec(tmp.arg(value).arg(reason).arg(QDate::currentDate().toString()).arg(credit_id).ar(id_card))){
 //        return {false,query.lastError().text()};

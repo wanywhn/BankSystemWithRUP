@@ -2,13 +2,18 @@
 
 #include <QHeaderView>
 #include <QSplitter>
+#include <QSqlQuery>
 #include <QStandardItemModel>
 #include <QTableView>
 
 #include "analy/pieview.h"
 #include "databaseutils.h"
 
+#include <QDebug>
+#include <QSqlResult>
+#include <QMap>
 
+#define DEBUG_PRE "DIALOG ANALY:"
 DialogAnaly::DialogAnaly(QString icd):id_card(icd)
 {
 
@@ -58,30 +63,37 @@ void DialogAnaly::setupViews()
 void DialogAnaly::loadFile(const QString icd)
 {
     auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<db.lastError();
+        return ;
+    }
+    QSqlQuery query(db);
+    QString tmp="SELECT figure,reason,date,cardid,type FROM consume_log WHERE cid='%1' ";
+    if(!query.exec(tmp.arg(icd))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return ;
+    }
 
-    QTextStream stream(&file);
-    QString line;
 
     model->removeRows(0, model->rowCount(QModelIndex()), QModelIndex());
 
     int row = 0;
-    do {
-        line = stream.readLine();
-        if (!line.isEmpty()) {
+    QMap<QString,float> map;
+    while (query.next()) {
+        map[query.value("type").toString()]+=query.value("figure").toFloat();
+    }
+    for(auto item:map.keys()){
             model->insertRows(row, 1, QModelIndex());
 
-            QStringList pieces = line.split(',', QString::SkipEmptyParts);
             model->setData(model->index(row, 0, QModelIndex()),
-                           pieces.value(0));
+                           item);
             model->setData(model->index(row, 1, QModelIndex()),
-                           pieces.value(1));
+                           map.value(item));
+            int c=row*256/map.size() ;
             model->setData(model->index(row, 0, QModelIndex()),
-                           QColor(pieces.value(2)), Qt::DecorationRole);
+                           QColor((128+c)%256,256-c,(64+c)%256), Qt::DecorationRole);
             row++;
         }
-    } while (!line.isEmpty());
+    }
 
-    file.close();
-    statusBar()->showMessage(tr("Loaded %1").arg(icd), 2000);
-}
 
