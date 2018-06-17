@@ -145,7 +145,7 @@ void DialogTransfer::slots_onecard_changed(QString ocd)
 
 void DialogTransfer::slots_transfer_money()
 {
-    auto ret=ctrl.withdraw(saccount.toInt(),le_count->text().toInt(),{"Transfer","Transfer to "+cb_name->currentText()+cb_onecard->currentText()});
+    auto ret=ctrl.withdraw(saccount.toInt(),le_count->text().toInt(),"Transfer","Transfer to "+cb_name->currentText()+cb_onecard->currentText());
     if(!ret.first){
         QMessageBox::warning(this,tr("Error"),ret.second);
         return ;

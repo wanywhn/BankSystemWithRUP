@@ -34,7 +34,7 @@ class one_card_control {
 
     QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, bool auto_continue,QString reason="DEPOSIT");
 
-    QPair<bool,QString> withdraw(int id,int count,QPair<QString,QString> type_info={"",""});
+    QPair<bool,QString> withdraw(int id,int count,QString reason,QString type);
 
     QPair<bool,QString> cancel_loss();
 

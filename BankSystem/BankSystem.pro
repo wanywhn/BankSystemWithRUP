@@ -44,7 +44,8 @@ SOURCES += \
     src/dialogrecord.cpp \
     src/dialogpeople.cpp \
     src/dialoganaly.cpp \
-    src/analy/pieview.cpp
+    src/analy/pieview.cpp \
+    src/dialogpaycreditcard.cpp
 
 HEADERS += \
        src/mainwindow.h \
@@ -66,7 +67,8 @@ HEADERS += \
     src/dialogrecord.h \
     src/dialogpeople.h \
     src/dialoganaly.h \
-    src/analy/pieview.h
+    src/analy/pieview.h \
+    src/dialogpaycreditcard.h
 
 FORMS += \
         src/mainwindow.ui

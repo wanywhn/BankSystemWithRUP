@@ -9,6 +9,7 @@
 #include <QInputDialog>
 
 #include "dialoganaly.h"
+#include "dialogpaycreditcard.h"
 #include "dialogpeople.h"
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
@@ -32,6 +33,7 @@ WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(par
         sqlmodel->setQuery(str_query.arg(str),DataBaseUtils::getInstance());
     });
     connect(btn_open_creditcard,&QPushButton::clicked,this,&WidgetOnlineBank::slots_open_creditcard);
+    connect(btn_pay_creditcard,&QPushButton::clicked,this,&WidgetOnlineBank::slots_pay_creditcard);
 }
 
 void WidgetOnlineBank::show_record()
@@ -116,12 +118,26 @@ void WidgetOnlineBank::slots_open_creditcard()
     QSqlQuery query(db);
 
     QString passwd=QInputDialog::getText(this,tr("Please Input"),tr("Please Input Passwd"));
-    QString tmp="INSERT INTO credit_card(credit,passwd,cid) VALUES('%1','%2','%3')";
-    if(!query.exec(tmp.arg(qrand()%10000).arg(passwd).arg(ctrl.get_idcard()))){
+    QString tmp="INSERT INTO credit_card(credit,passwd,cid,interest_free_money) VALUES('%1','%2','%3','%4')";
+    auto va=qrand()%10000;
+    if(!query.exec(tmp.arg(va).arg(passwd).arg(ctrl.get_idcard()).arg(va))){
         qDebug()<<DEBUG_PRE<<query.lastError();
         return;
     }
     QMessageBox::information(this,tr("Success"),tr("You Have Open Credit Card"));
+}
+
+void WidgetOnlineBank::slots_pay_creditcard()
+{
+    auto model=tv_lview->selectionModel();
+    auto row=model->selectedRows();
+    DialogPayCreditCard dia(ctrl.get_idcard(),row.at(0).data().toString(),cb_onecard->currentText());
+    if(dia.exec()==QDialog::Accepted){
+        qDebug()<<DEBUG_PRE<<"accept";
+    }else{
+        qDebug()<<DEBUG_PRE<<"REJECT";
+    }
+
 }
 
 void WidgetOnlineBank::init_res()
@@ -141,6 +157,7 @@ void WidgetOnlineBank::init_res()
     btn_transfer=new QPushButton(tr("Transfer"));
     btn_people=new QPushButton(tr("People Manage"));
     btn_open_creditcard=new QPushButton(tr("Open Credit Card"));
+    btn_pay_creditcard=new QPushButton(tr("Pay Credit Card"));
 
     sqlmodel=new QSqlQueryModel;
 
@@ -163,6 +180,7 @@ void WidgetOnlineBank::init_ui()
     layout_rv->addWidget(btn_transfer);
     layout_rv->addWidget(btn_people);
     layout_rv->addWidget(btn_open_creditcard);
+    layout_rv->addWidget(btn_pay_creditcard);
 
 }
 

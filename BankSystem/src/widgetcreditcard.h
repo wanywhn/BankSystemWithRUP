@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QWidget>
 #include "gen/BankSystem.h"
+#include <QFormLayout>
 
 class WidgetCreditCard : public QWidget
 {
@@ -27,7 +28,15 @@ private:
     QLineEdit	*le_creditcard_id;
     QPushButton *btn_pay;
     QPushButton	*btn_enchashment;
+    QPushButton *btn_showmsg;
     QLabel		*lb_img;
+
+    QFormLayout	*layout_fl;
+    QLabel *text1;
+    QLabel *text2;
+    QLabel *text3;
+
+
 
 private:
     void init_ui();

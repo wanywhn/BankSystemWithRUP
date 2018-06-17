@@ -84,7 +84,7 @@ public:
 
     void  set_online_bank_status(bool flag,QString name="",QString passwd="");
 
-    QPair<bool,QString> withdrawal_money(int id,int count,QPair<QString,QString> type={"",""});
+    QPair<bool,QString> withdrawal_money(int id,int count,QString reason,QString type);
 
     /**
      * @brief log  记录某人（cid）在某账户（id）上花费的金额及理由
@@ -163,8 +163,23 @@ public:
 
 
 public:
+    /**
+     * @brief pay pay money
+     * @param credit_id
+     * @param value
+     * @param reason
+     * @param type
+     * @return
+     */
     QPair<bool,QString> pay(QString credit_id,float value,QString reason,QString type);
     QPair<bool,QString> enchashmen(QString credit_id,QString passwd,float value);
+    float GetTotalLimit(QString credit_id);
+    float GetnowLimit(QString credit_id);
+    float Getminvalue(QString credit_id);
+    QStringList getCreditCards(QString idcard);
+
+    bool pay_own(QString credi_id,float value);
+
 private:
     bool checkifexists(QString id);
     bool checkifenough(float value,QString credit_id);
