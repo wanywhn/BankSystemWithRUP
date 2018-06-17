@@ -28,6 +28,7 @@ public slots:
     void slots_loss_report();
     void slots_people();
     void slots_open_creditcard();
+    void slots_pay_creditcard();
 
 
 private:
@@ -47,6 +48,8 @@ private:
 
     QPushButton	*btn_change_passwd;
     QPushButton	*btn_loss_report;
+
+    QPushButton	*btn_pay_creditcard;
 
 
     QSqlQueryModel	*sqlmodel;

@@ -56,7 +56,7 @@ void DepositWidget::init_ui()
       auto tmp=QInputDialog::getInt(this,tr("Input"),tr("Please Input count"));
       int id=rows.at(0).data().toInt();
       qDebug()<<DEBUG_PRE<<id;
-      auto ret=ctrl.withdraw(id,tmp,{"WithDraw","WithDraw From qiantai"});
+      auto ret=ctrl.withdraw(id,tmp,"WithDraw From qiantai","WITHDRAW");
 
       if(ret.first==true){
           QMessageBox::information(this,tr("Success"),tr("withdraw Success"));

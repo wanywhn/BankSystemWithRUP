@@ -90,10 +90,10 @@ QPair<bool, QString> one_card_control::deposit(int mk, int type, int benjin, int
 
 }
 
-QPair<bool, QString> one_card_control::withdraw(int id, int count, QPair<QString, QString> type_info)
+QPair<bool, QString> one_card_control::withdraw(int id, int count, QString reason, QString type)
 {
     one_card_account tmp(onecard);
-    return tmp.withdrawal_money(id,count,type_info);
+    return tmp.withdrawal_money(id,count,reason,type);
 
 }
 QPair<bool, QString> one_card_control::cancel_loss() {

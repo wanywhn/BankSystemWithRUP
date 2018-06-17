@@ -103,7 +103,7 @@ void one_card_account::set_online_bank_status(bool flag, QString name, QString p
 
 }
 
-QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair<QString, QString> type)
+QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QString reason, QString type)
 {
 
     auto db=DataBaseUtils::getInstance();
@@ -136,14 +136,14 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair
                    return {false,query.lastError().text()};
                }
 
-               log(type.second,count,one_card,id_card,type.first);
+               log(reason,count,one_card,id_card,type);
                return {true,""};
             }else if(benjin>count){
                tmp="UPDATE saving_subaccount SET benjin='%1' WHERE id='%2'";
                stmt=tmp.arg(benjin-count).arg(id);
                query.exec(stmt);
 
-               log(type.second,count,one_card,id_card,type.first);
+               log(reason,count,one_card,id_card,type);
                return {true,""};
             }else{
                 return {false,"Your Account don't have such money"};
@@ -570,6 +570,101 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd, 
 
 }
 
+float credit_crtl::GetTotalLimit(QString credit_id)
+{   if(!checkifexists(credit_id)){
+        return -1;
+    }
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<"Open DB ERROR";
+    }
+     QSqlQuery query(db);
+     QString tmp="SELECT credit FROM credit_card WHERE id='%1'";
+     if(!query.exec(tmp.arg(credit_id))){
+         return -1;
+     }
+     query.next();
+     auto curr_credit=query.value(0).toFloat();
+     return curr_credit;
+
+}
+
+float credit_crtl::GetnowLimit(QString credit_id)
+{
+    if(!checkifexists(credit_id)){
+           return -1;
+       }
+       auto db=DataBaseUtils::getInstance();
+       if(!db.open()){
+           qDebug()<<DEBUG_PRE<<"Open DB ERROR";
+       }
+        QSqlQuery query(db);
+        QString tmp="SELECT interest_free_money  FROM credit_card WHERE id='%1'";
+        if(!query.exec(tmp.arg(credit_id))){
+            return -1;
+        }
+        query.next();
+        return query.value(0).toFloat();
+}
+
+float credit_crtl::Getminvalue(QString credit_id)
+{
+    if(!checkifexists(credit_id)){
+           return -1;
+       }
+       auto db=DataBaseUtils::getInstance();
+       if(!db.open()){
+           qDebug()<<DEBUG_PRE<<"Open DB ERROR";
+       }
+        QSqlQuery query(db);
+        QString tmp="SELECT interest_free_money  FROM credit_card WHERE id='%1'";  //weigaichengxianyoudezuidihuankuan
+        if(!query.exec(tmp.arg(credit_id))){
+            return -1;
+        }
+        query.next();
+        auto curr_credit=query.value(0).toFloat();
+        return curr_credit;
+}
+
+QStringList credit_crtl::getCreditCards(QString idcard)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<db.lastError();
+        return {};
+    }
+    QSqlQuery query(db);
+    QString tmp="SELECT id FROM credit_card WHERE cid='%1'";
+    if(!query.exec(tmp.arg(idcard))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return {};
+    }
+    QStringList list;
+    while(query.next()){
+        list<<query.value(0).toString();
+    }
+    return list;
+    
+}
+
+bool credit_crtl::pay_own(QString credi_id, float value)
+{
+    auto db=DataBaseUtils::getInstance();
+    if(!db.open()){
+        qDebug()<<DEBUG_PRE<<db.lastError();
+        return false;
+    }
+    QSqlQuery query(db);
+    QString tmp="UPDATE credit_card SET interest_free_money=interest_free_money+ '%1',used=used-'%1',paid=paid+'%1' WHERE id='%2'";
+    if(!query.exec(tmp.arg(value).arg(credi_id))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return false;
+    }
+    return true;
+
+
+}
+
 bool credit_crtl::checkifexists(QString id)
 {
     auto db=DataBaseUtils::getInstance();
@@ -601,6 +696,7 @@ bool credit_crtl::checkifenough(float value, QString credit_id)
     if(!query.exec(tmp.arg(credit_id))){
         return false;
     }
+    query.next();
     auto curr_credit=query.value(0).toFloat();
     if((value-curr_credit)<0){
         return false;
