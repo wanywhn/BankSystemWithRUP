@@ -124,7 +124,8 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count, QPair
             }
 
             auto benjin=query.value(0).toDouble();
-            if(abs(benjin-count)<0.001){
+            //TODO
+            if( (benjin-count)<0.001){
                tmp="DELETE FROM card_saving WHERE cid='%1' AND sid='%2'" ;
                stmt=tmp.arg(one_card).arg(id);
                if(!query.exec(stmt)){
