@@ -1,0 +1,79 @@
+format 218
+
+classinstance 128110 class_ref 141934 // bank_assistant
+  name ""   xyz 105 4 2000 life_line_z 2000
+classinstance 128238 class_ref 128238 // one_card_account
+  name ""   xyz 384 4 2000 life_line_z 2000
+classinstance 129134 class_ref 128366 // saving_subaccount
+  name ""   xyz 528 4 2000 life_line_z 2000
+classinstance 129646 class_ref 148590 // BankBoundry
+  name ""   xyz 283 4 2000 life_line_z 2000
+classinstance 129774 class_ref 149102 // one_card_account_db
+  name ""   xyz 660 4 2000 life_line_z 2000
+durationcanvas 131054 classinstance_ref 128110 // :bank_assistant
+  xyzwh 143 68 2010 11 40
+end
+durationcanvas 131182 classinstance_ref 129646 // :BankBoundry
+  xyzwh 317 68 2010 11 25
+end
+durationcanvas 131438 classinstance_ref 128110 // :bank_assistant
+  xyzwh 143 199 2010 11 40
+end
+durationcanvas 131566 classinstance_ref 129646 // :BankBoundry
+  xyzwh 317 199 2010 11 25
+end
+durationcanvas 132590 classinstance_ref 129646 // :BankBoundry
+  xyzwh 317 290 2010 11 40
+end
+durationcanvas 132718 classinstance_ref 128238 // :one_card_account
+  xyzwh 431 279 2010 11 74
+end
+durationcanvas 132974 classinstance_ref 129134 // :saving_subaccount
+  xyzwh 577 278 2010 11 44
+end
+durationcanvas 133230 classinstance_ref 129774 // :one_card_account_db
+  xyzwh 721 316 2010 11 34
+end
+durationcanvas 133486 classinstance_ref 128110 // :bank_assistant
+  xyzwh 143 250 2010 11 40
+end
+durationcanvas 133614 classinstance_ref 129646 // :BankBoundry
+  xyzwh 317 250 2010 11 25
+end
+msg 131310 synchronous
+  from durationcanvas_ref 131054
+  to durationcanvas_ref 131182
+  yz 68 2015 explicitmsg "enter_subaccount"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 186 50
+msg 131694 synchronous
+  from durationcanvas_ref 131438
+  to durationcanvas_ref 131566
+  yz 199 2015 explicitmsg "enter_money"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 200 181
+msg 132846 synchronous
+  from durationcanvas_ref 132590
+  to durationcanvas_ref 132718
+  yz 312 2015 msg operation_ref 157678 // "withdrawal_money()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 323 294
+msg 133102 synchronous
+  from durationcanvas_ref 132718
+  to durationcanvas_ref 132974
+  yz 309 2015 msg operation_ref 150894 // "deposit()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 490 291
+msg 133358 synchronous
+  from durationcanvas_ref 132718
+  to durationcanvas_ref 133230
+  yz 337 2015 msg operation_ref 143214 // "update()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 561 319
+msg 133742 synchronous
+  from durationcanvas_ref 133486
+  to durationcanvas_ref 133614
+  yz 250 3005 explicitmsg "submit"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 218 232
+end

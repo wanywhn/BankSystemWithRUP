@@ -1,0 +1,806 @@
+format 218
+"bouml"
+  revision 14
+  modified_by 112 "JiaQingtong"
+  cpp_root_dir "/home/tender/Data/Workplace/git/BankSystemWithRUP/Model/bouml/src/"
+
+
+  
+  // class settings
+  default_attribute_visibility private default_relation_visibility private default_operation_visibility public
+  
+  classdiagramsettings draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no hide_ports no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes gradient none show_stereotype_properties no end
+  
+  usecasediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes gradient none show_stereotype_properties no end
+  
+  sequencediagramsettings show_full_operations_definition no show_class_of_operation no write_horizontally yes instances_drawing_mode natural drawing_language uml draw_all_relations yes shadow yes gradient none show_stereotype_properties no show_class_context_mode no show_msg_context_mode no end
+  
+  collaborationdiagramsettings show_full_operations_definition no show_class_of_operation no show_hierarchical_rank no write_horizontally yes instances_drawing_mode natural drawing_language uml package_name_in_tab no show_class_pack_context_mode no show_msg_context_mode no draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectdiagramsettings write_horizontally yes package_name_in_tab no show_class_pack_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  componentdiagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  deploymentdiagramsettings package_name_in_tab no show_context_mode no write_horizontally yes auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  statediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes write_label_horizontally yes show_trans_definition no draw_all_relations yes shadow yes gradient none
+   show_activities yes region_horizontally yes drawing_language uml show_stereotype_properties no end
+  
+  activitydiagramsettings package_name_in_tab no show_context_mode no show_opaque_action_definition no auto_label_position yes write_label_horizontally no draw_all_relations yes shadow yes gradient none
+   show_infonote yes drawing_language uml show_stereotype_properties no end
+  
+  class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white generalization_color black 
+  dpi 96
+  font_size 12
+  diagram_format A4
+
+  image_root_dir ""
+
+
+  mark_for_import
+  
+  ncouples 1
+  key "html dir" value "/tmp/"
+  usecaseview 128239 "online bank"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    objectdiagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 128239 "online bank_uc"
+      usecasediagramsettings end
+      size A4
+    end
+
+    usecase 128111 "open_one_online_bank"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 128367 "open_one_online_bank"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 128239 "inquire_onecard_information"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128239
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+
+      sequencediagram 128751 "inquire_onecard"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 128367 "inquire_allcards_information   "
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128111
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+
+      sequencediagram 135791 "inquire_all_card"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 128495 "transfer_money"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 135919 "transfer_money"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 128751
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+    end
+
+    usecase 128623 "change_password"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 136047 "change_passwd"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 128367
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+    end
+
+    usecase 128751 "analyse_economy"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 136175 "analyse_economy"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 128623
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+    end
+
+    usecase 128879 "report _loss"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 136303 "report_loss"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 128495
+	-_->
+	  stereotype "include"
+	  on usecase_ref 129007 // login_
+      end
+    end
+
+    usecase 129007 "login_"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+  end
+
+  usecaseview 128238 "UseCaseView"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    objectdiagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 128110 "depost_uc"
+      usecasediagramsettings end
+      size A4
+    end
+
+    class 128110 "kehu"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128110 // <association>
+	relation 128110 ----
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 128110 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 128238 // <association>
+      end
+    end
+
+    class 141934 "bank_assistant"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    usecase 128110 "open_one_card_system"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 141294 "open_one_card_system"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 134638 "open_online_bank_system"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128878
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+
+      sequencediagram 149102 "open_online_bank_system"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 134766 "close_account"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 129006
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+
+      sequencediagram 149230 "close_account"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 134894 "change_passwd"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128622
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+
+      sequencediagram 149358 "change_passwd"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 135022 "deposit"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      associated_diagram usecasediagram_ref 128110 // depost_uc
+      sequencediagram 141422 "deposit"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 128110
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+    end
+
+    usecase 135150 "transfer_account"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128750
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+
+      sequencediagram 149486 "transfer_account"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 135278 "withdrawal"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 141678 "withdrawal"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 135534
+	-_->
+	  stereotype "include"
+	  on usecase_ref 135534 // login
+      end
+    end
+
+    usecase 135406 "loss_report"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 128238
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 135790 // reapply_one_card
+      end
+
+      simplerelation 128366
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 135662 // cancel_loss_report
+      end
+
+      sequencediagram 156014 "loss_report"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 135534 "login"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 135662 "cancel_loss_report"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 156142 "cancel_loss_report"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 135790 "reapply_one_card"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 156270 "reapply_one_card"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+  end
+
+  deploymentview 128110 "chuxu_deployment"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    deploymentdiagram 134766 "d"
+      deploymentdiagramsettings
+       end
+      size A4
+    end
+
+    artifact 128110 "BankSystem"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 134894 // saving_info
+	class_ref 128366 // saving_subaccount
+	class_ref 135278 // dinghuo_liangbian
+	class_ref 135150 // fixed_deposit
+	class_ref 135022 // current_saving
+	class_ref 128110 // kehu
+	class_ref 128238 // one_card_account
+	class_ref 141806 // interest_table
+      end
+    end
+
+    artifact 134638 "db_utils"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 148974 // DB
+	class_ref 149102 // one_card_account_db
+      end
+    end
+
+    artifact 134766 "Application_Layer"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 148718 // one_card_control
+      end
+    end
+
+    artifact 134894 "Presentation_Layer"
+      stereotype "source"
+      cpp_h "#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}"
+      associated_elems
+	class_ref 148590 // BankBoundry
+      end
+    end
+  end
+
+  classview 134638 "class_diagram"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 128238 "chuxu_yewu"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+  package_ref 128110 // Presistence
+
+  package_ref 128238 // Application
+
+  package_ref 128366 // Presentation
+
+  componentview 128110 "LogicalView"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    componentdiagram 148206 "SystemArch"
+      componentdiagramsettings draw_all_relations no
+       end
+      size A4
+    end
+
+    component 128110 "Qt"
+    end
+
+    component 128238 "MySQL"
+    end
+  end
+end

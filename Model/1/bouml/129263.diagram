@@ -1,0 +1,13 @@
+format 218
+
+classinstance 128111 class_ref 128110 // kehu
+  name ""   xyz 54 23 2000 life_line_z 2000
+classinstance 128239 class_ref 128367 // online_bank
+  name ""   xyz 664 11 2000 life_line_z 2000
+classinstance 128367 class_ref 128495 // ;online_bank
+  name ""   xyz 501 7 2000 life_line_z 2000
+classinstance 128623 class_ref 128239 // online_bank_control
+  name ""   xyz 310 15 2000 life_line_z 2000
+classinstance 128751 class_ref 128623 // online_bank_boundary
+  name ""   xyz 110 14 2000 life_line_z 2000
+end

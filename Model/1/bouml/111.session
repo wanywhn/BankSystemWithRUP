@@ -1,0 +1,62 @@
+window_sizes 1366 740 285 1075 593 78
+cleanlooks_style
+diagrams
+  componentdiagram_ref 148206 // SystemArch
+    771 447 100 A4 0 0
+  classdiagram_ref 148718 // Main
+    154 145 100 A4 0 0
+  usecasediagram_ref 128110 // depost_uc
+    154 145 100 A4 0 0
+  sequencediagram_ref 141294 // open_one_card_system
+    610 517 100 A4 396 0
+  sequencediagram_ref 128367 // open_one_online_bank
+    559 446 100 A4 48 0
+  sequencediagram_ref 149102 // open_online_bank_system
+    154 145 100 A4 0 0
+  usecasediagram_ref 128239 // online bank_uc
+    860 474 100 A4 0 0
+  sequencediagram_ref 149230 // close_account
+    860 474 100 A4 0 0
+  sequencediagram_ref 149358 // change_passwd
+    154 145 100 A4 0 0
+  sequencediagram_ref 128751 // inquire_onecard
+    1075 593 100 A4 0 0
+  sequencediagram_ref 135791 // inquire_all_card
+    154 145 100 A4 0 0
+  sequencediagram_ref 135919 // transfer_money
+    860 474 100 A4 24 0
+  sequencediagram_ref 136047 // change_passwd
+    860 474 100 A4 0 0
+  active  sequencediagram_ref 136303 // report_loss
+    860 474 100 A4 0 0
+end
+show_stereotypes
+selected sequencediagram_ref 136303 // report_loss
+open
+  usecase_ref 128111 // open_one_online_bank
+  usecase_ref 128239 // inquire_onecard_information
+  usecase_ref 128367 // inquire_allcards_information   
+  usecase_ref 128495 // transfer_money
+  usecase_ref 128623 // change_password
+  sequencediagram_ref 136175 // analyse_economy
+  usecase_ref 128879 // report _loss
+  class_ref 128110 // kehu
+  class_ref 141934 // bank_assistant
+  usecase_ref 128110 // open_one_card_system
+  usecase_ref 134638 // open_online_bank_system
+  usecase_ref 134766 // close_account
+  usecase_ref 134894 // change_passwd
+  usecase_ref 135022 // deposit
+  usecase_ref 135150 // transfer_account
+  usecase_ref 135278 // withdrawal
+  usecase_ref 135406 // loss_report
+  usecase_ref 135662 // cancel_loss_report
+  usecase_ref 135790 // reapply_one_card
+  classview_ref 134638 // class_diagram
+  class_ref 128238 // one_card_account
+  class_ref 128367 // online_bank
+  class_ref 148718 // one_card_control
+  class_ref 128239 // online_bank_control
+  classview_ref 141166 // Realizations
+end
+end

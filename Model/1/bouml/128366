@@ -1,0 +1,122 @@
+format 218
+"Presentation" // Presentation
+  revision 2
+  modified_by 111 "baobao"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  simplerelation 142446
+    -_->
+      on component_ref 128238 // MySQL
+  end
+
+  simplerelation 142574
+    -_->
+      on component_ref 128110 // Qt
+  end
+
+  classview 141166 "Realizations"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 148718 "Main"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 148590 "BankBoundry"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 128111 "fgh"
+      visibility package stereotype "control"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 128623 "online_bank_boundary"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  simplerelation 142702
+    -_->
+      on component_ref 128110 // Qt
+  end
+
+  simplerelation 142830
+    -_->
+      on 
+      package_ref 128238 // Application
+  end
+end
