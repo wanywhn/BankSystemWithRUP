@@ -2,6 +2,7 @@
 #define DIALOGRECORD_H
 
 #include <QComboBox>
+#include <QDateEdit>
 #include <QDialog>
 #include <QFormLayout>
 #include <QHBoxLayout>
@@ -18,7 +19,7 @@ public:
     virtual ~DialogRecord(){}
 
 private:
-    QString one_card;
+    QString id_card;
     QStringList	type_list;
 
 
@@ -26,9 +27,7 @@ private:
 
     QFormLayout	*layout_fl;
 
-    QPushButton	*btn_select_date;
     QComboBox	*cb_categ;
-    QPushButton	*btn_refersh;
     QTableView	*tv_sqlview;
     QSqlQueryModel	*sqlmodel;
 
@@ -40,8 +39,6 @@ private:
 
 
 private slots:
-    void slots_select_date();
-    void slots_refersh();
     void slots_categ_changed(const QString &str);
 
 };

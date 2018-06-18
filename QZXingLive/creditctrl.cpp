@@ -79,7 +79,7 @@ QPair<bool, QString> credit_crtl::pay(QString credit_id, float value, QString re
     }
     //UPDATE credit_card
     QString
-    tmp="UPDATE credit_card SET interest_free_money=interest_free_money-%1,used=used+%2 WHERE id='%3' ";
+    tmp="UPDATE credit_card SET interest_free_money=interest_free_money-'%1',used=used+'%2' WHERE id='%3' ";
     if(!query.exec(tmp.arg(value).arg(value).arg(credit_id))){
         return {false,query.lastError().text()};
     }

@@ -54,9 +54,17 @@ void DepositWidget::init_ui()
           return ;
       }
       auto tmp=QInputDialog::getInt(this,tr("Input"),tr("Please Input count"));
+      auto idstr=rows.at(0).data().toString();
+      QPair<bool,QString> ret;
+      if(idstr.at(1)!="1"){
+          ret={false,"You Can only withdraw current deposit"};
+
+      }else{
       int id=rows.at(0).data().toInt();
       qDebug()<<DEBUG_PRE<<id;
-      auto ret=ctrl.withdraw(id,tmp,"WithDraw From qiantai","WITHDRAW");
+      ret=ctrl.withdraw(id,tmp,"WithDraw From qiantai","WITHDRAW");
+
+      }
 
       if(ret.first==true){
           QMessageBox::information(this,tr("Success"),tr("withdraw Success"));

@@ -22,7 +22,6 @@ void WidgetCreditCard::init_ui()
     layout_main->addLayout(layout_fl);
     layout_fl->addRow("credit limit",text1);
     layout_fl->addRow("remained limit",text2);
-    layout_fl->addRow("lowest payment",text3);
 
 
     connect(btn_pay,&QPushButton::clicked,this,[this](){
@@ -44,6 +43,7 @@ void WidgetCreditCard::init_ui()
         auto ret=ctrl.enchashmen(id,passwd,count);
         if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("Enchashment Success"));
+            btn_showmsg->clicked();
         }else{
             QMessageBox::warning(this,tr("Failed"),ret.second);
         }
@@ -75,7 +75,6 @@ void WidgetCreditCard::init_res()
     lb_img=new QLabel;
     text1=new QLabel;
     text2=new QLabel;
-    text3=new QLabel;
 
 
 }

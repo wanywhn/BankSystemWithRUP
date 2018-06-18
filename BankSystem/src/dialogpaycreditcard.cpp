@@ -74,6 +74,6 @@ void DialogPayCreditCard::init_data()
     cb_creditcard->clear();
     cb_creditcard->addItems(list);
     lb_least->setText(QString::number(cctrl.Getminvalue(cb_creditcard->currentText())));
-    lb_own->setText(QString::number(cctrl.Getminvalue(cb_creditcard->currentText())));
+    lb_own->setText(QString::number(cctrl.GetnowLimit(cb_creditcard->currentText())));
 
 }

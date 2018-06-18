@@ -38,7 +38,7 @@ WidgetOnlineBank::WidgetOnlineBank(online_ctrl &c, QWidget *parent) :QWidget(par
 
 void WidgetOnlineBank::show_record()
 {
-    DialogRecord dia(cb_onecard->currentText());
+    DialogRecord dia(ctrl.get_idcard());
     if(dia.exec()==QDialog::Accepted){
         qDebug()<<DEBUG_PRE<<"Accept";
         return ;
@@ -131,6 +131,10 @@ void WidgetOnlineBank::slots_pay_creditcard()
 {
     auto model=tv_lview->selectionModel();
     auto row=model->selectedRows();
+    if(row.count()==0){
+        QMessageBox::warning(this,tr("Error"),tr("You Shoule select a current deposit"));
+        return ;
+    }
     DialogPayCreditCard dia(ctrl.get_idcard(),row.at(0).data().toString(),cb_onecard->currentText());
     if(dia.exec()==QDialog::Accepted){
         qDebug()<<DEBUG_PRE<<"accept";

@@ -34,7 +34,6 @@ private:
     QFormLayout	*layout_fl;
     QLabel *text1;
     QLabel *text2;
-    QLabel *text3;
 
 
 

@@ -36,7 +36,7 @@ ApplicationWindow
 
         ComboBox{
             id:cb_cate
-            model: ["FOOD","CLOTHING","EDUCATION"]
+            model: ["FOOD","CLOTHING","EDUCATION","HOUSING","MACHINE","TRANSOPRT","OTHER"]
 
         }
         TextField{
@@ -55,11 +55,11 @@ ApplicationWindow
             text:"Back"
             onClicked: {
                 stackView.pop()
-                camera.start();
-            }
+            stackView.currentItem.camera_id.start();
         }
         }
 
+}
         function pay(){
             console.log(cb_cate.currentText)
             console.log(input_money.text)
@@ -69,14 +69,16 @@ ApplicationWindow
             id:ctrl
 
         }
+
         }
 
 
-    }
 
+    }
     Component{
         id:scanPage
         Page{
+        property Camera camera_id: camera
     Rectangle
     {
         id: bgRect
@@ -217,3 +219,4 @@ ApplicationWindow
 }
     }
 }
+

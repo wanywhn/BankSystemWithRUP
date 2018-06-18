@@ -16,11 +16,12 @@ static bool init_db(){
                 query.exec("CREATE TABLE IF NOT EXISTS id_card (iid VARCHAR(20) PRIMARY KEY ,online_bank boolean DEFAULT '0',online_name TEXT ,"
                            " passwd TEXT )");
                 //信用卡
-                query.exec("CREATE TABLE IF NOT EXISTS credit_card (id INTEGER PRIMARY KEY DEFAULT 2000000000 AUTO_INCREMENT,"
+                query.exec("CREATE TABLE IF NOT EXISTS credit_card (id INTEGER PRIMARY KEY  AUTO_INCREMENT ,"
                            "interest_free_money FLOAT DEFAULT 0,credit FLOAT,used FLOAT DEFAULT 0,paid FLOAT DEFAULT 0,passwd TEXT,cid VARCHAR(20),"
-                           "FOREIGN KEY (cid) REFERENCES id_card(iid) )");
+                           "FOREIGN KEY (cid) REFERENCES id_card(iid) ) ENGINE = InnoDB AUTO_INCREMENT = 2000000000");
                 //			  所有可用的额度             总额度       已使用      已还款（不准备做提前还款）
 
+                qDebug()<<query.lastError();
                 //消费累计
                 query.exec("CREATE TABLE IF NOT EXISTS credit_consume (id INTEGER PRIMARY KEY,"
                            "FOREIGN KEY (id) REFERENCES credit_card(id) ,"
@@ -34,7 +35,8 @@ static bool init_db(){
 
                 //支取信息
                 query.exec("CREATE TABLE IF NOT EXISTS enchashment_tb (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
-                            "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT "
+                            "figure FLOAT ,server_charge FLOAT,enchashment_interest FLOAT, credit_id INTEGER,"
+                           "FOREIGN KEY (credit_id) REFERENCES credit_card(id)  "
                            //支取金额		预借现金手续费				支取利息
                            " )");
 

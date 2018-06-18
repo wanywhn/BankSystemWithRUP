@@ -126,6 +126,8 @@ class sys_ctrl :public interface_ctrl{
 public:
     QPair<bool,QString> login(QString name ,QString passwd) override;
         QPair<bool,QString> change_passwd(QString name, QString origin, QString n)override;
+        QPair<bool,QString>use_register(int type, QString passwd, bool sys);
+        QPair<bool,QString>user_delete(QString id);
 
 private:
         QString idcard;
