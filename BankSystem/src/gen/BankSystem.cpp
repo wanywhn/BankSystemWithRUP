@@ -680,10 +680,7 @@ bool credit_crtl::checkifexists(QString id) {
     qDebug() << DEBUG_PRE << query.lastError();
     return false;
   }
-  if (query.size() == 0) {
-    return false;
-  }
-  return true;
+  return query.size() != 0;
 }
 
 bool credit_crtl::checkifenough(float value, QString credit_id) {
@@ -699,8 +696,5 @@ bool credit_crtl::checkifenough(float value, QString credit_id) {
   }
   query.next();
   auto curr_credit = query.value(0).toFloat();
-  if ((value - curr_credit) > 0) {
-    return false;
-  }
-  return true;
+  return value - curr_credit <= 0;
 }

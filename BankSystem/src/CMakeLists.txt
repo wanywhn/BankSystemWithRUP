@@ -18,6 +18,7 @@ file(GLOB_RECURSE   RESOURCES   "*.qrc")
 set(QTPKG Core  Gui Widgets Sql)
 find_package(Qt5 REQUIRED   ${QTPKG})
 
+set(CMAKE_PREFIX_PATH "/home/tender/Qt5.9.6/5.9.6/gcc_64")
 
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS} ${FORMS}    ${RESOURCES} DIalogChangePasswd.cpp DIalogChangePasswd.h)
 

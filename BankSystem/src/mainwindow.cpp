@@ -98,7 +98,7 @@ void MainWindow::init_ui()
 
     connect(cancel_loss_reporting,&QAction::triggered,this,[this](){
         auto ret=card_ctrl.cancel_loss();
-        if(ret.first==true){
+        if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("DONE"));
         }else{
             QMessageBox::warning(this,tr("Error"),ret.second);
@@ -106,7 +106,7 @@ void MainWindow::init_ui()
     });
     connect(reapply_onecard,&QAction::triggered,this,[this](){
         auto ret=card_ctrl.reapply_one_card();
-        if(ret.first==true){
+        if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("DONE"));
         }else{
             QMessageBox::warning(this,tr("Error"),ret.second);

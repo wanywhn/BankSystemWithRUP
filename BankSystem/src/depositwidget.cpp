@@ -56,7 +56,7 @@ void DepositWidget::init_ui()
       auto tmp=QInputDialog::getInt(this,tr("Input"),tr("Please Input count"));
       auto idstr=rows.at(0).data().toString();
       QPair<bool,QString> ret;
-      if(idstr.at(1)!="1"){
+      if(idstr.at(1)!=QString("1")){
           ret={false,"You Can only withdraw current deposit"};
 
       }else{
@@ -66,7 +66,7 @@ void DepositWidget::init_ui()
 
       }
 
-      if(ret.first==true){
+      if(ret.first){
           QMessageBox::information(this,tr("Success"),tr("withdraw Success"));
           model->setQuery(query_stmt,DataBaseUtils::getInstance());
       }else{

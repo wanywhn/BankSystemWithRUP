@@ -65,18 +65,12 @@ static bool init_db(){
 
                 query.exec("CREATE TABLE IF NOT EXISTS familiar (onecard INTEGER,name VARCHAR(20),idcard VARCHAR(20),PRIMARY KEY(onecard,name,idcard),"
                            "FOREIGN KEY(onecard) REFERENCES one_card(id),"
-//                           "FOREIGN KEY(name) REFERENCES one_card(owner_name),"
                            "FOREIGN KEY(idcard) REFERENCES id_card(iid) )");
 
                 qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS saving_subaccount(id INTEGER , s_type INTEGER , benjin DOUBLE,nianxian INTEGER,lilv float,qishi_shijian DATE ,ac bool,lixi float,m_type INTEGER,cid INTEGER ,FOREIGN KEY (cid) REFERENCES one_card(id) ,PRIMARY KEY(id,cid))");
                 qDebug()<<query.lastError();
 
-//                query.exec("CREATE TABLE IF NOT EXISTS card_saving( cid INTEGER,sid INTEGER,"
-//                          " FOREIGN KEY(cid) REFERENCES one_card(id),"
-//                          " FOREIGN KEY(sid) REFERENCES saving_subaccount(id) )");
-
-//                qDebug()<<query.lastError();
                 query.exec("CREATE TABLE IF NOT EXISTS lilv (id INTEGER PRIMARY KEY AUTO_INCREMENT,"
                            "current FLOAT,one_year FLOAT,five_year FLOAT,"
                            //活期			一年			五年
@@ -88,15 +82,6 @@ static bool init_db(){
                             //美元	日元			欧元
 
 
-//                query.exec("delete from sqlite_sequence where name='one_card'");
-//                query.exec("update sqlite_sequence SET seq = 1000000000 where name = 'one_card'");
-
-//            }else{
-//                qDebug()<<"have inited";
-//            }
-//        }else{
-//            qDebug()<<"query table error";
-//        }
 
         db.close();
 
