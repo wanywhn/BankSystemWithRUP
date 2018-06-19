@@ -1,2 +1,41 @@
-0       0       *       *       *       mysql -uroot -p </root/update.sql
+0       0       *       *       *       mysql -uroot -p </root/fixed.sql
+0       0       30       6       *       mysql -uroot -p </root/current.sql
+
+
+
+
+
+
+
+//current.sql
+mysql -uroot -p Wanywhn11;
+use jiaqingtong;
+select * from jiaqingtong.check_current();
+
+//
+CREATE FUNCTION `check_current` ()
+RETURNS INTEGER
+BEGIN
+UPDATE saving_subaccount 
+	SET benjin=( benjin+benjin*(lilv)/100*(DATEDIFF(CURDATE(),qishi_shijian)/365  )   ) ,
+	qishi_shijian=CURDATE() 
+	WHERE s_type=1;
+RETURN 1;
+END
+
+//fixed.sql
+mysql -uroot -p Wanywhn11;
+use jiaqingtong;
+select * from jiaqingtong.check_fixed();
+///
+CREATE FUNCTION `check_fixed` ()
+RETURNS INTEGER
+BEGIN
+UPDATE saving_subaccount 
+	SET benjin=( benjin+benjin*(lilv)/100*nianxian   ) ,
+    qishi_shijian=CURDATE()
+	WHERE s_type=2 AND DATEDIFF((qishi_shijian+ interval nianxian year),CURDATE())=0 ;
+    
+RETURN 1;
+END
 

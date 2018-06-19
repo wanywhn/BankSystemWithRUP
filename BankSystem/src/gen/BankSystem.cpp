@@ -552,7 +552,8 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   if (!query.exec(tmp)) {
     return {false, query.lastError().text() + " Can't read lixi"};
   }
-  float fee = float((query.value(0).toInt() + 100))/100;
+  query.next();
+  float fee = (query.value(0).toInt() + 100);
   float lixi = (query.value(1).toFloat() + 100)/100;
   // Check if > 0.7
   tmp = "SELECT credit FROM credit_card WHERE id='%1'";
@@ -572,7 +573,8 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   // UPDATE enchashment_tb
   tmp = "INSERT INTO enchashment_tb "
         "(figure,server_charge,enchashment_interest,credit_id) VALUES ('%1','%2',0,'%3')";
-  if (!query.exec(tmp.arg(value).arg(value * (fee-1)).arg(credit_id))) {
+  qDebug()<<"FEE"<<fee;
+  if (!query.exec(tmp.arg(value).arg(value * fee/100).arg(credit_id))) {
     return {false, query.lastError().text()};
   }
   // UPDATE consume_log
@@ -580,7 +582,7 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
                         "ENCHASHMENT");
   tmp = "UPDATE credit_card SET "
         "interest_free_money=interest_free_money-'%1',used=used+'%1' ";
-  if (!query.exec(tmp.arg(value * fee))) {
+  if (!query.exec(tmp.arg(value * fee/100))) {
     return {false, query.lastError().text()};
   }
   return {true, "success"};
