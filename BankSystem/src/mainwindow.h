@@ -31,6 +31,7 @@ private:
 
 
 
+    bool logined;
 
 
 };

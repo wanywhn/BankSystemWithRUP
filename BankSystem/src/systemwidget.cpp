@@ -123,6 +123,9 @@ void SystemWidget::reset_date()
 void SystemWidget::user_add()
 {
     auto text=QInputDialog::getText(this,tr("Input "),tr("Please Input passwd"));
+    if(text.isEmpty()){
+        return ;
+    }
     //TODO passwd check
     auto ret=ctrl.use_register(cb_cate->currentIndex()+1,text,cb_sys->isChecked());
     if(ret.first){
@@ -195,6 +198,7 @@ void SystemWidget::plan_delete()
     timer.stop();
     timer_aux.stop();
     lm_model->removeRow(0);
+    lb_started->setText(tr("Started:No"));
 }
 
 void SystemWidget::init_ui()

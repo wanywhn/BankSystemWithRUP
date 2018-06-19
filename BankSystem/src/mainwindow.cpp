@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     init_ui();
+    logined=false;
 }
 
 
@@ -75,10 +76,15 @@ void MainWindow::init_ui()
             return ;
         }
         QMessageBox::information(this,tr("Success"),tr("You have Login in"));
+        logined=true;
 
 
     });
     connect(change_passwd,&QAction::triggered,this,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
         DIalogChangePasswd dialog(card_ctrl);
         if(dialog.exec()==QDialog::Accepted){
             qDebug()<<"Change passwd successed";
@@ -87,16 +93,25 @@ void MainWindow::init_ui()
         }
     });
     connect(loss_reporting,&QAction::triggered,this,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
 
         auto ret=QMessageBox::question(this,tr("Confirm"),tr("Sure loss report?"));
         if(QMessageBox::Yes==ret||QMessageBox::Ok==ret){
             card_ctrl.set_loss();
+            QMessageBox::information(this,tr("Success"),tr("Set loss success"));
         }else{
             qDebug()<<"User Cancel loss report";
         }
     });
 
     connect(cancel_loss_reporting,&QAction::triggered,this,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
         auto ret=card_ctrl.cancel_loss();
         if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("DONE"));
@@ -105,6 +120,10 @@ void MainWindow::init_ui()
         }
     });
     connect(reapply_onecard,&QAction::triggered,this,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
         auto ret=card_ctrl.reapply_one_card();
         if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("DONE"));
@@ -113,6 +132,10 @@ void MainWindow::init_ui()
         }
     });
     connect(open_online_bank,&QAction::triggered,this,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
         bool ok;
         auto name=QInputDialog::getText(this,tr("Input"),tr("Please Input UserName"),QLineEdit::Normal,QDir::home().dirName(),&ok);
         if(!ok){
@@ -136,6 +159,10 @@ void MainWindow::init_ui()
 
 
     connect(deposit,&QAction::triggered,[this](){
+        if(!logined){
+            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
+            return ;
+        }
 
         auto wid=new DepositWidget(card_ctrl,this);
         this->setCentralWidget(wid);

@@ -13,9 +13,9 @@ QSqlDatabase DataBaseUtils::getInstance()
     db=QSqlDatabase::addDatabase("QMYSQL",connection_name);
     db.setDatabaseName(connection_name);
     }
-    db.setHostName("ericsuens.xin");
+    db.setHostName("localhost");
     db.setUserName("root");
-    db.setPassword("sunyukang123");
+    db.setPassword("Wanywhn11");
    return db;
 
 }
