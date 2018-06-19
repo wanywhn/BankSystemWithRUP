@@ -43,8 +43,8 @@ QPair<bool, QString> one_card_control::register_user(QString name,
 //    if(exists){
 //        return {false,QObject::tr("You had open an One Card")};
 //    }else{
-        tmp.create(name,idcard,address,phone,passwd);
-        return {true,""};
+        return {true,
+        tmp.create(name,idcard,address,phone,passwd)};
 //    }
 
 }
@@ -70,9 +70,15 @@ QPair<bool, QString> one_card_control::change_passwd(QString orig, QString npass
 
 void  one_card_control::transfer_money() {
 }
-void  one_card_control::set_loss() {
+bool one_card_control::set_loss() {
     one_card_account tmp(onecard);
-    tmp.set_loss(true);
+    return tmp.set_loss(true);
+}
+
+bool one_card_control::is_lost()
+{
+    one_card_account tmp(onecard);
+    return tmp.get_loss().first;
 }
 
 float one_card_control::get_lilv(int t)

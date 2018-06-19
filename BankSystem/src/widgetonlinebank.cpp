@@ -127,7 +127,17 @@ void WidgetOnlineBank::slots_open_creditcard()
         qDebug()<<DEBUG_PRE<<query.lastError();
         return;
     }
-    QMessageBox::information(this,tr("Success"),tr("You Have Open Credit Card"));
+    tmp="SELEC id WHERE cid='%1'";
+    if(!query.exec(tmp.arg(ctrl.get_idcard()))){
+        qDebug()<<DEBUG_PRE<<query.lastError();
+        return ;
+    }
+    QString idlist;
+    while (query.next()) {
+        idlist.append(","+query.value(0).toString());
+
+    }
+    QMessageBox::information(this,tr("Success"),tr("You Have Open Credit Card,now you have this:")+idlist);
 }
 
 void WidgetOnlineBank::slots_pay_creditcard()

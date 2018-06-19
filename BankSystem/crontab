@@ -1,0 +1,2 @@
+0       0       *       *       *       mysql -uroot -p </root/update.sql
+

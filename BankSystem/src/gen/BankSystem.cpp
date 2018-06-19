@@ -185,6 +185,15 @@ QPair<bool, QString> one_card_account::deposit(int mk, int type, int benjin,
                                                int cunqi, float lilv,
                                                int auto_continue,
                                                QString reason) {
+    if(type==1){
+        cunqi=0;
+    }
+    if(type==2&&benjin<100){
+        return {false,"should above 100"};
+    }
+    if(type==3&&benjin<50){
+        return {false,"should above 50"};
+    }
   // TODO CREATE TRIGGER
   auto db = DataBaseUtils::getInstance();
   if (!db.open()) {
@@ -234,18 +243,18 @@ QPair<bool, QString> one_card_account::deposit(int mk, int type, int benjin,
   return {true, ""};
 }
 
-void one_card_account::create(QString name, QString idcard, QString address,
+QString one_card_account::create(QString name, QString idcard, QString address,
                               QString phone, QString passwd) {
   auto db = DataBaseUtils::getInstance();
   if (!db.open()) {
-    return;
+    return "";
   } else {
     QSqlQuery query(db);
     QString tmp = "SELECT COUNT(*) FROM id_card WHERE iid='%1'";
     QString stmt = tmp.arg(idcard);
     if (!query.exec(stmt)) {
       qDebug() << DEBUG_PRE << query.lastError();
-      return;
+      return "";
     }
     query.next();
     if (query.value(0).toInt() == 0) {
@@ -253,13 +262,13 @@ void one_card_account::create(QString name, QString idcard, QString address,
       stmt = tmp.arg(idcard);
       if (!query.exec(stmt)) {
         qDebug() << DEBUG_PRE << query.lastError();
-        return;
+        return "";
       }
     }
     tmp = "SELECT MAX(id) FROM one_card ";
     if (!query.exec(tmp)) {
       qDebug() << query.lastError();
-      return;
+      return "";
     }
     int mid;
     if (!query.next()) {
@@ -289,19 +298,22 @@ void one_card_account::create(QString name, QString idcard, QString address,
       qDebug() << DEBUG_PRE << query.executedQuery();
       qDebug() << DEBUG_PRE << query.lastQuery();
     }
+    return QString::number(mid);
   }
 }
 
-void one_card_account::set_loss(bool flag) {
+bool one_card_account::set_loss(bool flag) {
   auto db = DataBaseUtils::getInstance();
   QSqlQuery query(db);
   QString tmp = "UPDATE one_card SET lost= '%1',lost_time='%2' WHERE id='%3'";
   QString stmt =
-      tmp.arg(flag).arg(QDate::currentDate().toString()).arg(one_card);
+      tmp.arg(flag).arg(QDate::currentDate().toString("yyyy-MM-dd")).arg(one_card);
   if (query.exec(stmt)) {
     qDebug() << DEBUG_PRE << "set_loss success";
+    return true;
   } else {
     qDebug() << query.lastError();
+    return false;
   }
 }
 
@@ -316,7 +328,7 @@ QPair<bool, QDate> one_card_account::get_loss() {
     ret.first = false;
     if (query.next()) {
       ret.first = query.value(0).toBool();
-      ret.second = QDate::fromString(query.value(1).toString());
+      ret.second = QDate::fromString(query.value(1).toString(),"yyyy-MM-dd");
     }
     return ret;
 
@@ -438,13 +450,17 @@ QPair<bool, QString> sys_ctrl::use_register(int type, QString passwd,
     return {false, db.lastError().text()};
   }
   QSqlQuery query(db);
-  QString tmp = "SELECT MAX(id) as iid FROM sys_acc_tb ";
+  QString tmp = "SELECT id as iid FROM sys_acc_tb ";
   if (!query.exec(tmp)) {
     return {false, query.lastError().text()};
   }
-  query.next();
-  auto t = query.value(0).toInt() % 10000 + 10001;
-  auto id = QString::number(type) + QString::number(t).right(3);
+  QVector<int> idlist;
+  while (query.next()) {
+      idlist.append(query.value(0).toInt()%10000);
+  }
+  auto maxtmp=*std::max_element(idlist.begin(),idlist.end());
+  auto t = maxtmp % 10000 + 10001;
+  auto id = QString::number(type) + QString::number(t).right(4);
   tmp = "INSERT INTO sys_acc_tb VALUES('%1','%2','%3')";
   if (!query.exec(tmp.arg(id).arg(passwd).arg(sys))) {
     return {false, query.lastError().text()};

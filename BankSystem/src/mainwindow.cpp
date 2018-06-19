@@ -45,6 +45,7 @@ void MainWindow::init_ui()
     auto cancel_loss_reporting=account_menu->addAction(tr("&Cancel Loss Reporting"));
     auto reapply_onecard=account_menu->addAction(tr("&Reapply One Card"));
     auto open_online_bank=account_menu->addAction(tr("&Open Online Bank"));
+    auto log_out=account_menu->addAction(tr("logout"));
 
     auto depart=this->menuBar()->addMenu(tr("Depart"));
     auto deposit=depart->addAction(tr("&Deposit"));
@@ -56,6 +57,11 @@ void MainWindow::init_ui()
     auto online_bank=depart->addAction(tr("Online Bank"));
 
     //------2
+    connect(log_out,&QAction::triggered,this,[this](){
+        logined=false;
+        QMessageBox::information(this,tr("Success"),tr("Logout Success"));
+
+    });
     connect(open_one_card,&QAction::triggered,this,[this](){
         OpenAccount dialog(card_ctrl);
         if(dialog.exec()==QDialog::Accepted){
@@ -73,6 +79,10 @@ void MainWindow::init_ui()
         }
         if(!this->card_ctrl.set_onecard(id)){
             QMessageBox::warning(this,tr("Error"),tr("Can't find the card,please login again"));
+            return ;
+        }
+        if(card_ctrl.is_lost()){
+            QMessageBox::warning(this,tr("Error"),tr("The Card Have Been lost"));
             return ;
         }
         QMessageBox::information(this,tr("Success"),tr("You have Login in"));
@@ -100,24 +110,30 @@ void MainWindow::init_ui()
 
         auto ret=QMessageBox::question(this,tr("Confirm"),tr("Sure loss report?"));
         if(QMessageBox::Yes==ret||QMessageBox::Ok==ret){
-            card_ctrl.set_loss();
+            if(card_ctrl.set_loss()){
+
             QMessageBox::information(this,tr("Success"),tr("Set loss success"));
+            }else{
+                QMessageBox::warning(this,tr("Error"),tr("set loss failed"));
+            }
         }else{
             qDebug()<<"User Cancel loss report";
         }
     });
 
     connect(cancel_loss_reporting,&QAction::triggered,this,[this](){
-        if(!logined){
-            QMessageBox::warning(this,tr("Error"),tr("Please Login!"));
-            return ;
-        }
+        QString id=QInputDialog::getText(this,tr("Please input "),tr("Please Input onecard id"));
+        if(id.isEmpty()){
+                return ;
+    }
+        card_ctrl.set_onecard(id);
         auto ret=card_ctrl.cancel_loss();
         if(ret.first){
             QMessageBox::information(this,tr("Success"),tr("DONE"));
         }else{
             QMessageBox::warning(this,tr("Error"),ret.second);
         }
+        card_ctrl.set_onecard("");
     });
     connect(reapply_onecard,&QAction::triggered,this,[this](){
         if(!logined){

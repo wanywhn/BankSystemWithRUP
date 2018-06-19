@@ -26,7 +26,7 @@ class one_card_control {
 
     void  transfer_money();
 
-    void  set_loss();
+    bool set_loss();
 
     bool is_lost();
 

@@ -100,9 +100,9 @@ public:
 
     QPair<bool,QString> deposit(int mk, int type, int benjin, int cunqi, float lilv, int auto_continue,QString reason);
 
-    void create(QString name ,QString idcard,QString address,QString phone ,QString passwd);
+    QString create(QString name ,QString idcard,QString address,QString phone ,QString passwd);
 
-    void set_loss(bool flag);
+    bool set_loss(bool flag);
     QPair<bool,QDate> get_loss();
 
     // DB interface

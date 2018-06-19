@@ -40,7 +40,7 @@ void OpenAccount::init_ui()
 
         auto ret=ctrl.register_user(name->text(),idcard->text(),address->text(),phone->text(),passwd->text());
         if(ret.first){
-            QMessageBox::information(this,tr("Success"),tr("Create Account Success"));
+            QMessageBox::information(this,tr("Success"),tr("Create Account Success,one card id:")+ret.second);
         QDialog::accept();
         }else{
             QMessageBox::warning(this,tr("Failed"),ret.second);
