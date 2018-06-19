@@ -1,0 +1,121 @@
+format 219
+
+classinstance 128110 class_ref 128110 // kehu
+  name ""   xyz 51 4 2000 life_line_z 2000
+classinstance 128238 class_ref 157806 // entity_one_card
+  name ""   xyz 520 4 2000 life_line_z 2000
+classinstance 128494 class_ref 157934 // control_forex
+  name ""   xyz 255 4 2000 life_line_z 2000
+classinstance 128622 class_ref 158062 // boundry_forex
+  name ""   xyz 119 4 2000 life_line_z 2000
+classinstance 129902 class_ref 157422 // entity_loan
+  name ""   xyz 409 4 2000 life_line_z 2000
+classinstance 131566 class_ref 148974 // DB
+  name ""   xyz 681 4 2000 life_line_z 2000
+durationcanvas 128750 classinstance_ref 128110 // :kehu
+  xyzwh 69 113 2010 11 40
+end
+durationcanvas 128878 classinstance_ref 128622 // :boundry_forex
+  xyzwh 174 113 2010 11 25
+end
+durationcanvas 129134 classinstance_ref 128110 // :kehu
+  xyzwh 69 196 2010 11 40
+end
+durationcanvas 129262 classinstance_ref 128622 // :boundry_forex
+  xyzwh 174 196 2010 11 25
+end
+durationcanvas 129518 classinstance_ref 128622 // :boundry_forex
+  xyzwh 174 252 2010 11 40
+end
+durationcanvas 129646 classinstance_ref 128494 // :control_forex
+  xyzwh 306 252 2010 11 25
+end
+durationcanvas 130030 classinstance_ref 128494 // :control_forex
+  xyzwh 306 314 2010 11 40
+end
+durationcanvas 130158 classinstance_ref 129902 // :entity_loan
+  xyzwh 451 314 2010 11 25
+end
+durationcanvas 130414 classinstance_ref 129902 // :entity_loan
+  xyzwh 451 384 2010 11 40
+end
+durationcanvas 130542 classinstance_ref 128494 // :control_forex
+  xyzwh 306 384 2010 11 25
+end
+durationcanvas 130798 classinstance_ref 128494 // :control_forex
+  xyzwh 306 447 2010 11 40
+end
+durationcanvas 130926 classinstance_ref 129902 // :entity_loan
+  xyzwh 451 447 2010 11 25
+end
+durationcanvas 131182 classinstance_ref 128238 // :entity_one_card
+  xyzwh 582 509 2010 11 30
+end
+durationcanvas 131694 classinstance_ref 128494 // :control_forex
+  xyzwh 306 562 2010 11 40
+end
+durationcanvas 131822 classinstance_ref 131566 // :DB
+  xyzwh 700 562 2010 11 25
+end
+durationcanvas 132078 classinstance_ref 128494 // :control_forex
+  xyzwh 306 618 2010 11 40
+end
+durationcanvas 132206 classinstance_ref 128622 // :boundry_forex
+  xyzwh 174 618 2010 11 25
+end
+lostfoundmsgsupport 131310 xyz 305 511 2015
+msg 129006 synchronous
+  from durationcanvas_ref 128750
+  to durationcanvas_ref 128878
+  yz 113 2015 explicitmsg "set_target"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 87 88
+msg 129390 synchronous
+  from durationcanvas_ref 129134
+  to durationcanvas_ref 129262
+  yz 196 2015 explicitmsg "transfer"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 96 171
+msg 129774 synchronous
+  from durationcanvas_ref 129518
+  to durationcanvas_ref 129646
+  yz 252 2015 msg operation_ref 175470 // "transfer_to_onecard()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 160 227
+msg 130286 synchronous
+  from durationcanvas_ref 130030
+  to durationcanvas_ref 130158
+  yz 314 2015 msg operation_ref 175598 // "checko_if_enough()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 308 289
+msg 130670 return
+  from durationcanvas_ref 130414
+  to durationcanvas_ref 130542
+  yz 384 2015 explicitmsg "enough"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 355 359
+msg 131054 synchronous
+  from durationcanvas_ref 130798
+  to durationcanvas_ref 130926
+  yz 447 2015 msg operation_ref 175726 // "decrease()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 344 422
+msg 131438 found_synchronous
+  from lostfoundmsgsupport_ref 131310
+  to durationcanvas_ref 131182
+  yz 509 2015 msg operation_ref 175854 // "deposit()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 414 484
+msg 131950 synchronous
+  from durationcanvas_ref 131694
+  to durationcanvas_ref 131822
+  yz 562 2015 msg operation_ref 143214 // "update()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 475 537
+msg 132334 return
+  from durationcanvas_ref 132078
+  to durationcanvas_ref 132206
+  yz 618 2015 explicitmsg "success"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 215 593
+end

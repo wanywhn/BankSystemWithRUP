@@ -1,6 +1,6 @@
 format 219
 "bouml"
-  revision 15
+  revision 16
   modified_by 110 "tender"
   cpp_root_dir "/home/tender/Data/Workplace/git/BankSystemWithRUP/Model/bouml/src/"
 
@@ -47,6 +47,225 @@ format 219
   
   ncouples 1
   key "html dir" value "/tmp/bouml/"
+  usecaseview 135150 "forex"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 165230 "forex"
+      usecasediagramsettings end
+      size A4
+    end
+
+    usecase 144110 "transfer_to_one_card"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 165614 "transfer_to_one_card"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 144238 "query_info"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 165742 "query_info"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+  end
+
+  usecaseview 135022 "loan"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 164718 "loan"
+      usecasediagramsettings end
+      size A4
+    end
+
+    usecase 143598 "apply_loan"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 164846 "apply_loan"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 143726 "pay_loan"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 164974 "pay_loan"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 143854 "loan_exten"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 165102 "loan_exten"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      class 157678 "check_system"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	operation 175214 "should_accept"
+	  public explicit_return_type ""
+	  nparams 0
+	  cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	  cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	  
+	end
+      end
+    end
+  end
+
   usecaseview 134894 "credit_card"
     
     usecasediagramsettings end
@@ -245,7 +464,6 @@ format 219
 	sequencediagramsettings end
 	overlapping_bars size A4
       end
-
     end
 
     usecase 142446 "add_sys_user"
@@ -448,6 +666,7 @@ ${inlines}
     end
 
     usecase 128111 "open_online_bank"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -475,6 +694,7 @@ ${inlines}
     end
 
     usecase 128239 "inquire_onecard_information"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -507,7 +727,8 @@ ${inlines}
       end
     end
 
-    usecase 128367 "inquire_allcards_information   "
+    usecase 128367 "inquire_allcards_information"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -574,6 +795,7 @@ ${inlines}
     end
 
     usecase 128623 "change_password"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -607,6 +829,7 @@ ${inlines}
     end
 
     usecase 128751 "analyse_economy"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -640,6 +863,7 @@ ${inlines}
     end
 
     usecase 128879 "report _loss"
+      stereotype "realization"
       
       usecasediagramsettings end
       
@@ -693,6 +917,34 @@ ${inlines}
       
       activitydiagramsettings
        end
+    end
+
+    usecase 143982 "open_forex"
+      stereotype "realization"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 165486 "open_forex"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
     end
   end
 
@@ -769,6 +1021,18 @@ ${inlines}
 	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
 "
 	    classrelation_ref 155630 // <association>
+      end
+
+      classrelation 157422 // <association>
+	relation 156398 ----
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 157422 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 157550 // <association>
       end
     end
 
@@ -1254,6 +1518,18 @@ ${namespace_end}"
 	class_ref 148590 // BankBoundry
       end
     end
+
+    deploymentnode 128110 "SystemServer"
+    end
+
+    deploymentnode 128238 "Client"
+    end
+
+    deploymentnode 128366 "CreditCardEQU"
+    end
+
+    deploymentnode 128494 "DataBase"
+    end
   end
 
   classview 134638 "class_diagram"
@@ -1376,5 +1652,4 @@ ${inlines}
     component 128238 "MySQL"
     end
   end
-
 end

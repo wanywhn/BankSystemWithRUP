@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="397" height="324" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="152" cy="193" rx="6" ry="6" />
+	<line stroke="black" stroke-opacity="1" x1="141" y1="204" x2="163" y2="204" />
+	<line stroke="black" stroke-opacity="1" x1="152" y1="199" x2="152" y2="214" />
+	<line stroke="black" stroke-opacity="1" x1="152" y1="214" x2="142" y2="226" />
+	<line stroke="black" stroke-opacity="1" x1="152" y1="214" x2="162" y2="226" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="154" y="241">kehu</text>
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="306" cy="111" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="303" cy="108" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="311" cy="276" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="308" cy="273" rx="31" ry="15" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="221" y="137">transfer_to_one_card</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="268" y="302">query_info</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="279" y1="124" x2="270" y2="122" />
+	<line stroke="black" stroke-opacity="1" x1="279" y1="124" x2="277" y2="132" />
+	<line stroke="black" stroke-opacity="1" x1="177" y1="202" x2="279" y2="124" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="276" y1="262" x2="272" y2="254" />
+	<line stroke="black" stroke-opacity="1" x1="276" y1="262" x2="268" y2="265" />
+	<line stroke="black" stroke-opacity="1" x1="177" y1="230" x2="276" y2="262" />
+</g>
+</svg>

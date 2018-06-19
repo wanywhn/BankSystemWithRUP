@@ -1,0 +1,17 @@
+format 219
+
+classcanvas 128110 class_ref 128110 // kehu
+  simpleclassdiagramsettings end
+  xyz 131 187 2000
+end
+usecasecanvas 128238 usecase_ref 144110 // transfer_to_one_card
+  xyzwh 272 93 3005 64 32 label_xy 221 125
+end
+usecasecanvas 128366 usecase_ref 144238 // query_info
+  xyzwh 277 258 3005 64 32 label_xy 268 290
+end
+line 128494 --->
+  from ref 128110 z 3006 to ref 128238
+line 128622 --->
+  from ref 128110 z 3006 to ref 128366
+end

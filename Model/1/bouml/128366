@@ -1,6 +1,6 @@
 format 219
 "Presentation" // Presentation
-  revision 3
+  revision 4
   modified_by 110 "tender"
   // class settings
   
@@ -60,7 +60,7 @@ format 219
     
     activitydiagramsettings
      end
-    classdiagram 148718 "Main"
+    classdiagram 148718 "Presentation"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -131,6 +131,53 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 157550 "boundry_loan"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 158062 "boundry_forex"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 176238 "display"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
   end
 

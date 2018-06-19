@@ -1,8 +1,8 @@
-window_sizes 1920 1031 381 1533 867 112
+window_sizes 1918 1031 381 1531 902 60
 cleanlooks_style
 diagrams
-  classdiagram_ref 148974 // Main
-    1226 693 100 A4 12 0
+  classdiagram_ref 148974 // Prisistence
+    1034 877 99 A4 72 0
   usecasediagram_ref 128110 // depost_uc
     1226 693 100 A4 0 0
   sequencediagram_ref 141294 // open_one_card_system
@@ -25,33 +25,72 @@ diagrams
     1226 693 100 A4 0 0
   sequencediagram_ref 156270 // reapply_one_card
     1226 693 100 A4 0 0
-  active  classdiagram_ref 128238 // chuxu_yewu
-    1226 693 100 A4 0 0
+  classdiagram_ref 128238 // kehu
+    1226 851 130 A4 0 0
+  usecasediagram_ref 128239 // online bank_uc
+    1224 680 100 A4 0 0
+  usecasediagram_ref 162798 // system_ucview
+    1224 680 100 A4 24 0
+  sequencediagram_ref 162926 // modefiy_config
+    1224 680 100 A4 0 0
+  sequencediagram_ref 163182 // add_user
+    1224 680 100 A4 24 0
+  sequencediagram_ref 163438 // delete_user
+    1224 680 100 A4 36 0
+  sequencediagram_ref 163566 // add_plan
+    1224 680 100 A4 0 0
+  sequencediagram_ref 163694 // cancel_modify_plan
+    1224 680 100 A4 0 0
+  usecasediagram_ref 163822 // credit_card
+    1224 680 100 A4 0 0
+  sequencediagram_ref 163950 // open_credit_card
+    1224 680 100 A4 0 0
+  sequencediagram_ref 164078 // pay
+    1224 680 100 A4 60 0
+  sequencediagram_ref 164206 // enchashment
+    1224 680 100 A4 168 0
+  sequencediagram_ref 164334 // repayment
+    1224 680 100 A4 168 0
+  componentdiagram_ref 148206 // SystemArch
+    1224 721 100 A4 0 0
+  classdiagram_ref 164462 // system
+    1224 721 100 A4 0 0
+  classdiagram_ref 164590 // processview
+    1224 721 100 A4 0 0
+  usecasediagram_ref 164718 // loan
+    1224 721 100 A4 0 0
+  sequencediagram_ref 164846 // apply_loan
+    1224 721 100 A4 0 0
+  sequencediagram_ref 164974 // pay_loan
+    1224 721 100 A4 0 0
+  sequencediagram_ref 165102 // loan_exten
+    1224 721 100 A4 0 0
+  usecasediagram_ref 165230 // forex
+    1224 721 100 A4 0 0
+  sequencediagram_ref 128367 // open_one_online_bank
+    1224 721 100 A4 0 0
+  sequencediagram_ref 165486 // open_forex
+    1224 721 100 A4 0 0
+  sequencediagram_ref 165614 // transfer_to_one_card
+    1224 721 100 A4 0 0
+  sequencediagram_ref 165742 // query_info
+    1224 721 100 A4 0 0
+  active  classdiagram_ref 148846 // Application
+    1224 721 100 A4 0 0
+  classdiagram_ref 148718 // Presentation
+    1224 721 100 A4 0 0
 end
 show_stereotypes
-selected classdiagram_ref 128238 // chuxu_yewu
+selected classdiagram_ref 148718 // Presentation
 open
-  class_ref 128110 // kehu
-  class_ref 141934 // bank_assistant
-  usecase_ref 128110 // open_one_card_system
-  usecase_ref 134638 // open_online_bank_system
-  usecase_ref 134766 // close_account
-  usecase_ref 134894 // change_passwd
-  usecase_ref 135022 // deposit
-  usecase_ref 135150 // transfer_account
-  usecase_ref 135278 // withdrawal
-  usecase_ref 135406 // loss_report
-  usecase_ref 135662 // cancel_loss_report
-  usecase_ref 135790 // reapply_one_card
-  deploymentview_ref 128110 // chuxu_deployment
-  classview_ref 134638 // class_diagram
-  class_ref 135150 // fixed_deposit
-  class_ref 128366 // saving_subaccount
-  class_ref 128238 // one_card_account
+  class_ref 157166 // BankSystem
   class_ref 149102 // one_card_account_db
+  class_ref 157422 // entity_loan
+  class_ref 157806 // entity_one_card
   classview_ref 141678 // Common
-  class_ref 148718 // one_card_control
+  classview_ref 141422 // _Realizations
   class_ref 148590 // BankBoundry
+  class_ref 158062 // boundry_forex
 end
 end
 verbose

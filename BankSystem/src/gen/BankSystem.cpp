@@ -552,8 +552,8 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   if (!query.exec(tmp)) {
     return {false, query.lastError().text() + " Can't read lixi"};
   }
-  float fee = (query.value(0).toFloat() + 1)/100;
-  float lixi = (query.value(1).toFloat() + 1)/100;
+  float fee = float((query.value(0).toInt() + 100))/100;
+  float lixi = (query.value(1).toFloat() + 100)/100;
   // Check if > 0.7
   tmp = "SELECT credit FROM credit_card WHERE id='%1'";
   if (!query.exec(tmp.arg(credit_id))) {
@@ -572,18 +572,12 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   // UPDATE enchashment_tb
   tmp = "INSERT INTO enchashment_tb "
         "(figure,server_charge,enchashment_interest,credit_id) VALUES ('%1','%2',0,'%3')";
-  if (!query.exec(tmp.arg(value).arg(value * fee).arg(credit_id))) {
+  if (!query.exec(tmp.arg(value).arg(value * (fee-1)).arg(credit_id))) {
     return {false, query.lastError().text()};
   }
   // UPDATE consume_log
   one_card_account::log("ENCHASHMENT", value, credit_id, id_card,
                         "ENCHASHMENT");
-  //    tmp="INSERT INTO consume_log (figure ,reason,date,cid) VALUES
-  //    ('%1','%2','%3','%4')";
-  //    if(!query.exec(tmp.arg(value).arg("ENCHASHMENT").arg(QDate::currentDate().toString()).ar(credit_id)));{
-  //        return {false,query.lastError().text()};
-  //    }
-  // UPDATE credit_card
   tmp = "UPDATE credit_card SET "
         "interest_free_money=interest_free_money-'%1',used=used+'%1' ";
   if (!query.exec(tmp.arg(value * fee))) {
@@ -638,18 +632,18 @@ float credit_crtl::Getminvalue(QString credit_id) {
   }
   QSqlQuery query(db);
   QString tmp =
-      "SELECT used FROM credit_card WHERE id='%1'"; // weigaichengxianyoudezuidihuankuan
+      "SELECT paid FROM credit_card WHERE id='%1'"; // weigaichengxianyoudezuidihuankuan
   if (!query.exec(tmp.arg(credit_id))) {
     return -1;
   }
   query.next();
   auto curr_credit = query.value(0).toFloat()*0.1;
-  tmp="SELECT server_charge,enchashment_interest FROM enchashment_tb WHERE credit_id='%1'";
+  tmp="SELECT figure,server_charge,enchashment_interest FROM enchashment_tb WHERE credit_id='%1'";
   if(!query.exec(tmp.arg(credit_id))){
       return -1;
   }
   while (query.next()) {
-  curr_credit+=query.value(0).toFloat()+query.value(1).toFloat();
+  curr_credit+=query.value(0).toFloat()*0.1+query.value(1).toFloat()+query.value(2).toFloat();
   }
   return curr_credit;
 }

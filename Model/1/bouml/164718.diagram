@@ -1,0 +1,22 @@
+format 219
+
+classcanvas 128110 class_ref 128110 // kehu
+  simpleclassdiagramsettings end
+  xyz 167 223 2000
+end
+usecasecanvas 128238 usecase_ref 143598 // apply_loan
+  xyzwh 353 96 3005 64 32 label_xy 342 128
+end
+usecasecanvas 128366 usecase_ref 143726 // pay_loan
+  xyzwh 367 207 3005 64 32 label_xy 364 239
+end
+usecasecanvas 128494 usecase_ref 143854 // loan_exten
+  xyzwh 380 332 3005 64 32 label_xy 370 364
+end
+line 128622 --->
+  from ref 128110 z 3006 to ref 128238
+line 128750 --->
+  from ref 128110 z 3006 to ref 128366
+line 128878 --->
+  from ref 128110 z 3006 to ref 128494
+end

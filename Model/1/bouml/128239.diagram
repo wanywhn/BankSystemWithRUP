@@ -1,5 +1,8 @@
 format 219
 
+usecasecanvas 128110 usecase_ref 143982 // open_forex
+  xyzwh 256 472 3005 64 32 label_xy 245 504
+end
 classcanvas 128111 class_ref 128110 // kehu
   simpleclassdiagramsettings end
   xyz 67 216 2000
@@ -10,8 +13,8 @@ end
 usecasecanvas 128495 usecase_ref 128239 // inquire_onecard_information
   xyzwh 338 26 3005 64 32 label_xy 255 58
 end
-usecasecanvas 129391 usecase_ref 128367 // inquire_allcards_information   
-  xyzwh 324 377 3010 64 32 label_xy 236 409
+usecasecanvas 129391 usecase_ref 128367 // inquire_allcards_information
+  xyzwh 324 377 3010 64 32 label_xy 241 409
 end
 usecasecanvas 129519 usecase_ref 128495 // transfer_money
   xyzwh 339 142 3005 64 32 label_xy 309 174
@@ -28,6 +31,8 @@ end
 usecasecanvas 130031 usecase_ref 129007 // login_
   xyzwh 721 155 3005 64 32 label_xy 729 187
 end
+line 128238 --->
+  from ref 128111 z 3006 to ref 128110
 line 128367 ---> decenter_begin 164
   from ref 128111 z 3006 to ref 128239
 line 130159 --->

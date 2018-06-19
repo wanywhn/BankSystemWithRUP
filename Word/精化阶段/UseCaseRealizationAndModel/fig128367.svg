@@ -3,21 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="870" height="663" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <g>
-	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="134" cy="30" rx="3" ry="3" />
-	<line stroke="black" stroke-opacity="1" x1="128" y1="35" x2="139" y2="35" />
-	<line stroke="black" stroke-opacity="1" x1="134" y1="33" x2="134" y2="40" />
-	<line stroke="black" stroke-opacity="1" x1="134" y1="40" x2="129" y2="46" />
-	<line stroke="black" stroke-opacity="1" x1="134" y1="40" x2="139" y2="46" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="135" y="67">:bank_assistant</text>
-</g>
-<g>
-	<line stroke="black" stroke-opacity="1" x1="331" y1="44" x2="339" y2="44" />
-	<line stroke="black" stroke-opacity="1" x1="331" y1="34" x2="331" y2="54" />
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="349" cy="44" rx="10" ry="10" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="349" y="74">:BankBoundry</text>
-</g>
-<g>
-	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="665" y1="78" x2="665" y2="663" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="523" cy="45" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="523" y1="35" x2="528" y2="30" />
+	<line stroke="black" stroke-opacity="1" x1="523" y1="35" x2="528" y2="40" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="523" y="75">:online_bank_control</text>
 </g>
 <g>
 	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="854" y="47" width="3" height="31" />
@@ -26,72 +15,38 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-decoration="underline" text-anchor="middle" x="801" y="65">:online_bank</text>
 </g>
 <g>
-	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="349" y1="75" x2="349" y2="663" />
-</g>
-<g>
 	<line stroke="black" stroke-opacity="1" x1="655" y1="57" x2="675" y2="57" />
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="665" cy="47" rx="10" ry="10" />
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="665" y="77">:;online_bank</text>
 </g>
 <g>
-	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="135" y1="68" x2="135" y2="663" />
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="523" y1="71" x2="523" y2="663" />
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="349" y1="75" x2="349" y2="663" />
 </g>
 <g>
 	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="802" y1="84" x2="802" y2="663" />
 </g>
 <g>
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="523" cy="45" rx="10" ry="10" />
-	<line stroke="black" stroke-opacity="1" x1="523" y1="35" x2="528" y2="30" />
-	<line stroke="black" stroke-opacity="1" x1="523" y1="35" x2="528" y2="40" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="523" y="75">:online_bank_control</text>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="665" y1="78" x2="665" y2="663" />
 </g>
 <g>
-	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="523" y1="71" x2="523" y2="663" />
+	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="134" cy="30" rx="3" ry="3" />
+	<line stroke="black" stroke-opacity="1" x1="128" y1="35" x2="139" y2="35" />
+	<line stroke="black" stroke-opacity="1" x1="134" y1="33" x2="134" y2="40" />
+	<line stroke="black" stroke-opacity="1" x1="134" y1="40" x2="129" y2="46" />
+	<line stroke="black" stroke-opacity="1" x1="134" y1="40" x2="139" y2="46" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="135" y="67">:bank_assistant</text>
 </g>
 <g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="660" y="485" width="10" height="24" />
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="135" y1="68" x2="135" y2="663" />
 </g>
 <g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="111" width="10" height="58" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="375" width="10" height="39" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="291" width="10" height="59" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="375" width="10" height="24" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="660" y="433" width="10" height="24" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="302" width="10" height="41" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="316" width="10" height="24" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="130" y="111" width="10" height="42" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="433" width="10" height="39" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="212" width="10" height="73" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="612" width="10" height="24" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="130" y="246" width="10" height="39" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="554" width="10" height="39" />
-</g>
-<g>
-	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="485" width="10" height="39" />
+	<line stroke="black" stroke-opacity="1" x1="331" y1="44" x2="339" y2="44" />
+	<line stroke="black" stroke-opacity="1" x1="331" y1="34" x2="331" y2="54" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="349" cy="44" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="349" y="74">:BankBoundry</text>
 </g>
 <g>
 	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="660" y="554" width="10" height="24" />
@@ -100,24 +55,77 @@
 	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="612" width="10" height="39" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="529" y1="321" x2="797" y2="321" />
-	<polygon fill="#000000" stroke="none" points="797,321 793,317 793,325" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="130" y="246" width="10" height="39" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="529" y1="559" x2="660" y2="559" />
-	<polygon fill="#000000" stroke="none" points="660,559 656,555 656,563" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="212" width="10" height="73" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="660" y="485" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="554" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="111" width="10" height="58" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="344" y="302" width="10" height="41" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="291" width="10" height="59" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="612" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="316" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="797" y="375" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="375" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="130" y="111" width="10" height="42" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="660" y="433" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="485" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="518" y="433" width="10" height="39" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="141" y1="251" x2="344" y2="251" />
+	<polygon fill="#000000" stroke="none" points="344,251 340,247 340,255" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" stroke-dasharray="4,4" x1="529" y1="380" x2="797" y2="380" />
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 533 376 L 529 380 L 533 384" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="529" y1="438" x2="660" y2="438" />
+	<polygon fill="#000000" stroke="none" points="660,438 656,434 656,442" />
 </g>
 <g>
 	<line stroke="black" stroke-opacity="1" x1="529" y1="490" x2="660" y2="490" />
 	<polygon fill="#000000" stroke="none" points="660,490 656,486 656,494" />
 </g>
 <g>
+	<line stroke="black" stroke-opacity="1" x1="529" y1="559" x2="660" y2="559" />
+	<polygon fill="#000000" stroke="none" points="660,559 656,555 656,563" />
+</g>
+<g>
 	<line stroke="black" stroke-opacity="1" x1="529" y1="617" x2="797" y2="617" />
 	<polygon fill="#000000" stroke="none" points="797,617 793,613 793,621" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="141" y1="251" x2="344" y2="251" />
-	<polygon fill="#000000" stroke="none" points="344,251 340,247 340,255" />
+	<line stroke="black" stroke-opacity="1" x1="529" y1="321" x2="797" y2="321" />
+	<polygon fill="#000000" stroke="none" points="797,321 793,317 793,325" />
 </g>
 <g>
 	<line stroke="black" stroke-opacity="1" x1="141" y1="116" x2="344" y2="116" />
@@ -128,18 +136,22 @@
 	<polygon fill="#000000" stroke="none" points="518,329 514,325 514,333" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="529" y1="438" x2="660" y2="438" />
-	<polygon fill="#000000" stroke="none" points="660,438 656,434 656,442" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="608" y="364">return if exists</text>
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" stroke-dasharray="4,4" x1="529" y1="380" x2="797" y2="380" />
-	<path fill="none" stroke="black" stroke-opacity="1" d="M 533 376 L 529 380 L 533 384" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="556" y="420">set_name</text>
 </g>
 <g>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="549" y="472">set_passwd</text>
 </g>
 <g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="201" y="98">set_cname</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="565" y="541">id_card</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="636" y="599">create</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="198" y="233">set_passwd</text>
 </g>
 <g>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="569" y="303">check_if_exists_username</text>
@@ -148,18 +160,6 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="353" y="311">register_onlinebank()</text>
 </g>
 <g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="565" y="541">id_card</text>
-</g>
-<g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="556" y="420">set_name</text>
-</g>
-<g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="636" y="599">create</text>
-</g>
-<g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="608" y="364">return if exists</text>
-</g>
-<g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="198" y="233">set_passwd</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="201" y="98">set_cname</text>
 </g>
 </svg>

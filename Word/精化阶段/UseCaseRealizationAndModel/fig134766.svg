@@ -3,22 +3,16 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="580" height="468" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <g>
-	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="291" y="240" width="118" height="31" />
-	<polygon fill="#dcdcdc" stroke="black" stroke-opacity="1" points="291,240 301,230 419,230 419,261 409,271 409,240 291,240" />
-	<line stroke="black" stroke-opacity="1" x1="409" y1="240" x2="419" y2="230" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="350" y="255">:SystemServer</text>
-</g>
-<g>
-	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="297" y="82" width="84" height="31" />
-	<polygon fill="#dcdcdc" stroke="black" stroke-opacity="1" points="297,82 307,72 391,72 391,103 381,113 381,82 297,82" />
-	<line stroke="black" stroke-opacity="1" x1="381" y1="82" x2="391" y2="72" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="339" y="97">:DataBase</text>
-</g>
-<g>
 	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="430" y="425" width="128" height="31" />
 	<polygon fill="#dcdcdc" stroke="black" stroke-opacity="1" points="430,425 440,415 568,415 568,446 558,456 558,425 430,425" />
 	<line stroke="black" stroke-opacity="1" x1="558" y1="425" x2="568" y2="415" />
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="494" y="440">:CreditCardEQU</text>
+</g>
+<g>
+	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="291" y="240" width="118" height="31" />
+	<polygon fill="#dcdcdc" stroke="black" stroke-opacity="1" points="291,240 301,230 419,230 419,261 409,271 409,240 291,240" />
+	<line stroke="black" stroke-opacity="1" x1="409" y1="240" x2="419" y2="230" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="350" y="255">:SystemServer</text>
 </g>
 <g>
 	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="144" y="415" width="57" height="31" />
@@ -27,7 +21,16 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="173" y="430">:Client</text>
 </g>
 <g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="334" y="158">Lan</text>
+	<rect fill="#dcdcdc" stroke="black" stroke-width="1" stroke-opacity="1" x="297" y="82" width="84" height="31" />
+	<polygon fill="#dcdcdc" stroke="black" stroke-opacity="1" points="297,82 307,72 391,72 391,103 381,113 381,82 297,82" />
+	<line stroke="black" stroke-opacity="1" x1="381" y1="82" x2="391" y2="72" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="339" y="97">:DataBase</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="371" y1="271" x2="483" y2="414" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="232" y="324">Internet</text>
 </g>
 <g>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="396" y="329">Internet</text>
@@ -36,12 +39,9 @@
 	<line stroke="black" stroke-opacity="1" x1="352" y1="229" x2="345" y2="113" />
 </g>
 <g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="334" y="158">Lan</text>
+</g>
+<g>
 	<line stroke="black" stroke-opacity="1" x1="330" y1="271" x2="196" y2="404" />
-</g>
-<g>
-	<line stroke="black" stroke-opacity="1" x1="371" y1="271" x2="483" y2="414" />
-</g>
-<g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="232" y="324">Internet</text>
 </g>
 </svg>

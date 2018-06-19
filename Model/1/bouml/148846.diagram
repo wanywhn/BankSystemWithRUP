@@ -24,4 +24,8 @@ classcanvas 128622 class_ref 156526 // control_credit_card
   classdiagramsettings member_max_width 0 end
   xyz 600 369 2000
 end
+classcanvas 128750 class_ref 157934 // control_forex
+  classdiagramsettings member_max_width 0 end
+  xyz 358 507 2000
+end
 end

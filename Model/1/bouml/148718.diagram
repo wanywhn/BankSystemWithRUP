@@ -16,4 +16,8 @@ classcanvas 128494 class_ref 155886 // sys_boundry
   classdiagramsettings member_max_width 0 end
   xyz 114 204 2005
 end
+classcanvas 128622 class_ref 158062 // boundry_forex
+  classdiagramsettings member_max_width 0 end
+  xyz 187 468 2000
+end
 end

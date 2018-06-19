@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="705" height="647" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<line stroke="black" stroke-opacity="1" x1="569" y1="24" x2="589" y2="24" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="579" cy="14" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="580" y="44">:entity_loan</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="417" cy="19" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="417" y1="9" x2="422" y2="4" />
+	<line stroke="black" stroke-opacity="1" x1="417" y1="9" x2="422" y2="14" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="417" y="49">:control_loan</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="417" y1="45" x2="417" y2="647" />
+</g>
+<g>
+	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="88" cy="7" rx="3" ry="3" />
+	<line stroke="black" stroke-opacity="1" x1="82" y1="12" x2="93" y2="12" />
+	<line stroke="black" stroke-opacity="1" x1="88" y1="10" x2="88" y2="17" />
+	<line stroke="black" stroke-opacity="1" x1="88" y1="17" x2="83" y2="23" />
+	<line stroke="black" stroke-opacity="1" x1="88" y1="17" x2="93" y2="23" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="89" y="44">:kehu</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="89" y1="45" x2="89" y2="647" />
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="689" y="8" width="3" height="31" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="648" y="36" width="44" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="644" y="4" width="45" height="32" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-decoration="underline" text-anchor="middle" x="667" y="26">:DB</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="668" y1="45" x2="668" y2="647" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="233" y1="16" x2="241" y2="16" />
+	<line stroke="black" stroke-opacity="1" x1="233" y1="6" x2="233" y2="26" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="251" cy="16" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="251" y="46">:boundry_loan</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="251" y1="47" x2="251" y2="647" />
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="579" y1="45" x2="579" y2="647" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="246" y="122" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="84" y="209" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="246" y="209" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="246" y="270" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="270" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="315" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="663" y="315" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="387" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="468" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="84" y="122" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="574" y="468" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="536" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="663" y="536" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="412" y="596" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="246" y="596" width="10" height="24" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="95" y1="127" x2="246" y2="127" />
+	<polygon fill="#000000" stroke="none" points="246,127 242,123 242,131" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="95" y1="214" x2="246" y2="214" />
+	<polygon fill="#000000" stroke="none" points="246,214 242,210 242,218" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="257" y1="275" x2="412" y2="275" />
+	<polygon fill="#000000" stroke="none" points="412,275 408,271 408,279" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="423" y1="320" x2="663" y2="320" />
+	<polygon fill="#000000" stroke="none" points="663,320 659,316 659,324" />
+</g>
+<g>
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 424 389 L 441 389 L 441 396 L 424 396" />
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 428 400 L 424 396 L 428 392" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="423" y1="473" x2="574" y2="473" />
+	<polygon fill="#000000" stroke="none" points="574,473 570,469 570,477" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="423" y1="541" x2="663" y2="541" />
+	<polygon fill="#000000" stroke="none" points="663,541 659,537 659,545" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" stroke-dasharray="4,4" x1="257" y1="601" x2="412" y2="601" />
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 261 597 L 257 601 L 261 605" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="109" y="109">select loan type</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="127" y="196">apply_loan</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="238" y="257">check_user_permission()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="515" y="302">query()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="405" y="375">accept</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="461" y="455">set_info()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="510" y="523">update()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="304" y="583">success</text>
+</g>
+</svg>

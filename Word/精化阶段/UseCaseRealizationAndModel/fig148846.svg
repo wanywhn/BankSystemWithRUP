@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Bouml (http://bouml.free.fr/) -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="779" height="538" version="1.1" xmlns="http://www.w3.org/2000/svg">
-<g>
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="454" cy="47" rx="10" ry="10" />
-	<line stroke="black" stroke-opacity="1" x1="454" y1="37" x2="459" y2="32" />
-	<line stroke="black" stroke-opacity="1" x1="454" y1="37" x2="459" y2="42" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="454" y="71">online_bank_control</text>
-	<line stroke="black" stroke-opacity="1" x1="367" y1="86" x2="541" y2="86" />
-	<line stroke="black" stroke-opacity="1" x1="367" y1="94" x2="541" y2="94" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="108">register_onlinebank()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="135">inquire_inc=fo()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="162">inquire_info()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="189">transfer_money()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="216">change_passwd()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="243">delete user()</text>
-</g>
+<svg width="779" height="637" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <g>
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="204" cy="45" rx="10" ry="10" />
 	<line stroke="black" stroke-opacity="1" x1="204" y1="35" x2="209" y2="30" />
@@ -39,16 +25,16 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="83" y="457">deposit()</text>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="83" y="484">cancel_loss()</text>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="83" y="511">reapply_one_card()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="83" y="538">check_if_enough()</text>
 </g>
 <g>
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="460" cy="322" rx="10" ry="10" />
-	<line stroke="black" stroke-opacity="1" x1="460" y1="312" x2="465" y2="307" />
-	<line stroke="black" stroke-opacity="1" x1="460" y1="312" x2="465" y2="317" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="460" y="346">modify_user</text>
-	<line stroke="black" stroke-opacity="1" x1="405" y1="361" x2="515" y2="361" />
-	<line stroke="black" stroke-opacity="1" x1="405" y1="369" x2="515" y2="369" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="409" y="383">user_add()</text>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="409" y="410">user_delete()</text>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="678" cy="71" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="678" y1="61" x2="683" y2="56" />
+	<line stroke="black" stroke-opacity="1" x1="678" y1="61" x2="683" y2="66" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="678" y="95">bank_info_ctrl</text>
+	<line stroke="black" stroke-opacity="1" x1="589" y1="110" x2="767" y2="110" />
+	<line stroke="black" stroke-opacity="1" x1="589" y1="118" x2="767" y2="118" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="593" y="132">modity_bank_config()</text>
 </g>
 <g>
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="682" cy="384" rx="10" ry="10" />
@@ -62,6 +48,21 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="604" y="499">repayment()</text>
 </g>
 <g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="465" cy="47" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="465" y1="37" x2="470" y2="32" />
+	<line stroke="black" stroke-opacity="1" x1="465" y1="37" x2="470" y2="42" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="465" y="71">online_bank_control</text>
+	<line stroke="black" stroke-opacity="1" x1="367" y1="86" x2="563" y2="86" />
+	<line stroke="black" stroke-opacity="1" x1="367" y1="94" x2="563" y2="94" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="108">register_onlinebank()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="135">inquire_inc=fo()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="162">inquire_info()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="189">transfer_money()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="216">change_passwd()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="243">delete user()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="371" y="270">register_forex_account()</text>
+</g>
+<g>
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="636" cy="187" rx="10" ry="10" />
 	<line stroke="black" stroke-opacity="1" x1="636" y1="177" x2="641" y2="172" />
 	<line stroke="black" stroke-opacity="1" x1="636" y1="177" x2="641" y2="182" />
@@ -72,12 +73,23 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="552" y="275">calcen_current_plan()</text>
 </g>
 <g>
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="678" cy="71" rx="10" ry="10" />
-	<line stroke="black" stroke-opacity="1" x1="678" y1="61" x2="683" y2="56" />
-	<line stroke="black" stroke-opacity="1" x1="678" y1="61" x2="683" y2="66" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="678" y="95">bank_info_ctrl</text>
-	<line stroke="black" stroke-opacity="1" x1="589" y1="110" x2="767" y2="110" />
-	<line stroke="black" stroke-opacity="1" x1="589" y1="118" x2="767" y2="118" />
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="593" y="132">modity_bank_config()</text>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="460" cy="322" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="460" y1="312" x2="465" y2="307" />
+	<line stroke="black" stroke-opacity="1" x1="460" y1="312" x2="465" y2="317" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="460" y="346">modify_user</text>
+	<line stroke="black" stroke-opacity="1" x1="405" y1="361" x2="515" y2="361" />
+	<line stroke="black" stroke-opacity="1" x1="405" y1="369" x2="515" y2="369" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="409" y="383">user_add()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="409" y="410">user_delete()</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="446" cy="522" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="446" y1="512" x2="451" y2="507" />
+	<line stroke="black" stroke-opacity="1" x1="446" y1="512" x2="451" y2="517" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="446" y="546">control_forex</text>
+	<line stroke="black" stroke-opacity="1" x1="358" y1="561" x2="534" y2="561" />
+	<line stroke="black" stroke-opacity="1" x1="358" y1="569" x2="534" y2="569" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="362" y="583">transfer_to_onecard()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="362" y="610">get_info()</text>
 </g>
 </svg>

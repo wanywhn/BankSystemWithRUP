@@ -1,0 +1,99 @@
+format 219
+
+classinstance 128110 class_ref 128110 // kehu
+  name ""   xyz 39 4 2000 life_line_z 2000
+classinstance 128238 class_ref 157422 // entity_loan
+  name ""   xyz 467 4 2000 life_line_z 2000
+classinstance 128366 class_ref 157294 // control_loan
+  name ""   xyz 317 4 2000 life_line_z 2000
+classinstance 128494 class_ref 157550 // boundry_loan
+  name ""   xyz 152 4 2000 life_line_z 2000
+classinstance 129774 class_ref 148974 // DB
+  name ""   xyz 702 4 2000 life_line_z 2000
+classinstance 132718 class_ref 157678 // check_system
+  name ""   xyz 755 5 2005 life_line_z 2000
+durationcanvas 128622 classinstance_ref 128110 // :kehu
+  xyzwh 57 107 2010 11 40
+end
+durationcanvas 128750 classinstance_ref 128494 // :boundry_loan
+  xyzwh 205 107 2010 11 25
+end
+durationcanvas 129390 classinstance_ref 128494 // :boundry_loan
+  xyzwh 205 173 2010 11 40
+end
+durationcanvas 129518 classinstance_ref 128366 // :control_loan
+  xyzwh 365 173 2010 11 25
+end
+durationcanvas 132846 classinstance_ref 128366 // :control_loan
+  xyzwh 365 208 2010 11 40
+end
+durationcanvas 132974 classinstance_ref 132718 // :check_system
+  xyzwh 812 208 2010 11 25
+end
+durationcanvas 133230 classinstance_ref 132718 // :check_system
+  xyzwh 812 256 2010 11 40
+end
+durationcanvas 133358 classinstance_ref 128366 // :control_loan
+  xyzwh 365 256 2010 11 25
+end
+durationcanvas 133614 classinstance_ref 128366 // :control_loan
+  xyzwh 365 300 2010 11 40
+end
+durationcanvas 133742 classinstance_ref 128238 // :entity_loan
+  xyzwh 509 300 2010 11 25
+end
+durationcanvas 133998 classinstance_ref 128366 // :control_loan
+  xyzwh 365 378 2010 11 40
+end
+durationcanvas 134126 classinstance_ref 129774 // :DB
+  xyzwh 721 378 2010 11 25
+end
+durationcanvas 134382 classinstance_ref 128366 // :control_loan
+  xyzwh 365 446 2010 11 40
+end
+durationcanvas 134510 classinstance_ref 128494 // :boundry_loan
+  xyzwh 205 446 2010 11 25
+end
+msg 128878 synchronous
+  from durationcanvas_ref 128622
+  to durationcanvas_ref 128750
+  yz 107 2015 explicitmsg "enten request"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 90 82
+msg 129646 synchronous
+  from durationcanvas_ref 129390
+  to durationcanvas_ref 129518
+  yz 173 2015 msg operation_ref 175086 // "request_exent_loan()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 249 148
+msg 133102 synchronous
+  from durationcanvas_ref 132846
+  to durationcanvas_ref 132974
+  yz 208 2015 msg operation_ref 175214 // "should_accept()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 532 183
+msg 133486 return
+  from durationcanvas_ref 133230
+  to durationcanvas_ref 133358
+  yz 256 3005 explicitmsg "should"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 568 231
+msg 133870 synchronous
+  from durationcanvas_ref 133614
+  to durationcanvas_ref 133742
+  yz 300 2015 explicitmsg "delay_pay"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 402 275
+msg 134254 synchronous
+  from durationcanvas_ref 133998
+  to durationcanvas_ref 134126
+  yz 378 2015 msg operation_ref 143214 // "update()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 515 353
+msg 134638 return
+  from durationcanvas_ref 134382
+  to durationcanvas_ref 134510
+  yz 446 2015 explicitmsg "success"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 260 421
+end

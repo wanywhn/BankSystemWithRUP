@@ -14,7 +14,7 @@ DialogPayCreditCard::DialogPayCreditCard(QString idcard, QString sid, QString oc
     connect(btn_calcen,&QPushButton::clicked,this,[this](){this->reject();});
     connect(cb_creditcard,&QComboBox::currentTextChanged,this,[this](QString str){
     lb_least->setText(QString::number(cctrl.Getminvalue(str)));
-    lb_own->setText(QString::number(cctrl.Getminvalue(str)));
+    lb_own->setText(QString::number(cctrl.GetTotalLimit(str)-cctrl.GetnowLimit(str)));
     });
             
     
@@ -77,6 +77,6 @@ void DialogPayCreditCard::init_data()
     cb_creditcard->clear();
     cb_creditcard->addItems(list);
     lb_least->setText(QString::number(cctrl.Getminvalue(cb_creditcard->currentText())));
-    lb_own->setText(QString::number(cctrl.GetnowLimit(cb_creditcard->currentText())));
+    lb_own->setText(QString::number(cctrl.GetTotalLimit(cb_creditcard->currentText())-cctrl.GetnowLimit(cb_creditcard->currentText())));
 
 }

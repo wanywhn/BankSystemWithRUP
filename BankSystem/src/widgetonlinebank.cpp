@@ -127,7 +127,7 @@ void WidgetOnlineBank::slots_open_creditcard()
         qDebug()<<DEBUG_PRE<<query.lastError();
         return;
     }
-    tmp="SELEC id WHERE cid='%1'";
+    tmp="SELECT id FROM credit_card WHERE cid='%1'";
     if(!query.exec(tmp.arg(ctrl.get_idcard()))){
         qDebug()<<DEBUG_PRE<<query.lastError();
         return ;

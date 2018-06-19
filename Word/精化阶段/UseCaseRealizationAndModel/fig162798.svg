@@ -25,6 +25,10 @@
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="635" cy="126" rx="31" ry="15" />
 </g>
 <g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="411" cy="316" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="408" cy="313" rx="31" ry="15" />
+</g>
+<g>
 	<ellipse fill="#cbcbcb" stroke="none" cx="450" cy="141" rx="31" ry="15" />
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="447" cy="138" rx="31" ry="15" />
 </g>
@@ -33,14 +37,10 @@
 	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="648" cy="324" rx="31" ry="15" />
 </g>
 <g>
-	<ellipse fill="#cbcbcb" stroke="none" cx="411" cy="316" rx="31" ry="15" />
-	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="408" cy="313" rx="31" ry="15" />
-</g>
-<g>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="249" y="90">modify_config</text>
 </g>
 <g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="572" y="353">cancel_modify_plan</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="575" y="155">delete_sys_user</text>
 </g>
 <g>
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="342" y="342">add_modify_plan</text>
@@ -49,7 +49,12 @@
 	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="396" y="167">add_sys_user</text>
 </g>
 <g>
-	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="575" y="155">delete_sys_user</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="572" y="353">cancel_modify_plan</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="616" y1="321" x2="610" y2="314" />
+	<line stroke="black" stroke-opacity="1" x1="616" y1="321" x2="609" y2="326" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="440" y1="314" x2="616" y2="321" />
 </g>
 <g>
 	<line stroke="black" stroke-opacity="1" x1="296" y1="77" x2="288" y2="81" />
@@ -57,9 +62,9 @@
 	<line stroke="black" stroke-opacity="1" x1="250" y1="233" x2="296" y2="77" />
 </g>
 <g>
-	<line stroke="black" stroke-opacity="1" x1="616" y1="321" x2="610" y2="314" />
-	<line stroke="black" stroke-opacity="1" x1="616" y1="321" x2="609" y2="326" />
-	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="440" y1="314" x2="616" y2="321" />
+	<line stroke="black" stroke-opacity="1" x1="376" y1="304" x2="371" y2="296" />
+	<line stroke="black" stroke-opacity="1" x1="376" y1="304" x2="368" y2="308" />
+	<line stroke="black" stroke-opacity="1" x1="303" y1="285" x2="376" y2="304" />
 </g>
 <g>
 	<line stroke="black" stroke-opacity="1" x1="418" y1="154" x2="409" y2="152" />
@@ -70,10 +75,5 @@
 	<line stroke="black" stroke-opacity="1" x1="603" y1="127" x2="596" y2="121" />
 	<line stroke="black" stroke-opacity="1" x1="603" y1="127" x2="597" y2="133" />
 	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="479" y1="135" x2="603" y2="127" />
-</g>
-<g>
-	<line stroke="black" stroke-opacity="1" x1="376" y1="304" x2="371" y2="296" />
-	<line stroke="black" stroke-opacity="1" x1="376" y1="304" x2="368" y2="308" />
-	<line stroke="black" stroke-opacity="1" x1="303" y1="285" x2="376" y2="304" />
 </g>
 </svg>
