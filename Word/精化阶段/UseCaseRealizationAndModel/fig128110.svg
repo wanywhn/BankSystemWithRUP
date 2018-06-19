@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="820" height="567" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="273" cy="59" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="270" cy="56" rx="31" ry="15" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="249" y="86">deposit</text>
+</g>
+<g>
+	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="110" cy="241" rx="6" ry="6" />
+	<line stroke="black" stroke-opacity="1" x1="99" y1="252" x2="121" y2="252" />
+	<line stroke="black" stroke-opacity="1" x1="110" y1="247" x2="110" y2="262" />
+	<line stroke="black" stroke-opacity="1" x1="110" y1="262" x2="100" y2="274" />
+	<line stroke="black" stroke-opacity="1" x1="110" y1="262" x2="120" y2="274" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="112" y="289">kehu</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="521" y="457">&lt;&lt;extend&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="584" y="136">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="599" y="169">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="529" y="514">&lt;&lt;extend&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="525" y="111">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="695" y="213">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="487" y="82">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="560" y="237">&lt;&lt;include&gt;&gt;</text>
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="679" cy="317" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-dasharray="4,4" stroke-width="1" stroke-opacity="1" cx="676" cy="314" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="414" cy="490" rx="42" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="411" cy="487" rx="42" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="689" cy="411" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="686" cy="408" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="705" cy="518" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="702" cy="515" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="499" cy="232" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="496" cy="229" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="91" cy="71" rx="37" ry="14" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-dasharray="4,4" stroke-width="1" stroke-opacity="1" cx="88" cy="68" rx="37" ry="14" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="779" cy="92" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="776" cy="89" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="467" cy="165" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-dasharray="4,4" stroke-width="1" stroke-opacity="1" cx="464" cy="162" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="422" cy="365" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-dasharray="4,4" stroke-width="1" stroke-opacity="1" cx="419" cy="362" rx="31" ry="15" />
+</g>
+<g>
+	<ellipse fill="#cbcbcb" stroke="none" cx="348" cy="114" rx="31" ry="15" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="345" cy="111" rx="31" ry="15" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="380" y="392">close_account</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="33" y="109">open_one_card_system</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="640" y="455">reapply_one_card</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="599" y="343">open_online_bank_system</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="420" y="191">change_passwd</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="649" y="545">cancel_loss_report</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="368" y="516">loss_report</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="450" y="265">transfer_account</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="763" y="117">login</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="312" y="141">withdrawal</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="256" y1="72" x2="247" y2="73" />
+	<line stroke="black" stroke-opacity="1" x1="256" y1="72" x2="257" y2="80" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="237" x2="256" y2="72" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="744" y1="86" x2="738" y2="79" />
+	<line stroke="black" stroke-opacity="1" x1="744" y1="86" x2="737" y2="91" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="302" y1="58" x2="744" y2="86" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="744" y1="103" x2="735" y2="100" />
+	<line stroke="black" stroke-opacity="1" x1="744" y1="103" x2="741" y2="111" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="524" y1="213" x2="744" y2="103" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="388" y1="471" x2="386" y2="462" />
+	<line stroke="black" stroke-opacity="1" x1="388" y1="471" x2="379" y2="472" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="288" x2="388" y2="471" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="387" y1="352" x2="382" y2="344" />
+	<line stroke="black" stroke-opacity="1" x1="387" y1="352" x2="379" y2="356" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="277" x2="387" y2="352" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="752" y1="105" x2="743" y2="103" />
+	<line stroke="black" stroke-opacity="1" x1="752" y1="105" x2="750" y2="113" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="436" y1="346" x2="752" y2="105" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="744" y1="90" x2="737" y2="84" />
+	<line stroke="black" stroke-opacity="1" x1="744" y1="90" x2="738" y2="96" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="377" y1="108" x2="744" y2="90" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="318" y1="127" x2="309" y2="125" />
+	<line stroke="black" stroke-opacity="1" x1="318" y1="127" x2="316" y2="135" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="253" x2="318" y2="127" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="654" y1="416" x2="646" y2="411" />
+	<line stroke="black" stroke-opacity="1" x1="654" y1="416" x2="649" y2="423" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="455" y1="474" x2="654" y2="416" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="464" y1="231" x2="457" y2="225" />
+	<line stroke="black" stroke-opacity="1" x1="464" y1="231" x2="458" y2="237" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="268" x2="464" y2="231" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="767" y1="105" x2="759" y2="108" />
+	<line stroke="black" stroke-opacity="1" x1="767" y1="105" x2="770" y2="112" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="694" y1="298" x2="767" y2="105" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="644" y1="311" x2="638" y2="304" />
+	<line stroke="black" stroke-opacity="1" x1="644" y1="311" x2="637" y2="316" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="272" x2="644" y2="311" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="90" y1="84" x2="84" y2="90" />
+	<line stroke="black" stroke-opacity="1" x1="90" y1="84" x2="96" y2="89" />
+	<line stroke="black" stroke-opacity="1" x1="107" y1="234" x2="90" y2="84" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="432" y1="170" x2="424" y2="166" />
+	<line stroke="black" stroke-opacity="1" x1="432" y1="170" x2="428" y2="177" />
+	<line stroke="black" stroke-opacity="1" x1="135" y1="263" x2="432" y2="170" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="670" y1="511" x2="664" y2="504" />
+	<line stroke="black" stroke-opacity="1" x1="670" y1="511" x2="663" y2="516" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="455" y1="491" x2="670" y2="511" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="744" y1="96" x2="736" y2="91" />
+	<line stroke="black" stroke-opacity="1" x1="744" y1="96" x2="739" y2="103" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="496" y1="153" x2="744" y2="96" />
+</g>
+</svg>

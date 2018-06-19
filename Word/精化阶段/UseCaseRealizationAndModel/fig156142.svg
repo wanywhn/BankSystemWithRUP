@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="762" height="519" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<ellipse fill="none" stroke="black" stroke-width="1" stroke-opacity="1" cx="96" cy="7" rx="3" ry="3" />
+	<line stroke="black" stroke-opacity="1" x1="90" y1="12" x2="101" y2="12" />
+	<line stroke="black" stroke-opacity="1" x1="96" y1="10" x2="96" y2="17" />
+	<line stroke="black" stroke-opacity="1" x1="96" y1="17" x2="91" y2="23" />
+	<line stroke="black" stroke-opacity="1" x1="96" y1="17" x2="101" y2="23" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="97" y="44">:bank_assistant</text>
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="746" y="8" width="3" height="31" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="567" y="36" width="182" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="563" y="4" width="183" height="32" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-decoration="underline" text-anchor="middle" x="655" y="26">:one_card_account_db</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="440" y1="45" x2="440" y2="519" />
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="656" y1="45" x2="656" y2="519" />
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="97" y1="45" x2="97" y2="519" />
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="440" cy="19" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="440" y1="9" x2="445" y2="4" />
+	<line stroke="black" stroke-opacity="1" x1="440" y1="9" x2="445" y2="14" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="440" y="49">:one_card_control</text>
+</g>
+<g>
+	<line stroke="black" stroke-dasharray="18,6"  stroke-opacity="1" x1="276" y1="46" x2="276" y2="519" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="258" y1="15" x2="266" y2="15" />
+	<line stroke="black" stroke-opacity="1" x1="258" y1="5" x2="258" y2="25" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="276" cy="15" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="276" y="45">:BankBoundry</text>
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="435" y="316" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="651" y="468" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="435" y="468" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="271" y="113" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="271" y="257" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="92" y="257" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="435" y="267" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="435" y="382" width="10" height="39" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="651" y="132" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="435" y="122" width="10" height="24" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="92" y="113" width="10" height="39" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="103" y1="118" x2="271" y2="118" />
+	<polygon fill="#000000" stroke="none" points="271,118 267,114 267,122" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="446" y1="473" x2="651" y2="473" />
+	<polygon fill="#000000" stroke="none" points="651,473 647,469 647,477" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="103" y1="262" x2="271" y2="262" />
+	<polygon fill="#000000" stroke="none" points="271,262 267,258 267,266" />
+</g>
+<g>
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 447 383 L 464 383 L 464 390 L 447 390" />
+	<polygon fill="#000000" stroke="none" points="447,390 451,394 451,386" />
+</g>
+<g>
+	<path fill="none" stroke="black" stroke-opacity="1" d="M 447 317 L 464 317 L 464 324 L 447 324" />
+	<polygon fill="#000000" stroke="none" points="447,324 451,328 451,320" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="282" y1="272" x2="435" y2="272" />
+	<polygon fill="#000000" stroke="none" points="435,272 431,268 431,276" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="282" y1="127" x2="435" y2="127" />
+	<polygon fill="#000000" stroke="none" points="435,127 431,123 431,131" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="446" y1="137" x2="651" y2="137" />
+	<polygon fill="#000000" stroke="none" points="651,137 647,133 647,141" />
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="370" y="310">lost_day_gt_one_week</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="482" y="126">check_if_exist()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="307" y="116">set_idcard()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="304" y="261">cancel_loss()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="128" y="251">request_cancel</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="409" y="376">set_loss()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="503" y="462">update()</text>
+</g>
+<g>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="135" y="107">enter_idcard</text>
+</g>
+</svg>

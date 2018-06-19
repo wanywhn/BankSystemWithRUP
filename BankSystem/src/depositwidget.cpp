@@ -53,7 +53,10 @@ void DepositWidget::init_ui()
           QMessageBox::warning(this,tr("Error"),tr("Please Select a row"));
           return ;
       }
-      auto tmp=QInputDialog::getInt(this,tr("Input"),tr("Please Input count"));
+      auto tmp=QInputDialog::getText(this,tr("Input"),tr("Please Input count"));
+      if(tmp.length()==0){
+          return ;
+      }
       auto idstr=rows.at(0).data().toString();
       QPair<bool,QString> ret;
       if(idstr.at(1)!=QString("1")){
@@ -62,7 +65,7 @@ void DepositWidget::init_ui()
       }else{
       int id=rows.at(0).data().toInt();
       qDebug()<<DEBUG_PRE<<id;
-      ret=ctrl.withdraw(id,tmp,"WithDraw From qiantai","WITHDRAW");
+      ret=ctrl.withdraw(id,tmp.toInt(),"WithDraw From qiantai","WITHDRAW");
 
       }
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Documentation produced by the Html generator of Bouml (http://www.bouml.fr) -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+
+<head>
+<title>Class one_card_account</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body bgcolor="#ffffff">
+
+<div class = "title">Class one_card_account</div>
+<p></p>
+
+<!-- ============================================================= -->
+
+<a name="ref4_128238"></a>
+<p>Declaration :</p><ul>
+<li>C++ : class one_card_account </li></ul><p>Artifact : <a href="index.html#ref8_128110"><b>BankSystem</b></a></p>
+<p>Stereotype: entity</p>
+<div class="sub">
+<a name="ref0_128238"></a>
+<table><tr><td><div class="element">Relation <b>&lt;association&gt;</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : -  : <a href="class128110.html#ref4_128110"><b>kehu</b></a>, multiplicity : 1</li><li>C++ : private: <a href="class128110.html#ref4_128110"><b>kehu</b></a> * </li></ul><a name="ref0_128366"></a>
+<table><tr><td><div class="element">Relation <b>subaccount (&lt;unidirectional association&gt;)</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : - subaccount : <a href="class128366.html#ref4_128366"><b>saving_subaccount</b></a>, multiplicity : *</li><li>C++ : private: vector&lt;<a href="class128366.html#ref4_128366"><b>saving_subaccount</b></a> *&gt; subaccount</li></ul><p>Stereotype: vector</p>
+<a name="ref1_134638"></a>
+<table><tr><td><div class="element">Attribute <b>id</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - id : char[11]</li><li>C++ : private: char[11] id</li></ul><a name="ref1_134766"></a>
+<table><tr><td><div class="element">Attribute <b>owner_name</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - owner_name : string</li><li>C++ : private: string owner_name</li></ul><a name="ref1_134894"></a>
+<table><tr><td><div class="element">Attribute <b>id_card</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - id_card : string</li><li>C++ : private: string id_card</li></ul><a name="ref1_135022"></a>
+<table><tr><td><div class="element">Attribute <b>address</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - address : string</li><li>C++ : private: string address</li></ul><a name="ref1_135150"></a>
+<table><tr><td><div class="element">Attribute <b>phone_number</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - phone_number : string</li><li>C++ : private: string phone_number</li></ul><a name="ref1_135278"></a>
+<table><tr><td><div class="element">Attribute <b>passwd</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - passwd : string</li><li>C++ : private: string passwd</li></ul><a name="ref1_135406"></a>
+<table><tr><td><div class="element">Attribute <b>online_bank</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - online_bank : bool = false</li><li>C++ : private: bool online_bank</li></ul><a name="ref1_135534"></a>
+<table><tr><td><div class="element">Attribute <b>online_name</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - online_name : string</li><li>C++ : private: string online_name</li></ul><a name="ref1_135662"></a>
+<table><tr><td><div class="element">Attribute <b>online_passwd</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - online_passwd : string</li><li>C++ : private: string online_passwd</li></ul><a name="ref1_135790"></a>
+<table><tr><td><div class="element">Attribute <b>lost</b></div></td></tr></table>
+<p>Declaration :</p><ul><li>Uml : - lost : bool = false</li><li>C++ : private: bool lost</li></ul><a name="ref2_134638"></a>
+<table><tr><td><div class="element">Operation <b>set_name</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_name() : string</li><li>C++ : public: string set_name()</li></ul><a name="ref2_134766"></a>
+<table><tr><td><div class="element">Operation <b>set_idcard</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_idcard() : string</li><li>C++ : public: string set_idcard()</li></ul><a name="ref2_134894"></a>
+<table><tr><td><div class="element">Operation <b>set_address</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_address() : string</li><li>C++ : public: string set_address()</li></ul><a name="ref2_135022"></a>
+<table><tr><td><div class="element">Operation <b>set_phone_number</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_phone_number() : string</li><li>C++ : public: string set_phone_number()</li></ul><a name="ref2_135150"></a>
+<table><tr><td><div class="element">Operation <b>set_passwd</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_passwd() : </li><li>C++ : public:  set_passwd()</li></ul><a name="ref2_135278"></a>
+<table><tr><td><div class="element">Operation <b>get_sub_account</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + get_sub_account() : </li><li>C++ : public:  get_sub_account()</li></ul><a name="ref2_144110"></a>
+<table><tr><td><div class="element">Operation <b>set_online_bank_status</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + set_online_bank_status() : </li><li>C++ : public:  set_online_bank_status()</li></ul><a name="ref2_157678"></a>
+<table><tr><td><div class="element">Operation <b>withdrawal_money</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + withdrawal_money() : </li><li>C++ : public:  withdrawal_money()</li></ul><a name="ref2_164846"></a>
+<table><tr><td><div class="element">Operation <b>change_passwd</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + change_passwd() : </li><li>C++ : public:  change_passwd()</li></ul><a name="ref2_164974"></a>
+<table><tr><td><div class="element">Operation <b>deposit</b></div></td></tr></table><p>Declaration :</p><ul><li>Uml : + deposit() : </li><li>C++ : public:  deposit()</li></ul></div>
+<p>All public operations : <a href="class128238.html#ref2_164846"><b>change_passwd</b></a> , <a href="class128238.html#ref2_164974"><b>deposit</b></a> , <a href="class128238.html#ref2_135278"><b>get_sub_account</b></a> , <a href="class128238.html#ref2_134894"><b>set_address</b></a> , <a href="class128238.html#ref2_134766"><b>set_idcard</b></a> , <a href="class128238.html#ref2_134638"><b>set_name</b></a> , <a href="class128238.html#ref2_144110"><b>set_online_bank_status</b></a> , <a href="class128238.html#ref2_135150"><b>set_passwd</b></a> , <a href="class128238.html#ref2_135022"><b>set_phone_number</b></a> , <a href="class128238.html#ref2_157678"><b>withdrawal_money</b></a> </p>
+</body>
+</html>

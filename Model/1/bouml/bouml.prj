@@ -1,7 +1,7 @@
-format 218
+format 219
 "bouml"
-  revision 14
-  modified_by 112 "JiaQingtong"
+  revision 15
+  modified_by 110 "tender"
   cpp_root_dir "/home/tender/Data/Workplace/git/BankSystemWithRUP/Model/bouml/src/"
 
 
@@ -11,6 +11,8 @@ format 218
   
   classdiagramsettings draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no hide_ports no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes gradient none show_stereotype_properties no end
   
+  classcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
   usecasediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes gradient none show_stereotype_properties no end
   
   sequencediagramsettings show_full_operations_definition no show_class_of_operation no write_horizontally yes instances_drawing_mode natural drawing_language uml draw_all_relations yes shadow yes gradient none show_stereotype_properties no show_class_context_mode no show_msg_context_mode no end
@@ -18,6 +20,8 @@ format 218
   collaborationdiagramsettings show_full_operations_definition no show_class_of_operation no show_hierarchical_rank no write_horizontally yes instances_drawing_mode natural drawing_language uml package_name_in_tab no show_class_pack_context_mode no show_msg_context_mode no draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
   
   objectdiagramsettings write_horizontally yes package_name_in_tab no show_class_pack_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
   
   componentdiagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none
    draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
@@ -42,7 +46,381 @@ format 218
   mark_for_import
   
   ncouples 1
-  key "html dir" value "/tmp/"
+  key "html dir" value "/tmp/bouml/"
+  usecaseview 134894 "credit_card"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 163822 "credit_card"
+      usecasediagramsettings end
+      size A4
+    end
+
+    usecase 143086 "open_credit_card"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 163950 "open_credit_card"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 143214 "pay"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 149998
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 143470 // repament
+      end
+
+      sequencediagram 164078 "pay"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 143342 "enchashment"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 164206 "enchashment"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 150126
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 143470 // repament
+      end
+    end
+
+    usecase 143470 "repament"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 164334 "repayment"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+  end
+
+  usecaseview 134766 "SystemCtrl"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 162798 "system_ucview"
+      usecasediagramsettings draw_all_relations no end
+      size A4
+    end
+
+    usecase 142318 "modify_config"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 162926 "modefiy_config"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+    end
+
+    usecase 142446 "add_sys_user"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 163182 "add_user"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+
+      simplerelation 149742
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 142574 // delete_sys_user
+      end
+    end
+
+    usecase 142574 "delete_sys_user"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 163438 "delete_user"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 142702 "add_modify_plan"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 149870
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 142830 // cancel_modify_plan
+      end
+
+      sequencediagram 163566 "add_plan"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    usecase 142830 "cancel_modify_plan"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      classcompositediagramsettings end
+      
+      objectdiagramsettings end
+      
+      objectcompositediagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      sequencediagram 163694 "cancel_modify_plan"
+	sequencediagramsettings end
+	overlapping_bars size A4
+      end
+    end
+
+    class 156910 "Sys_User"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 156014 // <dependency>
+	relation 155118 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 156014 // <dependency>
+	  b parent class_ref 141934 // bank_assistant
+      end
+
+      classrelation 156142 // <generalisation>
+	relation 155246 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 156142 // <generalisation>
+	  b parent class_ref 141934 // bank_assistant
+      end
+    end
+
+    class 157038 "normal_user"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 156270 // <generalisation>
+	relation 155374 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 156270 // <generalisation>
+	  b parent class_ref 141934 // bank_assistant
+      end
+    end
+  end
+
   usecaseview 128239 "online bank"
     
     usecasediagramsettings end
@@ -53,7 +431,11 @@ format 218
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     statediagramsettings
      end
@@ -65,7 +447,7 @@ format 218
       size A4
     end
 
-    usecase 128111 "open_one_online_bank"
+    usecase 128111 "open_online_bank"
       
       usecasediagramsettings end
       
@@ -75,7 +457,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -98,7 +484,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -127,7 +517,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -156,7 +550,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -185,7 +583,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -214,7 +616,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -243,7 +649,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -272,7 +682,11 @@ format 218
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -282,7 +696,7 @@ format 218
     end
   end
 
-  usecaseview 128238 "UseCaseView"
+  usecaseview 128238 "Deposit"
     
     usecasediagramsettings end
     
@@ -292,7 +706,11 @@ format 218
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     statediagramsettings
      end
@@ -328,6 +746,30 @@ ${inlines}
 "
 	    classrelation_ref 128238 // <association>
       end
+
+      classrelation 155246 // <association>
+	relation 154734 ----
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+"
+	    classrelation_ref 155246 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155374 // <association>
+      end
+
+      classrelation 155502 // <association>
+	relation 154862 ----
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155502 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155630 // <association>
+      end
     end
 
     class 141934 "bank_assistant"
@@ -343,6 +785,17 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 155758 // <association>
+	relation 154990 ----
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155758 // <association>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 155886 // <association>
+      end
     end
 
     usecase 128110 "open_one_card_system"
@@ -356,7 +809,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -380,7 +837,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -410,7 +871,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -440,7 +905,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -469,7 +938,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -499,7 +972,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -528,7 +1005,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -557,7 +1038,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -592,7 +1077,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -611,7 +1100,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -634,7 +1127,11 @@ ${inlines}
       
       classdiagramsettings member_max_width 0 end
       
+      classcompositediagramsettings end
+      
       objectdiagramsettings end
+      
+      objectcompositediagramsettings end
       
       statediagramsettings
        end
@@ -763,9 +1260,13 @@ ${namespace_end}"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -775,9 +1276,81 @@ ${namespace_end}"
     
     activitydiagramsettings
      end
-    classdiagram 128238 "chuxu_yewu"
+    classdiagram 128238 "kehu"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    classdiagram 164462 "system"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 164590 "processview"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 157166 "BankSystem"
+      visibility package stereotype "process"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 156654 // <dependency>
+	relation 155630 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 156654 // <dependency>
+	  b parent class_ref 148718 // one_card_control
+      end
+
+      classrelation 156782 // <dependency>
+	relation 155758 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 156782 // <dependency>
+	  b parent class_ref 128239 // online_bank_control
+      end
+
+      classrelation 156910 // <dependency>
+	relation 155886 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 156910 // <dependency>
+	  b parent class_ref 156526 // control_credit_card
+      end
+
+      classrelation 157038 // <dependency>
+	relation 156014 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 157038 // <dependency>
+	  b parent class_ref 156142 // plan_ctrl
+      end
+
+      classrelation 157166 // <dependency>
+	relation 156142 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 157166 // <dependency>
+	  b parent class_ref 156270 // modify_user
+      end
+
+      classrelation 157294 // <dependency>
+	relation 156270 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 157294 // <dependency>
+	  b parent class_ref 155630 // bank_info_ctrl
+      end
     end
   end
 
@@ -803,4 +1376,5 @@ ${namespace_end}"
     component 128238 "MySQL"
     end
   end
+
 end

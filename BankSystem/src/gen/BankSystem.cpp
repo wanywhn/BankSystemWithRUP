@@ -114,7 +114,7 @@ QPair<bool, QString> one_card_account::withdrawal_money(int id, int count,
 
   auto benjin = query.value(0).toDouble();
   // TODO
-  if ((benjin - count) < 0.001) {
+  if (abs(benjin - count) < 0.001) {
 //    tmp = "DELETE FROM card_saving WHERE cid='%1' AND sid='%2'";
 //    stmt = tmp.arg(one_card).arg(id);
 //    if (!query.exec(stmt)) {
@@ -191,17 +191,22 @@ QPair<bool, QString> one_card_account::deposit(int mk, int type, int benjin,
     return {false, "Can't open DB"};
   }
   QSqlQuery query(db);
-  QString tmp = "SELECT MAX(id) FROM saving_subaccount WHERE cid='%1' ";
+  QString tmp = "SELECT id FROM saving_subaccount WHERE cid='%1' ";
   QString stmt = tmp.arg(one_card);
   qDebug() << DEBUG_PRE << stmt;
   if (!query.exec(stmt)) {
     return {false, query.lastError().text()};
   }
   QString mid;
-  if (query.next()) {
-    mid = QString::number(query.value(0).toInt() + 1001).right(3);
-  } else {
-    mid = "000";
+  QList<int> list;
+  while (query.next()) {
+      list.append(query.value(0).toInt()%1000+1000);
+  }
+  if(list.isEmpty()){
+      mid="000";
+  }else{
+
+    mid = QString::number(*std::max_element(list.begin(),list.end())+1).right(3);
   }
   QString sid = QString::number(mk) + QString::number(type) + mid;
   qDebug() << DEBUG_PRE << "sid:" << sid;
@@ -531,8 +536,8 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   if (!query.exec(tmp)) {
     return {false, query.lastError().text() + " Can't read lixi"};
   }
-  float fee = query.value(0).toFloat() + 1;
-  float lixi = query.value(1).toFloat() + 1;
+  float fee = (query.value(0).toFloat() + 1)/100;
+  float lixi = (query.value(1).toFloat() + 1)/100;
   // Check if > 0.7
   tmp = "SELECT credit FROM credit_card WHERE id='%1'";
   if (!query.exec(tmp.arg(credit_id))) {
@@ -564,7 +569,7 @@ QPair<bool, QString> credit_crtl::enchashmen(QString credit_id, QString passwd,
   //    }
   // UPDATE credit_card
   tmp = "UPDATE credit_card SET "
-        "interest_free_money=interest_free_money-'%1'";
+        "interest_free_money=interest_free_money-'%1',used=used+'%1' ";
   if (!query.exec(tmp.arg(value * fee))) {
     return {false, query.lastError().text()};
   }
@@ -599,7 +604,7 @@ float credit_crtl::GetnowLimit(QString credit_id) {
     qDebug() << DEBUG_PRE << "Open DB ERROR";
   }
   QSqlQuery query(db);
-  QString tmp = "SELECT used FROM credit_card WHERE id='%1'";
+  QString tmp = "SELECT interest_free_money FROM credit_card WHERE id='%1'";
   if (!query.exec(tmp.arg(credit_id))) {
     return -1;
   }
@@ -617,18 +622,18 @@ float credit_crtl::Getminvalue(QString credit_id) {
   }
   QSqlQuery query(db);
   QString tmp =
-      "SELECT used,paid FROM credit_card WHERE id='%1'"; // weigaichengxianyoudezuidihuankuan
+      "SELECT used FROM credit_card WHERE id='%1'"; // weigaichengxianyoudezuidihuankuan
   if (!query.exec(tmp.arg(credit_id))) {
     return -1;
   }
   query.next();
-  auto curr_credit = query.value(1).toFloat()*0.1;
-  tmp="SELECT figure,server_charge,enchashment_interest FROM enchashment_tb WHERE credit_id='%1'";
+  auto curr_credit = query.value(0).toFloat()*0.1;
+  tmp="SELECT server_charge,enchashment_interest FROM enchashment_tb WHERE credit_id='%1'";
   if(!query.exec(tmp.arg(credit_id))){
       return -1;
   }
   while (query.next()) {
-  curr_credit+=query.value(0).toFloat()*0.1+query.value(1).toFloat()+query.value(2).toFloat();
+  curr_credit+=query.value(0).toFloat()+query.value(1).toFloat();
   }
   return curr_credit;
 }

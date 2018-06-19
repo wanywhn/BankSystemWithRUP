@@ -55,8 +55,8 @@ void DialogTransfer::init_ui()
     layout_fl->addRow(tr("Count"),le_count);
     layout_fl->addRow(btn_accept,btn_cancel);
 
-    cb_name->setEditable(true);
-    cb_onecard->setEditable(true);
+    cb_name->setEditable(false);
+    cb_onecard->setEditable(false);
 
 
 }
@@ -138,8 +138,6 @@ void DialogTransfer::slots_onecard_changed(QString ocd)
         }
 
 
-//    }else{
-//    }
 
 }
 

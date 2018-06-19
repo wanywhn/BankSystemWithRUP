@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="620" height="398" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<line stroke="black" stroke-opacity="1" x1="260" y1="129" x2="268" y2="129" />
+	<line stroke="black" stroke-opacity="1" x1="260" y1="119" x2="260" y2="139" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="278" cy="129" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="278" y="153">BankBoundry</text>
+	<line stroke="black" stroke-opacity="1" x1="220" y1="168" x2="336" y2="168" />
+	<line stroke="black" stroke-opacity="1" x1="220" y1="176" x2="336" y2="176" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="494" y1="332" x2="502" y2="332" />
+	<line stroke="black" stroke-opacity="1" x1="494" y1="322" x2="494" y2="342" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="512" cy="332" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="512" y="356">online_bank_boundary</text>
+	<line stroke="black" stroke-opacity="1" x1="416" y1="371" x2="608" y2="371" />
+	<line stroke="black" stroke-opacity="1" x1="416" y1="379" x2="608" y2="379" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="495" y1="187" x2="503" y2="187" />
+	<line stroke="black" stroke-opacity="1" x1="495" y1="177" x2="495" y2="197" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="513" cy="187" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="513" y="211">boundry_credit_card</text>
+	<line stroke="black" stroke-opacity="1" x1="426" y1="226" x2="600" y2="226" />
+	<line stroke="black" stroke-opacity="1" x1="426" y1="234" x2="600" y2="234" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="150" y1="214" x2="158" y2="214" />
+	<line stroke="black" stroke-opacity="1" x1="150" y1="204" x2="150" y2="224" />
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="168" cy="214" rx="10" ry="10" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="168" y="238">sys_boundry</text>
+	<line stroke="black" stroke-opacity="1" x1="114" y1="253" x2="222" y2="253" />
+	<line stroke="black" stroke-opacity="1" x1="114" y1="261" x2="222" y2="261" />
+</g>
+</svg>

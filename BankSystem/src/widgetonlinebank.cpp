@@ -118,6 +118,9 @@ void WidgetOnlineBank::slots_open_creditcard()
     QSqlQuery query(db);
 
     QString passwd=QInputDialog::getText(this,tr("Please Input"),tr("Please Input Passwd"));
+    if(passwd.isEmpty()){
+        return ;
+    }
     QString tmp="INSERT INTO credit_card(credit,passwd,cid,interest_free_money) VALUES('%1','%2','%3','%4')";
     auto va=qrand()%10000;
     if(!query.exec(tmp.arg(va).arg(passwd).arg(ctrl.get_idcard()).arg(va))){

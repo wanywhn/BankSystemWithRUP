@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="606" height="559" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="289" y="469" width="3" height="77" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="67" y="543" width="225" height="3" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="63" y="465" width="226" height="78" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="176" y="496">&lt;&lt;component&gt;&gt;</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="176" y="535">Qt</text>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="260" y="469" width="25" height="41" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="252" y="477" width="16" height="7" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="252" y="494" width="16" height="7" />
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="590" y="469" width="3" height="77" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="368" y="543" width="225" height="3" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="364" y="465" width="226" height="78" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="477" y="496">&lt;&lt;component&gt;&gt;</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="477" y="535">MySQL</text>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="561" y="469" width="25" height="41" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="553" y="477" width="16" height="7" />
+	<rect fill="#c0ffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="553" y="494" width="16" height="7" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="343" y="134" width="37" height="28" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="343" y="163" width="96" height="95" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="391" y="178">Application</text>
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="381" y="311" width="37" height="28" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="381" y="340" width="96" height="95" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="429" y="355">Presistence</text>
+</g>
+<g>
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="405" y1="258" x2="405" y2="255" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="416" y1="310" x2="420" y2="302" />
+	<line stroke="black" stroke-opacity="1" x1="416" y1="310" x2="408" y2="305" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="405" y1="255" x2="416" y2="310" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="462" y1="464" x2="465" y2="456" />
+	<line stroke="black" stroke-opacity="1" x1="462" y1="464" x2="454" y2="460" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="452" y1="435" x2="462" y2="464" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="249" y1="464" x2="257" y2="466" />
+	<line stroke="black" stroke-opacity="1" x1="249" y1="464" x2="251" y2="455" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="380" y1="397" x2="249" y2="464" />
+</g>
+<g>
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="201" y="19" width="41" height="28" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="201" y="48" width="106" height="95" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="254" y="63">Presentation</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="342" y1="154" x2="341" y2="145" />
+	<line stroke="black" stroke-opacity="1" x1="342" y1="154" x2="333" y2="154" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="307" y1="124" x2="342" y2="154" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="184" y1="464" x2="190" y2="459" />
+	<line stroke="black" stroke-opacity="1" x1="184" y1="464" x2="179" y2="457" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="241" y1="143" x2="184" y2="464" />
+</g>
+</svg>

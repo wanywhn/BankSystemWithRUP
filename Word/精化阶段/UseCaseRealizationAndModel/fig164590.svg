@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="881" height="639" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="368,2 557,2 557,20 539,38 368,38 368,2" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="368" y="2" width="282" height="248" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="454" y="26">online_bank_control</text>
+	<line stroke="black" stroke-opacity="1" x1="368" y1="38" x2="539" y2="38" />
+	<line stroke="black" stroke-opacity="1" x1="539" y1="38" x2="557" y2="20" />
+	<line stroke="black" stroke-opacity="1" x1="557" y1="20" x2="557" y2="2" />
+</g>
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="674,405 815,405 815,423 797,441 674,441 674,405" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="674" y="405" width="171" height="222" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="736" y="429">bank_info_ctrl</text>
+	<line stroke="black" stroke-opacity="1" x1="674" y1="441" x2="797" y2="441" />
+	<line stroke="black" stroke-opacity="1" x1="797" y1="441" x2="815" y2="423" />
+	<line stroke="black" stroke-opacity="1" x1="815" y1="423" x2="815" y2="405" />
+</g>
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="542,418 640,418 640,436 622,454 542,454 542,418" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="542" y="418" width="134" height="179" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="582" y="442">plan_ctrl</text>
+	<line stroke="black" stroke-opacity="1" x1="542" y1="454" x2="622" y2="454" />
+	<line stroke="black" stroke-opacity="1" x1="622" y1="454" x2="640" y2="436" />
+	<line stroke="black" stroke-opacity="1" x1="640" y1="436" x2="640" y2="418" />
+</g>
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="304,383 485,383 485,401 467,419 304,419 304,383" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="304" y="383" width="202" height="199" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="386" y="407">control_credit_card</text>
+	<line stroke="black" stroke-opacity="1" x1="304" y1="419" x2="467" y2="419" />
+	<line stroke="black" stroke-opacity="1" x1="467" y1="419" x2="485" y2="401" />
+	<line stroke="black" stroke-opacity="1" x1="485" y1="401" x2="485" y2="383" />
+</g>
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="636,211 761,211 761,229 743,247 636,247 636,211" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="636" y="211" width="190" height="169" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="690" y="235">modify_user</text>
+	<line stroke="black" stroke-opacity="1" x1="636" y1="247" x2="743" y2="247" />
+	<line stroke="black" stroke-opacity="1" x1="743" y1="247" x2="761" y2="229" />
+	<line stroke="black" stroke-opacity="1" x1="761" y1="229" x2="761" y2="211" />
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="501" y="281" width="3" height="73" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="399" y="351" width="105" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="395" y="277" width="106" height="74" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="448" y="291">&lt;&lt;process&gt;&gt;</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="448" y="320">BankSystem</text>
+	<line stroke="black" stroke-opacity="1" x1="395" y1="335" x2="501" y2="335" />
+	<line stroke="black" stroke-opacity="1" x1="395" y1="343" x2="501" y2="343" />
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="589" cy="25" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="589" y1="15" x2="594" y2="10" />
+	<line stroke="black" stroke-opacity="1" x1="589" y1="15" x2="594" y2="20" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="589" y="49">online_bank_control</text>
+	<line stroke="black" stroke-opacity="1" x1="502" y1="64" x2="676" y2="64" />
+	<line stroke="black" stroke-opacity="1" x1="502" y1="72" x2="676" y2="72" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="86">register_onlinebank()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="113">inquire_inc=fo()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="140">inquire_info()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="167">transfer_money()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="194">change_passwd()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="506" y="221">delete user()</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="401" cy="443" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="401" y1="433" x2="406" y2="428" />
+	<line stroke="black" stroke-opacity="1" x1="401" y1="433" x2="406" y2="438" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="401" y="467">control_credit_card</text>
+	<line stroke="black" stroke-opacity="1" x1="319" y1="482" x2="483" y2="482" />
+	<line stroke="black" stroke-opacity="1" x1="319" y1="490" x2="483" y2="490" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="323" y="504">pay()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="323" y="531">enchashment()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="323" y="558">repayment()</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="780" cy="466" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="780" y1="456" x2="785" y2="451" />
+	<line stroke="black" stroke-opacity="1" x1="780" y1="456" x2="785" y2="461" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="780" y="490">bank_info_ctrl</text>
+	<line stroke="black" stroke-opacity="1" x1="691" y1="505" x2="869" y2="505" />
+	<line stroke="black" stroke-opacity="1" x1="691" y1="513" x2="869" y2="513" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="695" y="527">modity_bank_config()</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="759" cy="256" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="759" y1="246" x2="764" y2="241" />
+	<line stroke="black" stroke-opacity="1" x1="759" y1="246" x2="764" y2="251" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="759" y="280">modify_user</text>
+	<line stroke="black" stroke-opacity="1" x1="704" y1="295" x2="814" y2="295" />
+	<line stroke="black" stroke-opacity="1" x1="704" y1="303" x2="814" y2="303" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="708" y="317">user_add()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="708" y="344">user_delete()</text>
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="620" cy="473" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="620" y1="463" x2="625" y2="458" />
+	<line stroke="black" stroke-opacity="1" x1="620" y1="463" x2="625" y2="468" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="620" y="497">plan_ctrl</text>
+	<line stroke="black" stroke-opacity="1" x1="532" y1="512" x2="708" y2="512" />
+	<line stroke="black" stroke-opacity="1" x1="532" y1="520" x2="708" y2="520" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="536" y="534">create_plan()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="536" y="561">calcen_current_plan()</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="504" y1="236" x2="495" y2="237" />
+	<line stroke="black" stroke-opacity="1" x1="504" y1="236" x2="505" y2="244" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="476" y1="276" x2="504" y2="236" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="698" y1="450" x2="695" y2="441" />
+	<line stroke="black" stroke-opacity="1" x1="698" y1="450" x2="689" y2="452" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="505" y1="345" x2="698" y2="450" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="703" y1="302" x2="696" y2="296" />
+	<line stroke="black" stroke-opacity="1" x1="703" y1="302" x2="697" y2="308" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="505" y1="313" x2="703" y2="302" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="569" y1="457" x2="569" y2="448" />
+	<line stroke="black" stroke-opacity="1" x1="569" y1="457" x2="560" y2="456" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="482" y1="355" x2="569" y2="457" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="418" y1="427" x2="425" y2="422" />
+	<line stroke="black" stroke-opacity="1" x1="418" y1="427" x2="413" y2="419" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="438" y1="355" x2="418" y2="427" />
+</g>
+<g>
+	<polygon fill="#ffffff" stroke="black" stroke-opacity="1" points="60,28 225,28 225,46 207,64 60,64 60,28" />
+	<rect fill="none" stroke="black" stroke-width="1" stroke-opacity="1" x="60" y="28" width="224" height="540" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" text-anchor="middle" x="134" y="52">one_card_control</text>
+	<line stroke="black" stroke-opacity="1" x1="60" y1="64" x2="207" y2="64" />
+	<line stroke="black" stroke-opacity="1" x1="207" y1="64" x2="225" y2="46" />
+	<line stroke="black" stroke-opacity="1" x1="225" y1="46" x2="225" y2="28" />
+</g>
+<g>
+	<ellipse fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" cx="188" cy="73" rx="10" ry="10" />
+	<line stroke="black" stroke-opacity="1" x1="188" y1="63" x2="193" y2="58" />
+	<line stroke="black" stroke-opacity="1" x1="188" y1="63" x2="193" y2="68" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="188" y="97">one_card_control</text>
+	<line stroke="black" stroke-opacity="1" x1="63" y1="112" x2="313" y2="112" />
+	<line stroke="black" stroke-opacity="1" x1="63" y1="120" x2="313" y2="120" />
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="134">set_name()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="161">set_idcard()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="188">set_address()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="215">set_phone_number()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="242">set_passwd()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="269">register()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="296">open_online_bank_system_of()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="323">delete_account_of()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="350">change_passwd_of()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="377">set_target_idcard()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="404">transfer_money()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="431">set_loss()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="458">is_lost()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="485">deposit()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="512">cancel_loss()</text>
+	<text font-family="Helvetica" font-size="12" fill="#000000" xml:space="preserve" x="67" y="539">reapply_one_card()</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="313" y1="309" x2="318" y2="315" />
+	<line stroke="black" stroke-opacity="1" x1="313" y1="309" x2="319" y2="303" />
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="394" y1="313" x2="313" y2="309" />
+</g>
+</svg>

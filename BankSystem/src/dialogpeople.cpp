@@ -1,5 +1,6 @@
 #include "dialogpeople.h"
 
+#include <QMessageBox>
 #include <QPushButton>
 #include <QSqlRecord>
 #include <QTimer>
@@ -16,10 +17,13 @@ DIalogPeople::DIalogPeople(QString id):idcard(id)
     connect(btn_add,&QPushButton::clicked,this,[this](){
         if(sqlmodel->insertRow(sqlmodel->rowCount())){
             qDebug()<<DEBUG_PRE<<"INSERT SUCCESSED";
+            QMessageBox::information(this,tr("Success"),tr("Add Success"));
             return ;
-        }
+        }else{
+            QMessageBox::warning(this,tr("ERROR"),sqlmodel->lastError().text());
             qDebug()<<DEBUG_PRE<<"INSERT FAILED:"<<sqlmodel->lastError();
             return ;
+        }
 
     });
     connect(btn_delete,&QPushButton::clicked,this,[this](){

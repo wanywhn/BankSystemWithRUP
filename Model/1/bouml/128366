@@ -1,10 +1,12 @@
-format 218
+format 219
 "Presentation" // Presentation
-  revision 2
-  modified_by 111 "baobao"
+  revision 3
+  modified_by 110 "tender"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 218
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -40,9 +44,13 @@ format 218
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -74,8 +82,8 @@ ${members}};
       
     end
 
-    class 128111 "fgh"
-      visibility package stereotype "control"
+    class 156398 "boundry_credit_card"
+      visibility package stereotype "boundary"
       cpp_decl "${comment}${template}class ${name}${inherit} {
 ${members}};
 ${inlines}
@@ -83,7 +91,7 @@ ${inlines}
       java_decl ""
       php_decl ""
       python_2_2 python_decl ""
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
 ${members}};
 "
       explicit_switch_type ""
@@ -92,6 +100,23 @@ ${members}};
     end
 
     class 128623 "online_bank_boundary"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 155886 "sys_boundry"
       visibility package stereotype "boundary"
       cpp_decl "${comment}${template}class ${name}${inherit} {
 ${members}};

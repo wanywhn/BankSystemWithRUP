@@ -11,6 +11,7 @@ DialogPayCreditCard::DialogPayCreditCard(QString idcard, QString sid, QString oc
     init_data();
 
     connect(btn_accept,&QPushButton::clicked,this,&DialogPayCreditCard::slots_pay);
+    connect(btn_calcen,&QPushButton::clicked,this,[this](){this->reject();});
     connect(cb_creditcard,&QComboBox::currentTextChanged,this,[this](QString str){
     lb_least->setText(QString::number(cctrl.Getminvalue(str)));
     lb_own->setText(QString::number(cctrl.Getminvalue(str)));
@@ -37,6 +38,8 @@ void DialogPayCreditCard::slots_pay()
         QMessageBox::warning(this,tr("Error"),tr("Pay Error"));
     }
     init_data();
+    QMessageBox::information(this,tr("pay success!"),tr("Pay Success"));
+    this->accept();
     
 }
 
